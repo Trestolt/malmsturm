@@ -72,8 +72,8 @@ Rot: #d7515c
 
 }
 
-.sheet-implication {
-    display: grid;
+.sheet-consequence {
+    display: inline-block;
     grid-gap: 5px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     border-radius: 3px;
