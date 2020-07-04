@@ -1,0 +1,200 @@
+<div class="charsheet">
+
+    <div class="title">
+        <span class="" data-i18n="character-name">Name des Charakters</span>
+        <input class="" type="text" name="attr_character_name" />
+        <span class="" data-i18n="player-name">Name des Spielers</span>
+        <input class="" type="text" name="attr_player_name" />
+        <span class="" data-i18n="group-concept">Gruppenkonzept</span>
+        <input class="" type="text" name="attr_group_concept"/>
+        <span class="" data-i18n="group-dilemma">Gruppendilemma</span>
+        <input class="" type="text" name="attr_group_dilemma" />
+        <span class="" data-i18n="relation-to">Verbindung von</span>
+        <input class="" type="text" name="attr_relation_name"/>
+        <span class="" data-i18n="relation-aspect">Verbindungsaspekt</span>
+        <input class="" type="text" name="attr_relation_aspect" />
+    </div>
+
+    <div class="aspects">
+        <span class="" data-i18n="aspects">Aspekte</span>
+        <fieldset class="repeating_aspect">
+            <span class="" data-i18n="aspect">Aspekt</span>
+            <input class="" type="text" name="attr_aspect" />
+            <button class="" type="roll" value="@{aspect}"></button>
+        </fieldset>
+    </div>
+
+    <div class="skills">
+        <span class="" data-i18n="skills">Fertigkeiten</span>
+        <span class="" data-i18n="athletic">Athletik</span>
+        <select class="" name="attr_skill_athletic">
+            <option value="-2" data-i18n="durchschnitt">-2 - Durchschnitt</option>
+            <option value="-1" data-i18n="durchschnitt">-1 - Durchschnitt</option>
+            <option value="0" data-i18n="nicht-vorhanden" selected>0 - nicht gelernt</option>
+            <option value="1" data-i18n="durchschnitt">+1 - Durchschnitt</option>
+            <option value="2" data-i18n="ordentlich">+2 - Ordentlich</option>
+            <option value="3" data-i18n="ordentlich">+3 - Ordentlich</option>
+            <option value="4" data-i18n="ordentlich">+4 - Ordentlich</option>
+            <option value="5" data-i18n="ordentlich">+5 - Ordentlich</option>
+            <option value="6" data-i18n="ordentlich">+6 - Ordentlich</option>
+            <option value="7" data-i18n="ordentlich">+7 - Ordentlich</option>
+            <option value="8" data-i18n="ordentlich">+8 - Ordentlich</option>
+        </select>
+        <button class="" type="roll" value="/roll 4dF + @{skill_athletic} + ?{Modifier?|0} "></button>
+    </div>
+
+    <div class="points">
+        <span class="" data-i18n="fate-points">Aktuelle Fate-Punkte</span>
+        <input class="" type="number" name="attr_fate_points" />
+        <span class="" data-i18n="rest-rate-modified">Modifizierte Erholungsrate</span>
+        <input class="" type="number" name="attr_rest_rate" />
+        <span class="" data-i18n="rest-rate">Erholungsrate</span>
+        <input class="" type="number" name="attr_rest_rate_max" />
+    </div>
+    <div class="stress">
+        <span class="" data-i18n="stress">Stress</span>
+        <span class="" data-i18n="arcane-stress">Arkaner Stress</span>
+        <span class ="">(
+        <select class="" name="attr_arcane_stress_selector">
+            <option value="0" data-i18n="selector-default" selected>Bitte eine Fertigkeit auswählen...</option>
+            <option value="1" data-i18n="athletic">Athletik</option>
+        </select>
+        )</span>
+        <input class="" type="number" name="attr_arcane_stress" />
+        <input class="" type="number" name="attr_arcane_stress_max" />
+        <span class="" data-i18n="mind-stress">Geistiger Stress (Wille)</span>
+        <select class="" name="attr_mind_stress_selector">
+            <option value="0" data-i18n="selector-default">Bitte eine Fertigkeit auswählen...</option>
+            <option value="1" data-i18n="wille" selected>Wille</option>
+        </select>
+        <input class="" type="number" name="attr_mind_stress" />
+        <input class="" type="number" name="attr_mind_stress_max" />
+        <span class="" data-i18n="physical-stress">Körperlicher Stress (Statur)</span>
+        <select class="" name="attr_physical_stress_selector">
+            <option value="0" data-i18n="selector-default">Bitte eine Fertigkeit auswählen...</option>
+            <option value="1" data-i18n="Statur" selected>Statur</option>
+        </select>
+        <input class="" type="number" name="attr_physical_stress" />
+        <input class="" type="number" name="attr_physical_stress_max" />
+    </div>
+
+    <div class="implication">
+        <span class="" data-i18n="implication">Konsequenzen</span>
+        <span class="">2</span>
+        <input class="" type="text" name="attr_implication_1" />
+        <input class="" type="text" name="attr_imp_type_1" />
+        <input class="" type="checkbox" name="attr_imp_done_1"/>  
+        
+        <span class="">4</span>
+        <input class="" type="text" name="attr_implication_2" />
+        <input class="" type="text" name="attr_imp_type_2" />
+        <input class="" type="checkbox" name="attr_imp_d2one_2"/>
+
+        <span class="">6</span>
+        <input class="" type="text" name="attr_implication_3" />
+        <input class="" type="text" name="attr_imp_type_3" />
+        <input class="" type="checkbox" name="attr_imp_done_3"/>
+
+        <span class="">?</span>
+        <input class="" type="text" name="attr_implication_4" />
+        <input class="" type="text" name="attr_imp_type_4" />
+        <input class="" type="checkbox" name="attr_imp_done_4"/>
+
+        <span class="">2</span>
+        <input class="" type="text" name="attr_implication_5" />
+        <input class="" type="text" name="attr_imp_type_5" />
+        <input class="" type="checkbox" name="attr_imp_done_5"/>
+
+        <span class="">2</span>
+        <input class="" type="text" name="attr_implication_6" />
+        <input class="" type="text" name="attr_imp_type_6" />
+        <input class="" type="checkbox" name="attr_imp_done_6"/>
+
+        <span class="">2</span>
+        <input class="" type="text" name="attr_implication_7" />
+        <input class="" type="text" name="attr_imp_type_7" />
+        <input class="" type="checkbox" name="attr_imp_done_7"/>
+
+        <span class="">2</span>
+        <input class="" type="text" name="attr_implication_8" />
+        <input class="" type="text" name="attr_imp_type_8" />
+        <input class="" type="checkbox" name="attr_imp_done_8"/>
+
+    </div>
+
+    <div class="stunts">
+        <span class="" data-i18n="stunts">Stunts</span>
+        <fieldset class="repeating_stunt">
+            <span class="" data-i18n="stunt">Stunt</span>
+            <input class="" type="number" name="attr_stunt_name" />
+            <button class="" type="roll" value="@{stunt_name} @{stunt_description}"></button>
+            <textarea class="" type="number" name="attr_stunt_description" ></textarea>
+            <span class="" data-i18n="type">Typ:</span>
+            <select class="" name="attr_stunt_type">
+                <option value="action" data-i18n="new-action">Neue Aktion</option>
+                <option value="bonus" data-i18n="bonus">Bonus</option>
+                <option value="exception" data-i18n="rule-exception">Regelausnahme</option>
+            </select>      
+            <span class="" data-i18n="costs">Kosten:</span>
+            <select class="" name="attr_stunt_costs">
+                <option value="free" data-i18n="free">frei</option>
+                <option value="rest-rate" data-i18n="rest-rate">-1 Erholungsrate</option>
+            </select>
+            <span class="" data-i18n="limits">Beschränkungen:</span>
+            <select class="" name="attr_stunt_limit">
+                <option value="scene" data-i18n="scene">Szene</option>
+                <option value="conflict" data-i18n="conflict">Konflikt</option>
+                <option value="session" data-i18n="session">Sitzung</option>
+                <option value="fate-point" data-i18n="fate-point">Fate-Punkt</option>
+            </select>
+        </fieldset>
+    </div>
+
+    <div class="extras">
+        <span class="" data-i18n="extras">Extras</span>
+        <fieldset class="repeating_extra">
+            <input class="" type="text" name="attr_extra_name" />
+            <button class="" type="roll" value="@{extra_name} @{extra_description}"></button>
+            <textarea class="" type="number" name="attr_extra_description" ></textarea>
+            <span class="" data-i18n="costs">Kosten:</span>
+            <select class="" name="attr_extra_costs">
+                <option value="aspect" data-i18n="aspect-slot">Aspektplätze</option>
+                <option value="stunt" data-i18n="stunt-slot">Stuntplätze</option>
+            </select>
+            <span class="" data-i18n="other-costs">Andere Kosten</span>
+            <input class="" type="text" name="attr_costs_other" />
+        </fieldset>
+    </div>
+
+    <div class="rewards">
+        <span class="" data-i18n="rewards">Belohungen</span>
+        <fieldset class="repeating_reward">
+            <input class="" type="text" name="attr_reward" />
+            <button class="" type="roll" value="@{extra_name} @{extra_description}"></button>
+            <input class="" type="checkbox" name="attr_reward_used"/>
+        </fieldset>
+    </div>
+
+    <div class="follower">
+        <span class="" data-i18n="follower">Getreue</span>
+        <fieldset class="repeating_follower">
+            <input class="" type="text" name="attr_follower_name" />
+            <button class="" type="roll" value="@{follower_name} @{follower_conecpt} @{follower_description}"></button>
+            <input class="" type="text" name="attr_follower_conecpt" />
+            <textarea class="" name="attr_follower_skills" ></textarea>
+            <span class="" data-i18n="stress">Stress</span>
+            <input class="" type="number" name="attr_follower_stress" />
+            <input class="" type="number" name="attr_follower_stress_max" />
+            <span class="" data-i18n="costs">Kosten:</span>
+            <input class="" type="number" name="attr_follower_costs" />
+            <span class="" data-i18n="stunts">Stunts</span>
+            <textarea class="" name="attr_follower_description"></textarea>
+        </fieldset>
+    </div>
+    
+    <div class="notes">
+        <span class="" data-i18n="notes">Notizen</span>
+        <textarea class="" name="attr_notes"></textarea>
+    </div>
+
+</div>
