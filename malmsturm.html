@@ -15,17 +15,17 @@
         <input class="" type="text" name="attr_relation_aspect" />
     </div>
 
+    <h3 class="" data-i18n="aspects">Aspekte</h3>
     <div class="aspects">
-        <span class="" data-i18n="aspects">Aspekte</span>
-        <fieldset class="repeating_aspect">
+        <fieldset class="aspects repeating_aspect">
             <span class="" data-i18n="aspect">Aspekt</span>
             <input class="" type="text" name="attr_aspect" />
             <button class="" type="roll" value="@{aspect}"></button>
         </fieldset>
     </div>
 
+    <h3 class="" data-i18n="skills">Fertigkeiten</h3>
     <div class="skills">
-        <span class="" data-i18n="skills">Fertigkeiten</span>
         <span class="" data-i18n="athletics">Athletik</span>
         <select class="" name="attr_skill_athletic">
             <option value="-2" data-i18n="durchschnitt">-2 - Durchschnitt</option>
@@ -51,15 +51,14 @@
         <span class="" data-i18n="rest-rate">Erholungsrate</span>
         <input class="" type="number" name="attr_rest_rate_max" />
     </div>
+
+    <h3 class="" data-i18n="stress">Stress</h3>
     <div class="stress">
-        <span class="" data-i18n="stress">Stress</span>
         <span class="" data-i18n="arcane-stress">Arkaner Stress</span>
-        <span class ="">(
         <select class="" name="attr_arcane_stress_selector">
             <option value="0" data-i18n="selector-default" selected>Bitte eine Fertigkeit auswählen...</option>
             <option value="1" data-i18n="athletics">Athletik</option>
         </select>
-        )</span>
         <input class="" type="number" name="attr_arcane_stress" />
         <input class="" type="number" name="attr_arcane_stress_max" />
         <span class="" data-i18n="mind-stress">Geistiger Stress (Wille)</span>
@@ -78,8 +77,8 @@
         <input class="" type="number" name="attr_physical_stress_max" />
     </div>
 
+    <h3 class="" data-i18n="implication">Konsequenzen</h3>
     <div class="implication">
-        <span class="" data-i18n="implication">Konsequenzen</span>
         <span class="">2</span>
         <input class="" type="text" name="attr_implication_1" />
         <input class="" type="text" name="attr_imp_type_1" />
@@ -122,13 +121,14 @@
 
     </div>
 
+    <h3 class="" data-i18n="stunts">Stunts</h3>
     <div class="stunts">
-        <span class="" data-i18n="stunts">Stunts</span>
         <fieldset class="repeating_stunt">
+            <div class="" >
             <span class="" data-i18n="stunt">Stunt</span>
-            <input class="" type="number" name="attr_stunt_name" />
+            <input class="" type="text" name="attr_stunt_name" />
             <button class="" type="roll" value="@{stunt_name} @{stunt_description}"></button>
-            <textarea class="" type="number" name="attr_stunt_description" ></textarea>
+            <textarea class="" name="attr_stunt_description" ></textarea>
             <span class="" data-i18n="type">Typ:</span>
             <select class="" name="attr_stunt_type">
                 <option value="action" data-i18n="new-action">Neue Aktion</option>
@@ -147,11 +147,12 @@
                 <option value="session" data-i18n="session">Sitzung</option>
                 <option value="fate-point" data-i18n="fate-point">Fate-Punkt</option>
             </select>
+            </div>
         </fieldset>
     </div>
 
+    <h3 class="" data-i18n="extras">Extras</h3>
     <div class="extras">
-        <span class="" data-i18n="extras">Extras</span>
         <fieldset class="repeating_extra">
             <input class="" type="text" name="attr_extra_name" />
             <button class="" type="roll" value="@{extra_name} @{extra_description}"></button>
@@ -166,8 +167,8 @@
         </fieldset>
     </div>
 
+    <h3 class="" data-i18n="rewards">Belohungen</h3>
     <div class="rewards">
-        <span class="" data-i18n="rewards">Belohungen</span>
         <fieldset class="repeating_reward">
             <input class="" type="text" name="attr_reward" />
             <button class="" type="roll" value="@{extra_name} @{extra_description}"></button>
@@ -175,8 +176,8 @@
         </fieldset>
     </div>
 
+    <h3 class="" data-i18n="follower">Getreue</h3>
     <div class="follower">
-        <span class="" data-i18n="follower">Getreue</span>
         <fieldset class="repeating_follower">
             <input class="" type="text" name="attr_follower_name" />
             <button class="" type="roll" value="@{follower_name} @{follower_conecpt} @{follower_description}"></button>
@@ -207,8 +208,9 @@
         <span class="" data-i18n="description">Beschreibung</span>
         <textarea class="" name="attr_tradition_description"></textarea>
     </div>
+    
+    <h3 class="" data-i18n="4-actions">Die 4 Aktionen</h3>
     <div class="4-actions">
-        <span class="" data-i18n="4-actions">Die 4 Aktionen</span>
         <span class="" data-i18n="ueberwinden">Überwinden</span>
         <button class="" type="roll" value="@{tradition_ueberwinden}"></button>
         <textarea class="" name="attr_tradition_ueberwinden"></textarea>
@@ -222,8 +224,9 @@
         <button class="" type="roll" value="@{tradition_defend}"></button>
         <textarea class="" name="attr_tradition_defend"></textarea>
     </div>    
+    
+<h3 class="" data-i18n="trauma">Trauma</h3>
     <div class="trauma">
-        <span class="" data-i18n="trauma">Trauma</span>
         <input class="" type="checkbox" name="attr_trauma_sepulter"/>  
         <span class="" data-i18n="sepulter">Sepulter</span>
         <span class="" data-i18n="stress-position">leitet Stress auf einen besonderen Ort ab</span>
