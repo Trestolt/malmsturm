@@ -1,0 +1,19 @@
+
+
+Name des Charakters     input text
+Name des Spielers       input text
+Gruppenkonzept          input textarea
+Gruppendilemma          input textarea                          Bild Malmsturm  (verfügbar in Github, Open Source Lizenz)
+######
+
+Aspekte                 repeating Section
+- Aspekt: input textarea   roll ?
+
+- Stunts, Aspekte und Extras? roll
+
+######
+
+weitere Bögen/ Tabs
+
+Schriftart
+

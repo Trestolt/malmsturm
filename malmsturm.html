@@ -26,7 +26,7 @@
 
     <div class="skills">
         <span class="" data-i18n="skills">Fertigkeiten</span>
-        <span class="" data-i18n="athletic">Athletik</span>
+        <span class="" data-i18n="athletics">Athletik</span>
         <select class="" name="attr_skill_athletic">
             <option value="-2" data-i18n="durchschnitt">-2 - Durchschnitt</option>
             <option value="-1" data-i18n="durchschnitt">-1 - Durchschnitt</option>
@@ -57,7 +57,7 @@
         <span class ="">(
         <select class="" name="attr_arcane_stress_selector">
             <option value="0" data-i18n="selector-default" selected>Bitte eine Fertigkeit auswählen...</option>
-            <option value="1" data-i18n="athletic">Athletik</option>
+            <option value="1" data-i18n="athletics">Athletik</option>
         </select>
         )</span>
         <input class="" type="number" name="attr_arcane_stress" />
@@ -72,7 +72,7 @@
         <span class="" data-i18n="physical-stress">Körperlicher Stress (Statur)</span>
         <select class="" name="attr_physical_stress_selector">
             <option value="0" data-i18n="selector-default">Bitte eine Fertigkeit auswählen...</option>
-            <option value="1" data-i18n="Statur" selected>Statur</option>
+            <option value="1" data-i18n="statur" selected>Statur</option>
         </select>
         <input class="" type="number" name="attr_physical_stress" />
         <input class="" type="number" name="attr_physical_stress_max" />
@@ -138,7 +138,7 @@
             <span class="" data-i18n="costs">Kosten:</span>
             <select class="" name="attr_stunt_costs">
                 <option value="free" data-i18n="free">frei</option>
-                <option value="rest-rate" data-i18n="rest-rate">-1 Erholungsrate</option>
+                <option value="rest-rate" data-i18n="rest-rate-stunt">-1 Erholungsrate</option>
             </select>
             <span class="" data-i18n="limits">Beschränkungen:</span>
             <select class="" name="attr_stunt_limit">
@@ -197,4 +197,43 @@
         <textarea class="" name="attr_notes"></textarea>
     </div>
 
+    <div class="tradition">
+        <span class="" data-i18n="tradition-name">Name der großen Tradition</span>
+        <input class="" type="text" name="attr_tradition_name" />
+        <span class="" data-i18n="tradition-aspect">Traditionsaspket</span>
+        <input class="" type="text" name="attr_tradition_aspect" />
+        <span class="" data-i18n="tradition-skill">Schlüsselfertigkeit</span>
+        <input class="" type="text" name="attr_tradition_skill" />
+        <span class="" data-i18n="description">Beschreibung</span>
+        <textarea class="" name="attr_tradition_description"></textarea>
+    </div>
+    <div class="4-actions">
+        <span class="" data-i18n="4-actions">Die 4 Aktionen</span>
+        <span class="" data-i18n="ueberwinden">Überwinden</span>
+        <button class="" type="roll" value="@{tradition_ueberwinden}"></button>
+        <textarea class="" name="attr_tradition_ueberwinden"></textarea>
+        <span class="" data-i18n="create-advantage">Erschaffen eines Vorteils</span>
+        <button class="" type="roll" value="@{tradition_advantage}"></button>
+        <textarea class="" name="attr_tradition_advantage"></textarea>
+        <span class="" data-i18n="attack">Angreifen</span>
+        <button class="" type="roll" value="@{tradition_attack}"></button>
+        <textarea class="" name="attr_tradition_attack"></textarea>
+        <span class="" data-i18n="defend">Verteidigen</span>
+        <button class="" type="roll" value="@{tradition_defend}"></button>
+        <textarea class="" name="attr_tradition_defend"></textarea>
+    </div>    
+    <div class="trauma">
+        <span class="" data-i18n="trauma">Trauma</span>
+        <input class="" type="checkbox" name="attr_trauma_sepulter"/>  
+        <span class="" data-i18n="sepulter">Sepulter</span>
+        <span class="" data-i18n="stress-position">leitet Stress auf einen besonderen Ort ab</span>
+        <input class="" type="checkbox" name="attr_trauma_saenda"/>  
+        <span class="" data-i18n="saenda">Saenda</span>
+        <span class="" data-i18n="stress-person">leitet Stress auf eine andere Person ab</span>
+        <input class="" type="checkbox" name="attr_trauma_mactatum"/>  
+        <span class="" data-i18n="mactatum">Mactatum</span>
+        <span class="" data-i18n="stress-item">leitet Stress auf einen persönlichen Gegenstand ab</span>
+        <span class="" data-i18n="notes">Notizen</span>
+        <textarea class="" name="attr_trauma_notes"></textarea>
+    </div>
 </div>
