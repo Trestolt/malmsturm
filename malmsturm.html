@@ -1,18 +1,45 @@
 <div class="charsheet">
-
+    <div class="header-bar">
+      <div class="modifikator">
+        <span class="" data-i18n="modifier">Modifikator</span>
+        <input type="radio" name="attr_mod_option" class="" value="?{@{query_translation}|0}" checked="checked" />
+        <input type="hidden" name="query_translation" value="Erleichterung(+) / Erschwernis(-), im Fall der Erleichterung ohne '+' eingeben" />
+        <span class="" data-i18n="yes">ja</span>
+        <input type="radio" name="attr_mod_option" class="" value="0" />
+        <span class="" data-i18n="no">nein</span>
+      </div>
+    </div>
     <div class="title">
+        <div>
         <span class="" data-i18n="character-name">Name des Charakters</span>
         <input class="" type="text" name="attr_character_name" />
+            <span class="" data-i18n="modifier">Modifikator</span>
+            <input type="radio" name="attr_mod_option" class="" value="?{@{query_translation}|0}" checked="checked" />
+            <input type="hidden" name="query_translation" value="Erleichterung(+) / Erschwernis(-), im Fall der Erleichterung ohne '+' eingeben" />
+            <span class="" data-i18n="yes">ja</span>
+            <input type="radio" name="attr_mod_option" class="" value="0" />
+            <span class="" data-i18n="no">nein</span>
+        </div>
+        <div>
         <span class="" data-i18n="player-name">Name des Spielers</span>
         <input class="" type="text" name="attr_player_name" />
+        </div>
+        <div>
         <span class="" data-i18n="group-concept">Gruppenkonzept</span>
         <input class="" type="text" name="attr_group_concept"/>
-        <span class="" data-i18n="group-dilemma">Gruppendilemma</span>
-        <input class="" type="text" name="attr_group_dilemma" />
+        </div>
+        <div>
+        <span class="" data-i18n="group-trouble">Gruppendilemma</span>
+        <input class="" type="text" name="attr_group_trouble" />
+        </div>
+        <div>
         <span class="" data-i18n="relation-to">Verbindung von</span>
         <input class="" type="text" name="attr_relation_name"/>
+        </div>
+        <div>
         <span class="" data-i18n="relation-aspect">Verbindungsaspekt</span>
         <input class="" type="text" name="attr_relation_aspect" />
+        </div>
     </div>
 
     <h3 class="" data-i18n="aspects">Aspekte</h3>
@@ -26,30 +53,236 @@
 
     <h3 class="" data-i18n="skills">Fertigkeiten</h3>
     <div class="skills">
-        <span class="" data-i18n="athletics">Athletik</span>
-        <select class="" name="attr_skill_athletic">
-            <option value="-2" data-i18n="durchschnitt">-2 - Durchschnitt</option>
-            <option value="-1" data-i18n="durchschnitt">-1 - Durchschnitt</option>
-            <option value="0" data-i18n="nicht-vorhanden" selected>0 - nicht gelernt</option>
-            <option value="1" data-i18n="durchschnitt">+1 - Durchschnitt</option>
-            <option value="2" data-i18n="ordentlich">+2 - Ordentlich</option>
-            <option value="3" data-i18n="ordentlich">+3 - Ordentlich</option>
-            <option value="4" data-i18n="ordentlich">+4 - Ordentlich</option>
-            <option value="5" data-i18n="ordentlich">+5 - Ordentlich</option>
-            <option value="6" data-i18n="ordentlich">+6 - Ordentlich</option>
-            <option value="7" data-i18n="ordentlich">+7 - Ordentlich</option>
-            <option value="8" data-i18n="ordentlich">+8 - Ordentlich</option>
-        </select>
-        <button class="" type="roll" value="/roll 4dF + @{skill_athletic} + ?{Modifier?|0} "></button>
+       <div class="skill">
+            <span class="" data-i18n="athletics"></span>
+            <select class="" name="attr_skill_athletics">
+                <option value="-2" data-i18n="terrible">-2 - fürchterlich</option>
+                <option value="-1" data-i18n="poor">-1 - schwach</option>
+                <option value="0" data-i18n="mediocre" selected>0 - mittelmäßig</option>
+                <option value="1" data-i18n="average">+1 - Durchschnitt</option>
+                <option value="2" data-i18n="fair">+2 - Ordentlich</option>
+                <option value="3" data-i18n="good">+3 - Gut</option>
+                <option value="4" data-i18n="great">+4 - Großartig</option>
+                <option value="5" data-i18n="supberb">+5 - Hervorragend</option>
+                <option value="6" data-i18n="fantastic">+6 - Fantastisch</option>
+                <option value="7" data-i18n="epic">+7 - Episch</option>
+                <option value="8" data-i18n="legendary">+8 - Legendär</option>
+            </select>
+            <button class="" type="roll" value="/roll 4dF + @{skill_athletics} + @{mod_option} "></button>
+        </div>
+        <div class="skill">
+            <span class="" data-i18n="rapport"></span>
+            <select class="" name="attr_skill_rapport">
+                <option value="-2" data-i18n="terrible">-2 - fürchterlich</option>
+                <option value="-1" data-i18n="poor">-1 - schwach</option>
+                <option value="0" data-i18n="mediocre" selected>0 - mittelmäßig</option>
+                <option value="1" data-i18n="average">+1 - Durchschnitt</option>
+                <option value="2" data-i18n="fair">+2 - Ordentlich</option>
+                <option value="3" data-i18n="good">+3 - Gut</option>
+                <option value="4" data-i18n="great">+4 - Großartig</option>
+                <option value="5" data-i18n="supberb">+5 - Hervorragend</option>
+                <option value="6" data-i18n="fantastic">+6 - Fantastisch</option>
+                <option value="7" data-i18n="epic">+7 - Episch</option>
+                <option value="8" data-i18n="legendary">+8 - Legendär</option>
+            </select>
+            <button class="" type="roll" value="/roll 4dF + @{skill_rapport} + @{mod_option} "></button>
+        </div>
+        <div class="skill">
+            <span class="" data-i18n="burglary"></span>
+            <select class="" name="attr_skill_buglary">
+                <option value="-2" data-i18n="terrible">-2 - fürchterlich</option>
+                <option value="-1" data-i18n="poor">-1 - schwach</option>
+                <option value="0" data-i18n="mediocre" selected>0 - mittelmäßig</option>
+                <option value="1" data-i18n="average">+1 - Durchschnitt</option>
+                <option value="2" data-i18n="fair">+2 - Ordentlich</option>
+                <option value="3" data-i18n="good">+3 - Gut</option>
+                <option value="4" data-i18n="great">+4 - Großartig</option>
+                <option value="5" data-i18n="supberb">+5 - Hervorragend</option>
+                <option value="6" data-i18n="fantastic">+6 - Fantastisch</option>
+                <option value="7" data-i18n="epic">+7 - Episch</option>
+                <option value="8" data-i18n="legendary">+8 - Legendär</option>
+            </select>
+            <button class="" type="roll" value="/roll 4dF + @{skill_burglary} + @{mod_option} "></button>
+        </div>
+        <div class="skill">
+            <span class="" data-i18n="empathy"></span>
+            <select class="" name="attr_skill_empathy">
+                <option value="-2" data-i18n="terrible">-2 - fürchterlich</option>
+                <option value="-1" data-i18n="poor">-1 - schwach</option>
+                <option value="0" data-i18n="mediocre" selected>0 - mittelmäßig</option>
+                <option value="1" data-i18n="average">+1 - Durchschnitt</option>
+                <option value="2" data-i18n="fair">+2 - Ordentlich</option>
+                <option value="3" data-i18n="good">+3 - Gut</option>
+                <option value="4" data-i18n="great">+4 - Großartig</option>
+                <option value="5" data-i18n="supberb">+5 - Hervorragend</option>
+                <option value="6" data-i18n="fantastic">+6 - Fantastisch</option>
+                <option value="7" data-i18n="epic">+7 - Episch</option>
+                <option value="8" data-i18n="legendary">+8 - Legendär</option>
+            </select>
+            <button class="" type="roll" value="/roll 4dF + @{skill_empathy} + @{mod_option} "></button>
+        </div>
+        <div class="skill">
+            <span class="" data-i18n="marksmanship"></span>
+            <select class="" name="attr_skill_marksmanship">
+                <option value="-2" data-i18n="terrible">-2 - fürchterlich</option>
+                <option value="-1" data-i18n="poor">-1 - schwach</option>
+                <option value="0" data-i18n="mediocre" selected>0 - mittelmäßig</option>
+                <option value="1" data-i18n="average">+1 - Durchschnitt</option>
+                <option value="2" data-i18n="fair">+2 - Ordentlich</option>
+                <option value="3" data-i18n="good">+3 - Gut</option>
+                <option value="4" data-i18n="great">+4 - Großartig</option>
+                <option value="5" data-i18n="supberb">+5 - Hervorragend</option>
+                <option value="6" data-i18n="fantastic">+6 - Fantastisch</option>
+                <option value="7" data-i18n="epic">+7 - Episch</option>
+                <option value="8" data-i18n="legendary">+8 - Legendär</option>
+            </select>
+            <button class="" type="roll" value="/roll 4dF + @{skill_marksmanship} + @{mod_option} "></button>
+        </div>
+        <div class="skill">
+            <span class="" data-i18n="lore"></span>
+            <select class="" name="attr_skill_lore">
+                <option value="-2" data-i18n="terrible">-2 - fürchterlich</option>
+                <option value="-1" data-i18n="poor">-1 - schwach</option>
+                <option value="0" data-i18n="mediocre" selected>0 - mittelmäßig</option>
+                <option value="1" data-i18n="average">+1 - Durchschnitt</option>
+                <option value="2" data-i18n="fair">+2 - Ordentlich</option>
+                <option value="3" data-i18n="good">+3 - Gut</option>
+                <option value="4" data-i18n="great">+4 - Großartig</option>
+                <option value="5" data-i18n="supberb">+5 - Hervorragend</option>
+                <option value="6" data-i18n="fantastic">+6 - Fantastisch</option>
+                <option value="7" data-i18n="epic">+7 - Episch</option>
+                <option value="8" data-i18n="legendary">+8 - Legendär</option>
+            </select>
+            <button class="" type="roll" value="/roll 4dF + @{skill_lore} + @{mod_option} "></button>
+        </div>
+        <div class="skill">
+            <span class="" data-i18n="crafts"></span>
+            <select class="" name="attr_skill_crafts">
+                <option value="-2" data-i18n="terrible">-2 - fürchterlich</option>
+                <option value="-1" data-i18n="poor">-1 - schwach</option>
+                <option value="0" data-i18n="mediocre" selected>0 - mittelmäßig</option>
+                <option value="1" data-i18n="average">+1 - Durchschnitt</option>
+                <option value="2" data-i18n="fair">+2 - Ordentlich</option>
+                <option value="3" data-i18n="good">+3 - Gut</option>
+                <option value="4" data-i18n="great">+4 - Großartig</option>
+                <option value="5" data-i18n="supberb">+5 - Hervorragend</option>
+                <option value="6" data-i18n="fantastic">+6 - Fantastisch</option>
+                <option value="7" data-i18n="epic">+7 - Episch</option>
+                <option value="8" data-i18n="legendary">+8 - Legendär</option>
+            </select>
+            <button class="" type="roll" value="/roll 4dF + @{skill_crafts} + @{mod_option} "></button>
+        </div>
+        <div class="skill">
+            <span class="" data-i18n="stealth"></span>
+            <select class="" name="attr_skill_stealth">
+                <option value="-2" data-i18n="terrible">-2 - fürchterlich</option>
+                <option value="-1" data-i18n="poor">-1 - schwach</option>
+                <option value="0" data-i18n="mediocre" selected>0 - mittelmäßig</option>
+                <option value="1" data-i18n="average">+1 - Durchschnitt</option>
+                <option value="2" data-i18n="fair">+2 - Ordentlich</option>
+                <option value="3" data-i18n="good">+3 - Gut</option>
+                <option value="4" data-i18n="great">+4 - Großartig</option>
+                <option value="5" data-i18n="supberb">+5 - Hervorragend</option>
+                <option value="6" data-i18n="fantastic">+6 - Fantastisch</option>
+                <option value="7" data-i18n="epic">+7 - Episch</option>
+                <option value="8" data-i18n="legendary">+8 - Legendär</option>
+            </select>
+            <button class="" type="roll" value="/roll 4dF + @{skill_stealth} + @{mod_option} "></button>
+        </div>
+        <div class="skill">
+            <span class="" data-i18n="fight"></span>
+            <select class="" name="attr_skill_fight">
+                <option value="-2" data-i18n="terrible">-2 - fürchterlich</option>
+                <option value="-1" data-i18n="poor">-1 - schwach</option>
+                <option value="0" data-i18n="mediocre" selected>0 - mittelmäßig</option>
+                <option value="1" data-i18n="average">+1 - Durchschnitt</option>
+                <option value="2" data-i18n="fair">+2 - Ordentlich</option>
+                <option value="3" data-i18n="good">+3 - Gut</option>
+                <option value="4" data-i18n="great">+4 - Großartig</option>
+                <option value="5" data-i18n="supberb">+5 - Hervorragend</option>
+                <option value="6" data-i18n="fantastic">+6 - Fantastisch</option>
+                <option value="7" data-i18n="epic">+7 - Episch</option>
+                <option value="8" data-i18n="legendary">+8 - Legendär</option>
+            </select>
+            <button class="" type="roll" value="/roll 4dF + @{skill_fight} + @{mod_option} "></button>
+        </div>
+        <div class="skill">
+            <span class="" data-i18n="contacts"></span>
+            <select class="" name="attr_skill_contacts">
+                <option value="-2" data-i18n="terrible">-2 - fürchterlich</option>
+                <option value="-1" data-i18n="poor">-1 - schwach</option>
+                <option value="0" data-i18n="mediocre" selected>0 - mittelmäßig</option>
+                <option value="1" data-i18n="average">+1 - Durchschnitt</option>
+                <option value="2" data-i18n="fair">+2 - Ordentlich</option>
+                <option value="3" data-i18n="good">+3 - Gut</option>
+                <option value="4" data-i18n="great">+4 - Großartig</option>
+                <option value="5" data-i18n="supberb">+5 - Hervorragend</option>
+                <option value="6" data-i18n="fantastic">+6 - Fantastisch</option>
+                <option value="7" data-i18n="epic">+7 - Episch</option>
+                <option value="8" data-i18n="legendary">+8 - Legendär</option>
+            </select>
+            <button class="" type="roll" value="/roll 4dF + @{skill_contacts} + @{mod_option} "></button>
+        </div>
+        <div class="skill">
+            <span class="" data-i18n="steer"></span>
+            <select class="" name="attr_skill_steer">
+                <option value="-2" data-i18n="terrible">-2 - fürchterlich</option>
+                <option value="-1" data-i18n="poor">-1 - schwach</option>
+                <option value="0" data-i18n="mediocre" selected>0 - mittelmäßig</option>
+                <option value="1" data-i18n="average">+1 - Durchschnitt</option>
+                <option value="2" data-i18n="fair">+2 - Ordentlich</option>
+                <option value="3" data-i18n="good">+3 - Gut</option>
+                <option value="4" data-i18n="great">+4 - Großartig</option>
+                <option value="5" data-i18n="supberb">+5 - Hervorragend</option>
+                <option value="6" data-i18n="fantastic">+6 - Fantastisch</option>
+                <option value="7" data-i18n="epic">+7 - Episch</option>
+                <option value="8" data-i18n="legendary">+8 - Legendär</option>
+            </select>
+            <button class="" type="roll" value="/roll 4dF + @{skill_steer} + @{mod_option} "></button>
+        </div>
+        <div class="skill">
+            <span class="" data-i18n="investigate"></span>
+            <select class="" name="attr_skill_investigate">
+                <option value="-2" data-i18n="terrible">-2 - fürchterlich</option>
+                <option value="-1" data-i18n="poor">-1 - schwach</option>
+                <option value="0" data-i18n="mediocre" selected>0 - mittelmäßig</option>
+                <option value="1" data-i18n="average">+1 - Durchschnitt</option>
+                <option value="2" data-i18n="fair">+2 - Ordentlich</option>
+                <option value="3" data-i18n="good">+3 - Gut</option>
+                <option value="4" data-i18n="great">+4 - Großartig</option>
+                <option value="5" data-i18n="supberb">+5 - Hervorragend</option>
+                <option value="6" data-i18n="fantastic">+6 - Fantastisch</option>
+                <option value="7" data-i18n="epic">+7 - Episch</option>
+                <option value="8" data-i18n="legendary">+8 - Legendär</option>
+            </select>
+            <button class="" type="roll" value="/roll 4dF + @{skill_investigate} + @{mod_option} "></button>
+        </div>
+        <div class="skill">
+            <span class="" data-i18n="provoke"></span>
+            <select class="" name="attr_skill_provoke">
+                <option value="-2" data-i18n="terrible">-2 - fürchterlich</option>
+                <option value="-1" data-i18n="poor">-1 - schwach</option>
+                <option value="0" data-i18n="mediocre" selected>0 - mittelmäßig</option>
+                <option value="1" data-i18n="average">+1 - Durchschnitt</option>
+                <option value="2" data-i18n="fair">+2 - Ordentlich</option>
+                <option value="3" data-i18n="good">+3 - Gut</option>
+                <option value="4" data-i18n="great">+4 - Großartig</option>
+                <option value="5" data-i18n="supberb">+5 - Hervorragend</option>
+                <option value="6" data-i18n="fantastic">+6 - Fantastisch</option>
+                <option value="7" data-i18n="epic">+7 - Episch</option>
+                <option value="8" data-i18n="legendary">+8 - Legendär</option>
+            </select>
+            <button class="" type="roll" value="/roll 4dF + @{skill_provoke} + @{mod_option} "></button>
+        </div>
     </div>
 
     <div class="points">
         <span class="" data-i18n="fate-points">Aktuelle Fate-Punkte</span>
         <input class="" type="number" name="attr_fate_points" />
-        <span class="" data-i18n="rest-rate-modified">Modifizierte Erholungsrate</span>
-        <input class="" type="number" name="attr_rest_rate" />
-        <span class="" data-i18n="rest-rate">Erholungsrate</span>
-        <input class="" type="number" name="attr_rest_rate_max" />
+        <span class="" data-i18n="refresh-modified">Modifizierte Erholungsrate</span>
+        <input class="" type="number" name="attr_refresh" />
+        <span class="" data-i18n="refresh">Erholungsrate</span>
+        <input class="" type="number" name="attr_refresh_max" />
     </div>
 
     <h3 class="" data-i18n="stress">Stress</h3>
@@ -61,17 +294,17 @@
         </select>
         <input class="" type="number" name="attr_arcane_stress" />
         <input class="" type="number" name="attr_arcane_stress_max" />
-        <span class="" data-i18n="mind-stress">Geistiger Stress (Wille)</span>
-        <select class="" name="attr_mind_stress_selector">
+        <span class="" data-i18n="mental-stress">Geistiger Stress (Wille)</span>
+        <select class="" name="attr_mental_stress_selector">
             <option value="0" data-i18n="selector-default">Bitte eine Fertigkeit auswählen...</option>
-            <option value="1" data-i18n="wille" selected>Wille</option>
+            <option value="1" data-i18n="will" selected>Wille</option>
         </select>
-        <input class="" type="number" name="attr_mind_stress" />
-        <input class="" type="number" name="attr_mind_stress_max" />
+        <input class="" type="number" name="attr_mental_stress" />
+        <input class="" type="number" name="attr_mental_stress_max" />
         <span class="" data-i18n="physical-stress">Körperlicher Stress (Statur)</span>
         <select class="" name="attr_physical_stress_selector">
             <option value="0" data-i18n="selector-default">Bitte eine Fertigkeit auswählen...</option>
-            <option value="1" data-i18n="statur" selected>Statur</option>
+            <option value="1" data-i18n="physique" selected>Statur</option>
         </select>
         <input class="" type="number" name="attr_physical_stress" />
         <input class="" type="number" name="attr_physical_stress_max" />
@@ -129,24 +362,30 @@
             <input class="" type="text" name="attr_stunt_name" />
             <button class="" type="roll" value="@{stunt_name} @{stunt_description}"></button>
             <textarea class="" name="attr_stunt_description" ></textarea>
-            <span class="" data-i18n="type">Typ:</span>
-            <select class="" name="attr_stunt_type">
-                <option value="action" data-i18n="new-action">Neue Aktion</option>
-                <option value="bonus" data-i18n="bonus">Bonus</option>
-                <option value="exception" data-i18n="rule-exception">Regelausnahme</option>
-            </select>      
-            <span class="" data-i18n="costs">Kosten:</span>
-            <select class="" name="attr_stunt_costs">
-                <option value="free" data-i18n="free">frei</option>
-                <option value="rest-rate" data-i18n="rest-rate-stunt">-1 Erholungsrate</option>
-            </select>
-            <span class="" data-i18n="limits">Beschränkungen:</span>
-            <select class="" name="attr_stunt_limit">
-                <option value="scene" data-i18n="scene">Szene</option>
-                <option value="conflict" data-i18n="conflict">Konflikt</option>
-                <option value="session" data-i18n="session">Sitzung</option>
-                <option value="fate-point" data-i18n="fate-point">Fate-Punkt</option>
-            </select>
+            <div class="">
+                <span class="" data-i18n="type">Typ:</span>
+                <select class="" name="attr_stunt_type">
+                    <option value="action" data-i18n="new-action">Neue Aktion</option>
+                    <option value="bonus" data-i18n="bonus">Bonus</option>
+                    <option value="exception" data-i18n="rule-exception">Regelausnahme</option>
+                </select>      
+            </div>
+            <div class="">
+                <span class="" data-i18n="costs">Kosten:</span>
+                <select class="" name="attr_stunt_costs">
+                    <option value="free" data-i18n="free">frei</option>
+                    <option value="rest-rate" data-i18n="rest-rate-stunt">-1 Erholungsrate</option>
+                </select>
+            </div>
+            <div class="">
+                <span class="" data-i18n="limits">Beschränkungen:</span>
+                <select class="" name="attr_stunt_limit">
+                    <option value="scene" data-i18n="scene">Szene</option>
+                    <option value="conflict" data-i18n="conflict">Konflikt</option>
+                    <option value="session" data-i18n="session">Sitzung</option>
+                    <option value="fate-point" data-i18n="fate-point">Fate-Punkt</option>
+                </select>
+            </div>
             </div>
         </fieldset>
     </div>
@@ -240,3 +479,16 @@
         <textarea class="" name="attr_trauma_notes"></textarea>
     </div>
 </div>
+
+
+<script type="text/worker">
+
+	on("sheet:opened change:mod_option", function () {
+		getAttrs(["query_translation"], function (v) {
+			setAttrs({
+				query_translation: getTranslationByKey('query_trans')
+			});
+		});
+    });
+    
+</script>
