@@ -1,46 +1,29 @@
-<div class="charsheet">
-    <div class="header-bar">
-      <div class="modifikator">
-        <span class="" data-i18n="modifier">Modifikator</span>
-        <input type="radio" name="attr_mod_option" class="" value="?{@{query_translation}|0}" checked="checked" />
-        <input type="hidden" name="query_translation" value="Erleichterung(+) / Erschwernis(-), im Fall der Erleichterung ohne '+' eingeben" />
-        <span class="" data-i18n="yes">ja</span>
-        <input type="radio" name="attr_mod_option" class="" value="0" />
-        <span class="" data-i18n="no">nein</span>
-      </div>
-    </div>
+<div class="main">
     <div class="title">
-        <div>
-        <span class="" data-i18n="character-name">Name des Charakters</span>
-        <input class="" type="text" name="attr_character_name" />
-            <!-- <span class="" data-i18n="modifier">Modifikator</span>
-            <input type="radio" name="attr_mod_option" class="" value="?{@{query_translation}|0}" checked="checked" />
-            <input type="hidden" name="query_translation" value="Erleichterung(+) / Erschwernis(-), im Fall der Erleichterung ohne '+' eingeben" />
-            <span class="" data-i18n="yes">ja</span>
-            <input type="radio" name="attr_mod_option" class="" value="0" />
-            <span class="" data-i18n="no">nein</span> -->
-        </div>
-        <div>
-        <span class="" data-i18n="player-name">Name des Spielers</span>
-        <input class="" type="text" name="attr_player_name" />
-        </div>
-        <div>
-        <span class="" data-i18n="group-concept">Gruppenkonzept</span>
-        <input class="" type="text" name="attr_group_concept"/>
-        <img class="sheet-logo" src="https://ifyoudontlikeitfuckoff.de/wp-content/uploads/malmsturm-logo.png" alt="MALMSTURM" />
-        </div>
-        <div>
-        <span class="" data-i18n="group-trouble">Gruppendilemma</span>
-        <input class="" type="text" name="attr_group_trouble" />
-        </div>
-        <div>
-        <span class="" data-i18n="relation-to">Verbindung von</span>
-        <input class="" type="text" name="attr_relation_name"/>
-        </div>
-        <div>
-        <span class="" data-i18n="relation-aspect">Verbindungsaspekt</span>
-        <input class="" type="text" name="attr_relation_aspect" />
-        </div>
+        <span class="title-text" data-i18n="character-name">Name des Charakters</span>
+        <input class="title-input" type="text" name="attr_character_name" />
+
+
+        <span class="title-text" data-i18n="player-name">Name des Spielers</span>
+        <input class="title-input" type="text" name="attr_player_name" />
+
+
+        <span class="title-text" data-i18n="group-concept">Gruppenkonzept</span>
+        <input class="title-input" type="text" name="attr_group_concept" />
+
+
+        <span class="title-text" data-i18n="group-trouble">Gruppendilemma</span>
+        <input class="title-input" type="text" name="attr_group_trouble" />
+
+
+        <span class="title-text" data-i18n="relation-to">Verbindung von</span>
+        <input class="title-input" type="text" name="attr_relation_name" />
+
+
+        <span class="title-text" data-i18n="relation-aspect">Verbindungsaspekt</span>
+        <input class="title-input" type="text" name="attr_relation_aspect" />
+
+        <img class="title-image" src="https://ifyoudontlikeitfuckoff.de/wp-content/uploads/malmsturm-logo.png" alt="MALMSTURM" />
     </div>
 
     <h3 class="" data-i18n="aspects">Aspekte</h3>
@@ -54,7 +37,17 @@
 
     <h3 class="" data-i18n="skills">Fertigkeiten</h3>
     <div class="skills">
-       <div class="skill">
+        <div class="modifikator">
+            <span class="" data-i18n="modifier">Modifikator</span>
+            <input type="radio" name="attr_mod_option" class="" value="?{@{query_translation}|0}" checked="checked" />
+            <input type="hidden" name="query_translation" value="Erleichterung(+) / Erschwernis(-), im Fall der Erleichterung ohne '+' eingeben" />
+            <span class="" data-i18n="yes">ja</span>
+            <input type="radio" name="attr_mod_option" class="" value="0" />
+            <span class="" data-i18n="no">nein</span>
+        </div>
+        <div></div>
+        <div></div>
+        <div class="skill">
             <span class="" data-i18n="athletics"></span>
             <select class="" name="attr_skill_athletics">
                 <option value="-2" data-i18n="terrible">-2 - fürchterlich</option>
@@ -291,7 +284,7 @@
                 <option value="8" data-i18n="legendary">+8 - Legendär</option>
             </select>
             <button class="" type="roll" value="/roll 4dF + @{skill_resources} + @{mod_option} "></button>
-        </div>        
+        </div>
         <div class="skill">
             <span class="" data-i18n="physique"></span>
             <select class="" name="attr_skill_physique">
@@ -308,7 +301,7 @@
                 <option value="8" data-i18n="legendary">+8 - Legendär</option>
             </select>
             <button class="" type="roll" value="/roll 4dF + @{skill_physique} + @{mod_option} "></button>
-        </div>    
+        </div>
         <div class="skill">
             <span class="" data-i18n="decieve"></span>
             <select class="" name="attr_skill_decieve">
@@ -325,7 +318,7 @@
                 <option value="8" data-i18n="legendary">+8 - Legendär</option>
             </select>
             <button class="" type="roll" value="/roll 4dF + @{skill_decieve} + @{mod_option} "></button>
-        </div>    
+        </div>
         <div class="skill">
             <span class="" data-i18n="survival"></span>
             <select class="" name="attr_skill_survival">
@@ -342,7 +335,7 @@
                 <option value="8" data-i18n="legendary">+8 - Legendär</option>
             </select>
             <button class="" type="roll" value="/roll 4dF + @{skill_survival} + @{mod_option} "></button>
-        </div>    
+        </div>
         <div class="skill">
             <span class="" data-i18n="notice"></span>
             <select class="" name="attr_skill_notice">
@@ -359,7 +352,7 @@
                 <option value="8" data-i18n="legendary">+8 - Legendär</option>
             </select>
             <button class="" type="roll" value="/roll 4dF + @{skill_notice} + @{mod_option} "></button>
-        </div>    
+        </div>
         <div class="skill">
             <span class="" data-i18n="will"></span>
             <select class="" name="attr_skill_will">
@@ -376,8 +369,8 @@
                 <option value="8" data-i18n="legendary">+8 - Legendär</option>
             </select>
             <button class="" type="roll" value="/roll 4dF + @{skill_will} + @{mod_option} "></button>
-        </div>    
-        
+        </div>
+
     </div>
 
     <div class="points">
@@ -391,193 +384,199 @@
 
     <h3 class="" data-i18n="stress">Stress</h3>
     <div class="stress">
-        <span class="" data-i18n="arcane-stress">Arkaner Stress</span>
-        <select class="" name="attr_arcane_stress_selector">
-            <option value="0" data-i18n="selector-default" selected>Bitte eine Fertigkeit auswählen...</option>
-            <option value="1" data-i18n="athletics"></option>
-            <option value="2" data-i18n="rapport"></option>
-            <option value="3" data-i18n="burglary"></option>
-            <option value="4" data-i18n="empathy"></option>
-            <option value="5" data-i18n="marksmanship"></option>
-            <option value="6" data-i18n="lore"></option>
-            <option value="7" data-i18n="crafts"></option>
-            <option value="8" data-i18n="stealth"></option>
-            <option value="9" data-i18n="fight"></option>
-            <option value="10" data-i18n="contacts"></option>
-            <option value="11" data-i18n="steer"></option>
-            <option value="12" data-i18n="investigate"></option>
-            <option value="13" data-i18n="provoke"></option>
-            <option value="14" data-i18n="resources"></option>
-            <option value="15" data-i18n="physique"></option>
-            <option value="16" data-i18n="decieve"></option>
-            <option value="17" data-i18n="survival"></option>
-            <option value="18" data-i18n="notice"></option>
-            <option value="19" data-i18n="will"></option>
-        </select>
-        <input class="" type="number" name="attr_arcane_stress" />
-        <input class="" type="number" name="attr_arcane_stress_max" />
-        <span class="" data-i18n="mental-stress">Geistiger Stress (Wille)</span>
-        <select class="" name="attr_mental_stress_selector">
-            <option value="19" data-i18n="will" selected>Wille</option>
-        </select>
-        <input class="" type="number" name="attr_mental_stress" />
-        <input class="" type="number" name="attr_mental_stress_max" />
-        <span class="" data-i18n="physical-stress">Körperlicher Stress (Statur)</span>
-        <select class="" name="attr_physical_stress_selector">
-            <option value="15" data-i18n="physique" selected>Statur</option>
-        </select>
-        <input class="" type="number" name="attr_physical_stress" />
-        <input class="" type="number" name="attr_physical_stress_max" />
+        <div>
+            <span class="" data-i18n="arcane-stress">Arkaner Stress</span>
+            <select class="" name="attr_arcane_stress_selector">
+                <option value="0" data-i18n="selector-default" selected>Bitte eine Fertigkeit auswählen...</option>
+                <option value="1" data-i18n="athletics"></option>
+                <option value="2" data-i18n="rapport"></option>
+                <option value="3" data-i18n="burglary"></option>
+                <option value="4" data-i18n="empathy"></option>
+                <option value="5" data-i18n="marksmanship"></option>
+                <option value="6" data-i18n="lore"></option>
+                <option value="7" data-i18n="crafts"></option>
+                <option value="8" data-i18n="stealth"></option>
+                <option value="9" data-i18n="fight"></option>
+                <option value="10" data-i18n="contacts"></option>
+                <option value="11" data-i18n="steer"></option>
+                <option value="12" data-i18n="investigate"></option>
+                <option value="13" data-i18n="provoke"></option>
+                <option value="14" data-i18n="resources"></option>
+                <option value="15" data-i18n="physique"></option>
+                <option value="16" data-i18n="decieve"></option>
+                <option value="17" data-i18n="survival"></option>
+                <option value="18" data-i18n="notice"></option>
+                <option value="19" data-i18n="will"></option>
+            </select>
+            <input class="" type="number" name="attr_arcane_stress" />
+            <input class="" type="number" name="attr_arcane_stress_max" />
+        </div>
+        <div>
+            <span class="" data-i18n="mental-stress">Geistiger Stress (Wille)</span>
+            <select class="" name="attr_mental_stress_selector">
+                <option value="19" data-i18n="will" selected>Wille</option>
+            </select>
+            <input class="" type="number" name="attr_mental_stress" />
+            <input class="" type="number" name="attr_mental_stress_max" />
+        </div>
+        <div>
+            <span class="" data-i18n="physical-stress">Körperlicher Stress (Statur)</span>
+            <select class="" name="attr_physical_stress_selector">
+                <option value="15" data-i18n="physique" selected>Statur</option>
+            </select>
+            <input class="" type="number" name="attr_physical_stress" />
+            <input class="" type="number" name="attr_physical_stress_max" />
+        </div>
     </div>
 
     <h3 class="" data-i18n="consequence">Konsequenzen</h3>
     <div class="consequence">
         <div>
-        <span class="">2</span>
-        <input class="" type="text" data-i18n-placeholder="mild-consequence" placeholder="leichte Konsequenz" name="attr_consequence_1" />
-        <select class="" name="attr_consequence_type_1">
-            <option value="0" data-i18n="select-type" selected>Art auswählen</option>
-            <option value="1" data-i18n="arcane" >arkan</option>
-            <option value="2" data-i18n="mental">geistig</option>
-            <option value="3" data-i18n="physical">körperlich</option>
-        </select>
-        <select class="" name="attr_consequence_done_1">
-            <option value="0" data-i18n="not-treated"selected >unbehandelt</option>
-            <option value="1" data-i18n="treated">behandelt</option>
-        </select>
+            <span class="">2</span>
+            <input class="" type="text" data-i18n-placeholder="mild-consequence" placeholder="leichte Konsequenz" name="attr_consequence_1" />
+            <select class="" name="attr_consequence_type_1">
+                <option value="0" data-i18n="select-type" selected>Art auswählen</option>
+                <option value="1" data-i18n="arcane">arkan</option>
+                <option value="2" data-i18n="mental">geistig</option>
+                <option value="3" data-i18n="physical">körperlich</option>
+            </select>
+            <select class="" name="attr_consequence_done_1">
+                <option value="0" data-i18n="not-treated" selected>unbehandelt</option>
+                <option value="1" data-i18n="treated">behandelt</option>
+            </select>
         </div>
         <div>
-        <span class="">4</span>
-        <input class="" type="text" data-i18n-placeholder="moderate-consequence" placeholder="mittlere Konsequenz" name="attr_consequence_2" />
-        <select class="" name="attr_consequence_type_2">
-            <option value="0" data-i18n="select-type" selected>Art auswählen</option>
-            <option value="1" data-i18n="arcane" >arkan</option>
-            <option value="2" data-i18n="mental">geistig</option>
-            <option value="3" data-i18n="physical">körperlich</option>
-        </select>
-        <select class="" name="attr_consequence_done_2">
-            <option value="0" data-i18n="not-treated"selected >unbehandelt</option>
-            <option value="1" data-i18n="treated">behandelt</option>
-        </select>
+            <span class="">4</span>
+            <input class="" type="text" data-i18n-placeholder="moderate-consequence" placeholder="mittlere Konsequenz" name="attr_consequence_2" />
+            <select class="" name="attr_consequence_type_2">
+                <option value="0" data-i18n="select-type" selected>Art auswählen</option>
+                <option value="1" data-i18n="arcane">arkan</option>
+                <option value="2" data-i18n="mental">geistig</option>
+                <option value="3" data-i18n="physical">körperlich</option>
+            </select>
+            <select class="" name="attr_consequence_done_2">
+                <option value="0" data-i18n="not-treated" selected>unbehandelt</option>
+                <option value="1" data-i18n="treated">behandelt</option>
+            </select>
         </div>
         <div>
-        <span class="">6</span>
-        <input class="" type="text" data-i18n-placeholder="severe-consequence" placeholder="schwere Konsequenz" name="attr_consequence_3" />
-        <select class="" name="attr_consequence_type_3">
-            <option value="0" data-i18n="select-type" selected>Art auswählen</option>
-            <option value="1" data-i18n="arcane" >arkan</option>
-            <option value="2" data-i18n="mental">geistig</option>
-            <option value="3" data-i18n="physical">körperlich</option>
-        </select>
-        <select class="" name="attr_consequence_done_3">
-            <option value="0" data-i18n="not-treated"selected >unbehandelt</option>
-            <option value="1" data-i18n="treated">behandelt</option>
-        </select>
+            <span class="">6</span>
+            <input class="" type="text" data-i18n-placeholder="severe-consequence" placeholder="schwere Konsequenz" name="attr_consequence_3" />
+            <select class="" name="attr_consequence_type_3">
+                <option value="0" data-i18n="select-type" selected>Art auswählen</option>
+                <option value="1" data-i18n="arcane">arkan</option>
+                <option value="2" data-i18n="mental">geistig</option>
+                <option value="3" data-i18n="physical">körperlich</option>
+            </select>
+            <select class="" name="attr_consequence_done_3">
+                <option value="0" data-i18n="not-treated" selected>unbehandelt</option>
+                <option value="1" data-i18n="treated">behandelt</option>
+            </select>
         </div>
         <div>
-        <span class="">?</span>
-        <input class="" type="text" data-i18n-placeholder="extreme-consequence" placeholder="extreme Konsequenz" name="attr_consequence_4" />
-        <select class="" name="attr_consequence_type_4">
-            <option value="0" data-i18n="select-type" selected>Art auswählen</option>
-            <option value="1" data-i18n="arcane" >arkan</option>
-            <option value="2" data-i18n="mental">geistig</option>
-            <option value="3" data-i18n="physical">körperlich</option>
-        </select>
-        <select class="" name="attr_consequence_done_4">
-            <option value="0" data-i18n="not-treated"selected >unbehandelt</option>
-            <option value="1" data-i18n="treated">behandelt</option>
-        </select>
+            <span class="">?</span>
+            <input class="" type="text" data-i18n-placeholder="extreme-consequence" placeholder="extreme Konsequenz" name="attr_consequence_4" />
+            <select class="" name="attr_consequence_type_4">
+                <option value="0" data-i18n="select-type" selected>Art auswählen</option>
+                <option value="1" data-i18n="arcane">arkan</option>
+                <option value="2" data-i18n="mental">geistig</option>
+                <option value="3" data-i18n="physical">körperlich</option>
+            </select>
+            <select class="" name="attr_consequence_done_4">
+                <option value="0" data-i18n="not-treated" selected>unbehandelt</option>
+                <option value="1" data-i18n="treated">behandelt</option>
+            </select>
         </div>
         <div>
-        <span class="">2</span>
-        <input class="" type="text" data-i18n-placeholder="additional-mild-consequence" placeholder="leichte Konsequenz" name="attr_consequence_5" />
-        <select class="" name="attr_consequence_type_6">
-            <option value="0" data-i18n="select-type" selected>Art auswählen</option>
-            <option value="1" data-i18n="arcane" >arkan</option>
-            <option value="2" data-i18n="mental">geistig</option>
-            <option value="3" data-i18n="physical">körperlich</option>
-        </select>
-        <select class="" name="attr_consequence_done_5">
-            <option value="0" data-i18n="not-treated"selected >unbehandelt</option>
-            <option value="1" data-i18n="treated">behandelt</option>
-        </select>
+            <span class="">2</span>
+            <input class="" type="text" data-i18n-placeholder="additional-mild-consequence" placeholder="leichte Konsequenz" name="attr_consequence_5" />
+            <select class="" name="attr_consequence_type_6">
+                <option value="0" data-i18n="select-type" selected>Art auswählen</option>
+                <option value="1" data-i18n="arcane">arkan</option>
+                <option value="2" data-i18n="mental">geistig</option>
+                <option value="3" data-i18n="physical">körperlich</option>
+            </select>
+            <select class="" name="attr_consequence_done_5">
+                <option value="0" data-i18n="not-treated" selected>unbehandelt</option>
+                <option value="1" data-i18n="treated">behandelt</option>
+            </select>
         </div>
         <div>
-        <span class="">2</span>
-        <input class="" type="text" data-i18n-placeholder="additional-mild-consequence" placeholder="leichte Konsequenz" name="attr_consequence_6" />
-        <select class="" name="attr_consequence_type_6">
-            <option value="0" data-i18n="select-type" selected>Art auswählen</option>
-            <option value="1" data-i18n="arcane" >arkan</option>
-            <option value="2" data-i18n="mental">geistig</option>
-            <option value="3" data-i18n="physical">körperlich</option>
-        </select>
-        <select class="" name="attr_consequence_done_6">
-            <option value="0" data-i18n="not-treated"selected >unbehandelt</option>
-            <option value="1" data-i18n="treated">behandelt</option>
-        </select>
+            <span class="">2</span>
+            <input class="" type="text" data-i18n-placeholder="additional-mild-consequence" placeholder="leichte Konsequenz" name="attr_consequence_6" />
+            <select class="" name="attr_consequence_type_6">
+                <option value="0" data-i18n="select-type" selected>Art auswählen</option>
+                <option value="1" data-i18n="arcane">arkan</option>
+                <option value="2" data-i18n="mental">geistig</option>
+                <option value="3" data-i18n="physical">körperlich</option>
+            </select>
+            <select class="" name="attr_consequence_done_6">
+                <option value="0" data-i18n="not-treated" selected>unbehandelt</option>
+                <option value="1" data-i18n="treated">behandelt</option>
+            </select>
         </div>
         <div>
-        <span class="">2</span>
-        <input class="" type="text" data-i18n-placeholder="additional-mild-consequence" placeholder="leichte Konsequenz" name="attr_consequence_7" />
-        <select class="" name="attr_consequence_type_7">
-            <option value="0" data-i18n="select-type" selected>Art auswählen</option>
-            <option value="1" data-i18n="arcane" >arkan</option>
-            <option value="2" data-i18n="mental">geistig</option>
-            <option value="3" data-i18n="physical">körperlich</option>
-        </select>
-        <select class="" name="attr_consequence_done_7">
-            <option value="0" data-i18n="not-treated"selected >unbehandelt</option>
-            <option value="1" data-i18n="treated">behandelt</option>
-        </select>
+            <span class="">2</span>
+            <input class="" type="text" data-i18n-placeholder="additional-mild-consequence" placeholder="leichte Konsequenz" name="attr_consequence_7" />
+            <select class="" name="attr_consequence_type_7">
+                <option value="0" data-i18n="select-type" selected>Art auswählen</option>
+                <option value="1" data-i18n="arcane">arkan</option>
+                <option value="2" data-i18n="mental">geistig</option>
+                <option value="3" data-i18n="physical">körperlich</option>
+            </select>
+            <select class="" name="attr_consequence_done_7">
+                <option value="0" data-i18n="not-treated" selected>unbehandelt</option>
+                <option value="1" data-i18n="treated">behandelt</option>
+            </select>
         </div>
         <div>
-        <span class="">2</span>
-        <input class="" type="text" data-i18n-placeholder="additional-mild-consequence" placeholder="leichte Konsequenz" name="attr_consequence_8" />
-        <select class="" name="attr_consequence_type_8">
-            <option value="0" data-i18n="select-type" selected>Art auswählen</option>
-            <option value="1" data-i18n="arcane" >arkan</option>
-            <option value="2" data-i18n="mental">geistig</option>
-            <option value="3" data-i18n="physical">körperlich</option>
-        </select>
-        <select class="" name="attr_consequence_done_8">
-            <option value="0" data-i18n="not-treated"selected >unbehandelt</option>
-            <option value="1" data-i18n="treated">behandelt</option>
-        </select>
+            <span class="">2</span>
+            <input class="" type="text" data-i18n-placeholder="additional-mild-consequence" placeholder="leichte Konsequenz" name="attr_consequence_8" />
+            <select class="" name="attr_consequence_type_8">
+                <option value="0" data-i18n="select-type" selected>Art auswählen</option>
+                <option value="1" data-i18n="arcane">arkan</option>
+                <option value="2" data-i18n="mental">geistig</option>
+                <option value="3" data-i18n="physical">körperlich</option>
+            </select>
+            <select class="" name="attr_consequence_done_8">
+                <option value="0" data-i18n="not-treated" selected>unbehandelt</option>
+                <option value="1" data-i18n="treated">behandelt</option>
+            </select>
         </div>
     </div>
 
     <h3 class="" data-i18n="stunts">Stunts</h3>
     <div class="stunts">
         <fieldset class="repeating_stunt">
-            <div class="" >
-            <span class="" data-i18n="stunt">Stunt</span>
-            <input class="" type="text" name="attr_stunt_name" />
-            <button class="" type="roll" value="@{stunt_name} @{stunt_description}"></button>
-            <textarea class="" name="attr_stunt_description" ></textarea>
             <div class="">
-                <span class="" data-i18n="type">Typ:</span>
-                <select class="" name="attr_stunt_type">
-                    <option value="action" data-i18n="new-action">Neue Aktion</option>
-                    <option value="bonus" data-i18n="bonus">Bonus</option>
-                    <option value="exception" data-i18n="rule-exception">Regelausnahme</option>
-                </select>      
-            </div>
-            <div class="">
-                <span class="" data-i18n="costs">Kosten:</span>
-                <select class="" name="attr_stunt_costs">
-                    <option value="free" data-i18n="free">frei</option>
-                    <option value="rest-rate" data-i18n="rest-rate-stunt">-1 Erholungsrate</option>
-                </select>
-            </div>
-            <div class="">
-                <span class="" data-i18n="limits">Beschränkungen:</span>
-                <select class="" name="attr_stunt_limit">
-                    <option value="scene" data-i18n="scene">Szene</option>
-                    <option value="conflict" data-i18n="conflict">Konflikt</option>
-                    <option value="session" data-i18n="session">Sitzung</option>
-                    <option value="fate-point" data-i18n="fate-point">Fate-Punkt</option>
-                </select>
-            </div>
+                <!-- <span class="" data-i18n="stunt">Stunt</span> -->
+                <input class="" data-i18n-placeholder="name" placeholder="Name" type="text" name="attr_stunt_name" />
+                <button class="" type="roll" value="@{stunt_name} @{stunt_description}"></button>
+                <textarea class="" data-i18n-placeholder="description" placeholder="Beschreibung" name="attr_stunt_description"></textarea>
+                <div class="">
+                    <span class="" data-i18n="type">Typ:</span>
+                    <select class="" name="attr_stunt_type">
+                        <option value="action" data-i18n="new-action">Neue Aktion</option>
+                        <option value="bonus" data-i18n="bonus">Bonus</option>
+                        <option value="exception" data-i18n="rule-exception">Regelausnahme</option>
+                    </select>
+                </div>
+                <div class="">
+                    <span class="" data-i18n="costs">Kosten:</span>
+                    <select class="" name="attr_stunt_costs">
+                        <option value="free" data-i18n="free">frei</option>
+                        <option value="rest-rate" data-i18n="rest-rate-stunt">-1 Erholungsrate</option>
+                    </select>
+                </div>
+                <div class="">
+                    <span class="" data-i18n="limits">Beschränkungen:</span>
+                    <select class="" name="attr_stunt_limit">
+                        <option value="scene" data-i18n="scene">Szene</option>
+                        <option value="conflict" data-i18n="conflict">Konflikt</option>
+                        <option value="session" data-i18n="session">Sitzung</option>
+                        <option value="fate-point" data-i18n="fate-point">Fate-Punkt</option>
+                    </select>
+                </div>
             </div>
         </fieldset>
     </div>
@@ -585,16 +584,22 @@
     <h3 class="" data-i18n="extras">Extras</h3>
     <div class="extras">
         <fieldset class="repeating_extra">
-            <input class="" type="text" name="attr_extra_name" />
-            <button class="" type="roll" value="@{extra_name} @{extra_description}"></button>
-            <textarea class="" type="number" name="attr_extra_description" ></textarea>
-            <span class="" data-i18n="costs">Kosten:</span>
-            <select class="" name="attr_extra_costs">
-                <option value="aspect" data-i18n="aspect-slot">Aspektplätze</option>
-                <option value="stunt" data-i18n="stunt-slot">Stuntplätze</option>
-            </select>
-            <span class="" data-i18n="other-costs">Andere Kosten</span>
-            <input class="" type="text" name="attr_costs_other" />
+            <div>
+                <input class="" type="text" data-i18n-placeholder="name" placeholder="Name" name="attr_extra_name" />
+                <button class="" type="roll" value="@{extra_name} @{extra_description}"></button>
+            </div>
+            <div>
+                <textarea class="" type="number" data-i18n-placeholder="description" placeholder="Beschreibung" name="attr_extra_description"></textarea>
+            </div>
+            <div>
+                <span class="" data-i18n="costs">Kosten:</span>
+                <select class="" name="attr_extra_costs">
+                    <option value="aspect" data-i18n="aspect-slot">Aspektplätze</option>
+                    <option value="stunt" data-i18n="stunt-slot">Stuntplätze</option>
+                </select>
+                <span class="" data-i18n="other-costs">Andere Kosten</span>
+                <input class="" type="text" name="attr_costs_other" />
+            </div>
         </fieldset>
     </div>
 
@@ -603,84 +608,15 @@
         <fieldset class="repeating_reward">
             <input class="" type="text" name="attr_reward" />
             <button class="" type="roll" value="@{extra_name} @{extra_description}"></button>
-            <input class="" type="checkbox" name="attr_reward_used"/>
+            <input class="" type="checkbox" name="attr_reward_used" />
         </fieldset>
     </div>
 
-    <h3 class="" data-i18n="follower">Getreue</h3>
-    <div class="follower">
-        <fieldset class="repeating_follower">
-            <input class="" type="text" name="attr_follower_name" />
-            <button class="" type="roll" value="@{follower_name} @{follower_conecpt} @{follower_description}"></button>
-            <input class="" type="text" name="attr_follower_conecpt" />
-            <textarea class="" name="attr_follower_skills" ></textarea>
-            <span class="" data-i18n="stress">Stress</span>
-            <input class="" type="number" name="attr_follower_stress" />
-            <input class="" type="number" name="attr_follower_stress_max" />
-            <span class="" data-i18n="costs">Kosten:</span>
-            <input class="" type="number" name="attr_follower_costs" />
-            <span class="" data-i18n="stunts">Stunts</span>
-            <textarea class="" name="attr_follower_description"></textarea>
-        </fieldset>
-    </div>
-    
-    <h3 class="" data-i18n="notes">Notizen</h3>
-    <div class="notes">
-         <textarea class="" name="attr_notes"></textarea>
-    </div>
-
-    <div class="tradition">
-        <span class="" data-i18n="tradition-name">Name der großen Tradition</span>
-        <input class="" type="text" name="attr_tradition_name" />
-        <span class="" data-i18n="tradition-aspect">Traditionsaspket</span>
-        <input class="" type="text" name="attr_tradition_aspect" />
-        <span class="" data-i18n="tradition-skill">Schlüsselfertigkeit</span>
-        <input class="" type="text" name="attr_tradition_skill" />
-        <span class="" data-i18n="description">Beschreibung</span>
-        <textarea class="" name="attr_tradition_description"></textarea>
-    </div>
-    
-    <h3 class="" data-i18n="4-actions">Die 4 Aktionen</h3>
-    <div class="4-actions">
-        <span class="" data-i18n="ueberwinden">Überwinden</span>
-        <button class="" type="roll" value="@{tradition_ueberwinden}"></button>
-        <textarea class="" name="attr_tradition_ueberwinden"></textarea>
-        <span class="" data-i18n="create-advantage">Erschaffen eines Vorteils</span>
-        <button class="" type="roll" value="@{tradition_advantage}"></button>
-        <textarea class="" name="attr_tradition_advantage"></textarea>
-        <span class="" data-i18n="attack">Angreifen</span>
-        <button class="" type="roll" value="@{tradition_attack}"></button>
-        <textarea class="" name="attr_tradition_attack"></textarea>
-        <span class="" data-i18n="defend">Verteidigen</span>
-        <button class="" type="roll" value="@{tradition_defend}"></button>
-        <textarea class="" name="attr_tradition_defend"></textarea>
-    </div>    
-    
-<h3 class="" data-i18n="trauma">Trauma</h3>
-    <div class="trauma">
-        <input class="" type="checkbox" name="attr_trauma_sepulter"/>  
-        <span class="" data-i18n="sepulter">Sepulter</span>
-        <span class="" data-i18n="stress-position">leitet Stress auf einen besonderen Ort ab</span>
-        <input class="" type="checkbox" name="attr_trauma_saenda"/>  
-        <span class="" data-i18n="saenda">Saenda</span>
-        <span class="" data-i18n="stress-person">leitet Stress auf eine andere Person ab</span>
-        <input class="" type="checkbox" name="attr_trauma_mactatum"/>  
-        <span class="" data-i18n="mactatum">Mactatum</span>
-        <span class="" data-i18n="stress-item">leitet Stress auf einen persönlichen Gegenstand ab</span>
-        <span class="" data-i18n="notes">Notizen</span>
-        <textarea class="" name="attr_trauma_notes"></textarea>
-    </div>
-</div>
 
 
-<script type="text/worker">
 
-	on("sheet:opened change:mod_option", function () {
-		getAttrs(["query_translation"], function (v) {
-			setAttrs({
-				query_translation: getTranslationByKey('query_trans')
-			});
-		});
-    });
-    
-</script>
+    <script type="text/worker">
+
+        on("sheet:opened change:mod_option", function () { getAttrs(["query_translation"], function (v) { setAttrs({ query_translation: getTranslationByKey('query_trans') }); }); });
+
+    </script>
