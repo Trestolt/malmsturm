@@ -44,7 +44,7 @@ Rot: #d7515c
      background-image: url(https://raw.githubusercontent.com/Trestolt/malmsturm/master/assets/bg_splats_png24.png);
      background-repeat: repeat;
      /*grid-template-areas: "title  title " "skills   aspects" "skills points" "skills stress" "skills   consequence " "skills  rewards " "stunts extras";*/
-     grid-template-areas: "title  title " "aspects points" "skills consequence" "skills stunts" "skills extras" "skills rewards";
+     grid-template-areas: "title  title " "aspects points" "skills consequence" "skills rewards" "extras stunts";
  }
  
  input {
@@ -111,7 +111,7 @@ Rot: #d7515c
  }
  
  .sheet-skill-input {
-     width: 3em;
+     width: 10em;
  }
  
  .sheet-points {
