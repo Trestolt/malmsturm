@@ -39,7 +39,7 @@ Rot: #d7515c
      grid-template-rows: auto;
      background-image: url(https://raw.githubusercontent.com/Trestolt/malmsturm/master/assets/bg_splats_png24.png);
      background-repeat: repeat;
-     grid-template-areas: "title  title " "aspects points" "skills stress" "skills consequence" "skills stunts" "rewards extras";
+     grid-template-areas: "title  title " "aspects points" "skills stress" "skills consequence" "skills rewards" "stunts extras";
  }
  
  input {
