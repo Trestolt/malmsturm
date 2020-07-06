@@ -1,12 +1,70 @@
- * {
-     --color-font-tab-checked: white;
-     --bg-tab-unchecked: white;
-     --bg-tab-checked: green;
-     --bg-sheet: #ffffff;
-     --bg-input: #ffffff;
-     --bg-input-readonly: #f5f5f5;
-     --color-font: black;
-     --color-border: black;
+ .sheet-char_selector[value="character"]~* {
+     --display-character: inline;
+     --display-contact: none;
+ }
+ 
+ .sheet-char_selector[value="contact"]~* {
+     --display-character: none;
+     --display-contact: inline;
+ }
+ 
+ .sheet-character {
+     display: var(--display-character);
+ }
+ 
+ .sheet-contact {
+     display: var(--display-contact);
+ }
+ 
+ .sheet-sheet_selector[value="main"]~* {
+     --main-grid-template-areas: "title  title " "tabs tabs" "aspects aspects" "skills points" "skills stress" "skills consequence" "skills rewards" "stunts extras";
+     --display-skills: inline-block;
+     --display-aspects: inline-block;
+     --display-points: grid;
+     --display-stress: grid;
+     --display-stunts: inline-block;
+     --display-extras: inline-block;
+     --display-consequence: inline-block;
+     --display-rewards: inline-block;
+     --display-follower: none;
+     --display-notes: none;
+     --display-tradition: none;
+     --display-4-actions: none;
+     --display-trauma: none;
+ }
+ 
+ .sheet-sheet_selector[value="follower"]~* {
+     --main-grid-template-areas: "title  title " "tabs tabs" "follower follower";
+     --display-skills: none;
+     --display-aspects: none;
+     --display-points: none;
+     --display-stress: none;
+     --display-stunts: none;
+     --display-extras: none;
+     --display-consequence: none;
+     --display-rewards: none;
+     --display-follower: inline-block;
+     --display-notes: none;
+     --display-tradition: none;
+     --display-4-actions: none;
+     --display-trauma: none;
+ }
+ 
+ .sheet-sheet_selector[value="tradition"]~* {
+     --main-grid-template-areas: "title  title" "tabs tabs" "tradition tradition" "4-actions trauma" "4-actions notes";
+     --display-skills: none;
+     --display-aspects: none;
+     --display-points: none;
+     --display-stress: none;
+     --display-stunts: none;
+     --display-extras: none;
+     --display-consequence: none;
+     --display-rewards: none;
+     --display-follower: none;
+     --display-notes: inline-block;
+     --display-tradition: inline-block;
+     --display-4-actions: inline-block;
+     --display-trauma: inline-block;
  }
  /*
 Farben ausser Schwarz und weiß
@@ -26,9 +84,27 @@ Rot: #d7515c
  follower
  notes
  tradition
- 4actions
+ 4-actions
  trauma
 
+
+ 
+ --display-title: grid;
+ --display-tabs: grids;
+ --display-skills: inline-block;
+ --display-aspects: inline-block;
+ --display-points: grid;
+ --display-stress: grid;
+ --display-stunts: inline-block;
+ --display-extras: inline-block;
+ --display-consequence: inline-block;
+ --display-rewards: inline-block;
+ --display-follower: inline-block;
+ --display-notes: inline-block;
+ --display-tradition: inline-block;
+ --display-4-actions: inline-block;
+ --display-trauma: inline-block;
+ var()
 */
  
  .sheet-main {
@@ -39,7 +115,7 @@ Rot: #d7515c
      grid-template-rows: auto;
      background-image: url(https://raw.githubusercontent.com/Trestolt/malmsturm/master/assets/bg_splats_png24.png);
      background-repeat: repeat;
-     grid-template-areas: "title  title " "aspects points" "skills stress" "skills consequence" "skills rewards" "stunts extras";
+     grid-template-areas: var(--main-grid-template-areas);
  }
  
  input {
@@ -69,7 +145,7 @@ Rot: #d7515c
  .sheet-title {
      display: grid;
      grid-gap: 5px;
-     grid-template-columns: 1fr 1fr 1fr 2fr;
+     grid-template-columns: 1fr 1fr 2fr 2fr 1fr;
      border-radius: 3px;
      border: 1px solid;
      margin: 10px;
@@ -83,8 +159,8 @@ Rot: #d7515c
  }*/
  
  .sheet-title-image {
-     grid-column: 4 /4;
-     grid-row: 1 / 6;
+     grid-column: 3 /5;
+     grid-row: 2 / 5;
  }
  
  .sheet-title-text {
@@ -94,14 +170,30 @@ Rot: #d7515c
  }
  
  .sheet-title-input {
-     width: 12em;
+     width: 25em;
      grid-column: 2 /2;
  }
  
- .sheet-aspects {
-     display: inline-block;
+ .sheet-title-setting1 {
+     grid-column: 3 / 5;
+     grid-row: 1 / 1;
+     text-align: right;
+ }
+ 
+ .sheet-tabs {
+     display: grid;
      grid-gap: 5px;
-     grid-template-columns: 1fr 3fr;
+     border-radius: 3px;
+     border: 1px solid;
+     margin: 10px;
+     padding: 5px;
+     grid-area: tabs;
+     grid-template-columns: 1fr 1fr 1fr;
+ }
+ 
+ .sheet-aspects {
+     display: var(--display-aspects);
+     grid-gap: 5px;
      border-radius: 3px;
      border: 1px solid;
      margin: 10px;
@@ -109,8 +201,16 @@ Rot: #d7515c
      grid-area: aspects;
  }
  
+ .sheet-aspects-select {
+     width: max-content;
+ }
+ 
+ .sheet-aspects-text {
+     width: 40em;
+ }
+ 
  .sheet-skills {
-     display: inline-block;
+     display: var(--display-skills);
      border-radius: 3px;
      border: 1px solid;
      margin: 10px;
@@ -133,7 +233,7 @@ Rot: #d7515c
  }
  
  .sheet-points {
-     display: grid;
+     display: var(--display-points);
      grid-gap: 5px;
      grid-template-columns: 1fr 1fr;
      border-radius: 3px;
@@ -148,7 +248,7 @@ Rot: #d7515c
  }
  
  .sheet-stress {
-     display: grid;
+     display: var(--display-stress);
      grid-gap: 5px;
      grid-template-columns: 1fr 1fr 1fr 1fr;
      border-radius: 3px;
@@ -163,7 +263,7 @@ Rot: #d7515c
  }
  
  .sheet-consequence {
-     display: inline-block;
+     display: var(--display-consequence);
      grid-gap: 5px;
      grid-template-columns: 1fr 1fr 1fr 1fr;
      border-radius: 3px;
@@ -174,7 +274,7 @@ Rot: #d7515c
  }
  
  .sheet-stunts {
-     display: inline-block;
+     display: var(--display-stunts);
      grid-gap: 5px;
      grid-template-columns: 1fr 3fr;
      border-radius: 3px;
@@ -185,7 +285,7 @@ Rot: #d7515c
  }
  
  .sheet-extras {
-     display: inline-block;
+     display: var(--display-extras);
      grid-gap: 5px;
      grid-template-columns: 1fr 3fr;
      border-radius: 3px;
@@ -196,7 +296,7 @@ Rot: #d7515c
  }
  
  .sheet-rewards {
-     display: inline-block;
+     display: var(--display-rewards);
      grid-gap: 5px;
      grid-template-columns: 1fr 3fr;
      border-radius: 3px;
@@ -207,7 +307,7 @@ Rot: #d7515c
  }
  
  .sheet-follower {
-     display: inline-block;
+     display: var(--display-follower);
      grid-gap: 5px;
      grid-template-columns: 1fr 3fr;
      border-radius: 3px;
@@ -218,7 +318,7 @@ Rot: #d7515c
  }
  
  .sheet-notes {
-     display: inline-block;
+     display: var(--display-notes);
      grid-gap: 5px;
      grid-template-columns: 1fr 3fr;
      border-radius: 3px;
@@ -229,7 +329,7 @@ Rot: #d7515c
  }
  
  .sheet-tradition {
-     display: inline-block;
+     display: var(--display-tradition);
      grid-gap: 5px;
      grid-template-columns: 1fr 3fr;
      border-radius: 3px;
@@ -240,18 +340,18 @@ Rot: #d7515c
  }
  
  .sheet-4-actions {
-     display: inline-block;
+     display: var(--display-4-actions);
      grid-gap: 5px;
      grid-template-columns: 1fr 3fr;
      border-radius: 3px;
      border: 1px solid;
      margin: 10px;
      padding: 5px;
-     grid-area: 4actions;
+     grid-area: 4-actions;
  }
  
  .sheet-trauma {
-     display: inline-block;
+     display: var(--display-trauma);
      grid-gap: 5px;
      grid-template-columns: 1fr 3fr;
      border-radius: 3px;
@@ -271,10 +371,10 @@ Rot: #d7515c
  
  button[type="roll"].sheet-w6chat {
      background-image: url(https://raw.githubusercontent.com/Trestolt/malmsturm/master/assets/chat-icon_512x512-gold_B.png);
-     background-size: 26px 26px;
+     background-size: 16px 16px;
      background-repeat: no-repeat;
-     width: 26px;
-     height: 26px;
+     width: 16px;
+     height: 16px;
      border-style: none;
      background-color: transparent;
      margin-left: 5px;
