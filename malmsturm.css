@@ -33,14 +33,13 @@ Rot: #d7515c
  
  .sheet-main {
      display: grid;
-     width: 1000px;
+     width: 820px;
      grid-gap: 4px;
      grid-template-columns: auto;
      grid-template-rows: auto;
      background-image: url(https://raw.githubusercontent.com/Trestolt/malmsturm/master/assets/bg_splats_png24.png);
      background-repeat: repeat;
-     /*grid-template-areas: "title  title " "skills   aspects" "skills points" "skills stress" "skills   consequence " "skills  rewards " "stunts extras";*/
-     grid-template-areas: "title  title " "aspects points" "skills consequence" "skills rewards" "extras stunts";
+     grid-template-areas: "title  title " "aspects points" "skills stress" "skills consequence" "skills stunts" "rewards extras";
  }
  
  input {
@@ -97,8 +96,6 @@ Rot: #d7515c
  
  .sheet-skills {
      display: inline-block;
-     grid-gap: 5px;
-     grid-template-columns: 1fr 3fr;
      border-radius: 3px;
      border: 1px solid;
      margin: 10px;
@@ -106,14 +103,24 @@ Rot: #d7515c
      grid-area: skills;
  }
  
+ .sheet-skill {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+ }
+ 
  .sheet-skill-input {
      width: 10em;
+ }
+ 
+ .sheet-skill-text {
+     width: 10em;
+     line-height: 3em;
  }
  
  .sheet-points {
      display: grid;
      grid-gap: 5px;
-     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+     grid-template-columns: 1fr 1fr;
      border-radius: 3px;
      border: 1px solid;
      margin: 10px;
@@ -126,7 +133,7 @@ Rot: #d7515c
  }
  
  .sheet-stress {
-     display: inline-block;
+     display: grid;
      grid-gap: 5px;
      grid-template-columns: 1fr 1fr 1fr 1fr;
      border-radius: 3px;
