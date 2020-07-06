@@ -245,3 +245,41 @@ Rot: #d7515c
      padding: 5px;
      grid-area: trauma;
  }
+ 
+ button[type="roll"].sheet-w6chat:before {
+     content: ' ';
+ }
+ 
+ button[type="roll"].sheet-w6chat:hover {
+     background-position: 0;
+ }
+ 
+ button[type="roll"].sheet-w6chat {
+     background-image: url(https://raw.githubusercontent.com/Trestolt/malmsturm/master/assets/chat-icon_512x512-gold.png);
+     background-size: 26px 26px;
+     background-repeat: no-repeat;
+     width: 26px;
+     height: 26px;
+     border-style: none;
+     background-color: transparent;
+     margin-left: 5px;
+ }
+ 
+ button[type="roll"].sheet-w6fate:before {
+     content: ' ';
+ }
+ 
+ button[type="roll"].sheet-w6fate:hover {
+     background-position: 0;
+ }
+ 
+ button[type="roll"].sheet-w6fate {
+     background-image: url(https://raw.githubusercontent.com/Trestolt/malmsturm/master/assets/dice-icon_512x512_gold.png);
+     background-size: 26px 26px;
+     background-repeat: no-repeat;
+     width: 26px;
+     height: 26px;
+     border-style: none;
+     background-color: transparent;
+     margin-left: 5px;
+ }
