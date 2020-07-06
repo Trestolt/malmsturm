@@ -51,6 +51,21 @@ Rot: #d7515c
      /*   border-color: var(--color-border);*/
  }
  
+ select {
+     -webkit-appearance: none;
+ }
+ 
+ input[type=number]::-webkit-inner-spin-button,
+ input[type=number]::-webkit-outer-spin-button {
+     -webkit-appearance: none;
+     margin: 0;
+ }
+ 
+ input[type="number"] {
+     -moz-appearance: textfield;
+     text-align: center;
+ }
+ 
  .sheet-title {
      display: grid;
      grid-gap: 5px;
