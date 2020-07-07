@@ -717,6 +717,7 @@
     <div class="follower">
         <h3 class="" data-i18n="follower">Getreue</h3>
         <fieldset class="repeating_follower">
+            <br>
             <div>
                 <input class="" type="text" data-i18n-placeholder="name" placeholder="Name" name="attr_follower_name" />
                 <button class="w6chat" type="roll" value="@{follower_name} @{follower_conecpt} @{follower_description}"></button>
@@ -725,7 +726,7 @@
                 <input class="" type="text" data-i18n-placeholder="concept" placeholder="Konzept" name="attr_follower_conecpt" />
             </div>
             <br>
-            <h3 class="" data-i18n="skills">Fertigkeiten</h3>
+            <h4 class="" data-i18n="skills">Fertigkeiten</h4>
             <div class="modifikator">
                 <span class="" data-i18n="modifier">Modifikator</span>
                 <input type="radio" name="attr_mod_option" class="" value="?{@{query_translation}|0}" checked="checked" />
@@ -893,14 +894,12 @@
 
             <br>
             <div>
-                <span class="" data-i18n="stress">Stress</span>
-
+                <span class="" data-i18n="stress">Stress</span><span>: </span>
                 <input type="radio" name="attr_follower_stress" class="follower-stress" value="1"><span></span>
                 <input type="radio" name="attr_follower_stress" class="follower-stress" value="2" checked="checked"><span></span>
                 <input type="radio" name="attr_follower_stress" class="follower-stress" value="3"><span></span>
                 <input type="radio" name="attr_follower_stress" class="follower-stress" value="4"><span></span>
                 <input type="radio" name="attr_follower_stress" class="follower-stress" value="5"><span></span>
-
             </div>
             <div>
                 <span class="" data-i18n="costs">Kosten:</span>
@@ -911,6 +910,7 @@
             <div>
                 <textarea class="stunt-textarea" data-i18n-placeholder="description" placeholder="Beschreibung" name="attr_follower_description"></textarea>
             </div>
+            <br>
         </fieldset>
     </div>
 
