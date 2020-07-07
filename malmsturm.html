@@ -458,7 +458,7 @@
         <h3 class="" data-i18n="stress">Stress</h3>
         <span class='dee'></span>
         <span class='dee'></span>
-        <span class='dee'></span>
+
         <span class="" data-i18n="arcane-stress">Arkaner Stress</span>
         <select class="stress-select  bloody" name="attr_arcane_stress_selector">
             <option class="bloody" value="0" data-i18n="selector-default" selected>Bitte eine Fertigkeit auswählen...</option>
@@ -482,23 +482,70 @@
             <option class="bloody" value="18" data-i18n="notice"></option>
             <option class="bloody" value="19" data-i18n="will"></option>
         </select>
-        <input class="" type="number" name="attr_arcane_stress" />
-        <input class="" type="number" name="attr_arcane_stress_max" />
+        <div class="dots">
+            <input type="hidden" name="attr_arcane_stress" class="dot" value="2" />
+            <button type="action" name="act_arcane_stress_1" class="dot">
+              <span class="checked"></span>
+            </button>
+            <button type="action" name="act_arcane_stress_2" class="dot gt-1">
+              <span class="checked"></span>
+            </button>
+            <button type="action" name="act_arcane_stress_3" class="dot gt-1 gt-2">
+              <span class="checked"></span>
+            </button>
+            <button type="action" name="act_arcane_stress_4" class="dot gt-1 gt-2 gt-3">
+              <span class="checked"></span>
+            </button>
+            <button type="action" name="act_arcane_stress_5" class="dot gt-1 gt-2 gt-3 gt-4">
+              <span class="checked"></span>
+            </button>
+        </div>
 
         <span class="" data-i18n="mental-stress">Geistiger Stress (Wille)</span>
         <select class="stress-select bloody" name="attr_mental_stress_selector">
             <option class="bloody" value="19" data-i18n="will" selected>Wille</option>
         </select>
-        <input class="" type="number" name="attr_mental_stress" />
-        <input class="" type="number" name="attr_mental_stress_max" />
+        <div class="dots">
+            <input type="hidden" name="attr_mental_stress" class="dot" value="2" />
+            <button type="action" name="act_mental_stress_1" class="dot">
+              <span class="checked"></span>
+            </button>
+            <button type="action" name="act_mental_stress_2" class="dot gt-1">
+              <span class="checked"></span>
+            </button>
+            <button type="action" name="act_mental_stress_3" class="dot gt-1 gt-2">
+              <span class="checked"></span>
+            </button>
+            <button type="action" name="act_mental_stress_4" class="dot gt-1 gt-2 gt-3">
+              <span class="checked"></span>
+            </button>
+            <button type="action" name="act_mental_stress_5" class="dot gt-1 gt-2 gt-3 gt-4">
+              <span class="checked"></span>
+            </button>
+        </div>
 
         <span class="" data-i18n="physical-stress">Körperlicher Stress (Statur)</span>
         <select class="stress-select bloody" name="attr_physical_stress_selector">
             <option class="bloody" value="15" data-i18n="physique" selected>Statur</option>
         </select>
-        <input class="" type="number" name="attr_physical_stress" />
-        <input class="" type="number" name="attr_physical_stress_max" />
-
+        <div class="dots">
+            <input type="hidden" name="attr_physical_stress" class="dot" value="2" />
+            <button type="action" name="act_physical_stress_1" class="dot">
+              <span class="checked"></span>
+            </button>
+            <button type="action" name="act_physical_stress_2" class="dot gt-1">
+              <span class="checked"></span>
+            </button>
+            <button type="action" name="act_physical_stress_3" class="dot gt-1 gt-2">
+              <span class="checked"></span>
+            </button>
+            <button type="action" name="act_physical_stress_4" class="dot gt-1 gt-2 gt-3">
+              <span class="checked"></span>
+            </button>
+            <button type="action" name="act_physical_stress_5" class="dot gt-1 gt-2 gt-3 gt-4">
+              <span class="checked"></span>
+            </button>
+        </div>
     </div>
 
 
@@ -847,8 +894,13 @@
             <br>
             <div>
                 <span class="" data-i18n="stress">Stress</span>
-                <input class="" type="number" name="attr_follower_stress" />
-                <input class="" type="number" name="attr_follower_stress_max" />
+
+                <input type="radio" name="attr_follower_stress" class="follower-stress" value="1"><span></span>
+                <input type="radio" name="attr_follower_stress" class="follower-stress" value="2" checked="checked"><span></span>
+                <input type="radio" name="attr_follower_stress" class="follower-stress" value="3"><span></span>
+                <input type="radio" name="attr_follower_stress" class="follower-stress" value="4"><span></span>
+                <input type="radio" name="attr_follower_stress" class="follower-stress" value="5"><span></span>
+
             </div>
             <div>
                 <span class="" data-i18n="costs">Kosten:</span>
@@ -964,6 +1016,8 @@
 
 <script type="text/worker">
 
-    on("sheet:opened change:mod_option", function () { getAttrs(["query_translation"], function (v) { setAttrs({ query_translation: getTranslationByKey('query_trans') }); }); });
+    on("sheet:opened change:mod_option", function () { getAttrs(["query_translation"], function (v) { setAttrs({ query_translation: getTranslationByKey('query_trans') }); }); }); const arcane_stressValues = ["1","2","3","4","5"]; arcane_stressValues.forEach(function(value)
+    { on(`clicked:arcane_stress_${value}`, function() { setAttrs({ "arcane_stress": value }); }); }); const mental_stressValues = ["1","2","3","4","5"]; mental_stressValues.forEach(function(value) { on(`clicked:mental_stress_${value}`, function() { setAttrs({
+    "mental_stress": value }); }); }); const physical_stressValues = ["1","2","3","4","5"]; physical_stressValues.forEach(function(value) { on(`clicked:physical_stress_${value}`, function() { setAttrs({ "physical_stress": value }); }); });
 
 </script>
