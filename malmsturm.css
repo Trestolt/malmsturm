@@ -51,7 +51,7 @@
  }
  
  .sheet-sheet_selector[value="tradition"]~* {
-     --main-grid-template-areas: "title  title" "tabs tabs" "tradition tradition" "4-actions trauma" "4-actions notes";
+     --main-grid-template-areas: "title  title" "tabs tabs" "tradition tradition" "4-actions trauma" "notes notes";
      --display-skills: none;
      --display-aspects: none;
      --display-points: none;
@@ -106,6 +106,14 @@ Rot: #d7515c
  --display-trauma: inline-block;
  var()
 */
+ 
+ .sheet-golden {
+     color: #8a6d45;
+ }
+ 
+ .sheet-bloody {
+     color: #c20e1a;
+ }
  
  .sheet-main {
      display: grid;
@@ -262,6 +270,44 @@ Rot: #d7515c
      width: 8em;
  }
  
+ input[type="checkbox"].sheet-klapp-cb {
+     z-index: 1;
+     position: relative;
+     top: 5px;
+     left: 6px;
+     width: 16px;
+     height: 16px;
+     margin: -10px;
+     opacity: 0;
+     cursor: pointer;
+ }
+ 
+ input[type="checkbox"].sheet-klapp-cb+span::before {
+     content: "(-)";
+     font-weight: bold;
+     display: inline-block;
+     width: 14px;
+     height: 14px;
+     margin-right: 4px;
+     text-align: center;
+     vertical-align: middle;
+     font-size: 12px;
+     line-height: 14px;
+ }
+ 
+ input[type="checkbox"].sheet-klapp-cb:checked+span::before {
+     content: "(+)";
+     font-weight: bold;
+ }
+ 
+ div.sheet-klapp-box {
+     display: block;
+ }
+ 
+ input[type="checkbox"].sheet-klapp-cb:checked~div.sheet-klapp-box {
+     display: none;
+ }
+ 
  .sheet-consequence {
      display: var(--display-consequence);
      grid-gap: 5px;
@@ -359,6 +405,11 @@ Rot: #d7515c
      margin: 10px;
      padding: 5px;
      grid-area: trauma;
+ }
+ 
+ .sheet-stunt-textarea {
+     width: 97%;
+     height: 150px;
  }
  
  button[type="roll"].sheet-w6chat:before {
