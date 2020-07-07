@@ -25,7 +25,7 @@
             <span class="" data-i18n="contact">Verbindung</span>
         </div>
 
-        <img class="title-image" src="https://ifyoudontlikeitfuckoff.de/wp-content/uploads/malmsturm-logo.png" alt="MALMSTURM" />
+        <!-- <img class="title-image" src="https://ifyoudontlikeitfuckoff.de/wp-content/uploads/malmsturm-logo.png" alt="MALMSTURM" />-->
 
 
     </div>
@@ -677,7 +677,8 @@
             <div>
                 <input class="" type="text" data-i18n-placeholder="concept" placeholder="Konzept" name="attr_follower_conecpt" />
             </div>
-            <span class="" data-i18n="skills">Fertigkeiten</span>
+            <br>
+            <h3 class="" data-i18n="skills">Fertigkeiten</h3>
             <div class="modifikator">
                 <span class="" data-i18n="modifier">Modifikator</span>
                 <input type="radio" name="attr_mod_option" class="" value="?{@{query_translation}|0}" checked="checked" />
@@ -723,15 +724,138 @@
                         <option class="bloody" value="8" data-i18n="legendary">+8 - Legendär</option>
                     </select>
                 <button class="w6fate" type="roll" value="/roll 4dF + @{skill_follower_1} + @{mod_option} "></button>
+                <input type="checkbox" class="klapp-cb" name="attr_klapp_box_1" value="1" checked><span></span>
+                <div class="klapp-box">
+                    <select class="" name="attr_skill_follower_selector_2">
+                        <option class="bloody" value="0" data-i18n="selector-default" selected>Bitte eine Fertigkeit auswählen...</option>
+                        <option class="bloody" value="1" data-i18n="athletics"></option>
+                        <option class="bloody" value="2" data-i18n="rapport"></option>
+                        <option class="bloody" value="3" data-i18n="burglary"></option>
+                        <option class="bloody" value="4" data-i18n="empathy"></option>
+                        <option class="bloody" value="5" data-i18n="marksmanship"></option>
+                        <option class="bloody" value="6" data-i18n="lore"></option>
+                        <option class="bloody" value="7" data-i18n="crafts"></option>
+                        <option class="bloody" value="8" data-i18n="stealth"></option>
+                        <option class="bloody" value="9" data-i18n="fight"></option>
+                        <option class="bloody" value="10" data-i18n="contacts"></option>
+                        <option class="bloody" value="11" data-i18n="steer"></option>
+                        <option class="bloody" value="12" data-i18n="investigate"></option>
+                        <option class="bloody" value="13" data-i18n="provoke"></option>
+                        <option class="bloody" value="14" data-i18n="resources"></option>
+                        <option class="bloody" value="15" data-i18n="physique"></option>
+                        <option class="bloody" value="16" data-i18n="decieve"></option>
+                        <option class="bloody" value="17" data-i18n="survival"></option>
+                        <option class="bloody" value="18" data-i18n="notice"></option>
+                        <option class="bloody" value="19" data-i18n="will"></option>
+                    </select>
+                    <select class="" name="attr_skill_follower_2">
+                        <option class="bloody" value="-2" data-i18n="terrible">-2 - fürchterlich</option>
+                        <option class="bloody" value="-1" data-i18n="poor">-1 - schwach</option>
+                        <option class="bloody" value="0" data-i18n="mediocre">0 - mittelmäßig</option>
+                        <option class="bloody" value="1" data-i18n="average">+1 - Durchschnitt</option>
+                        <option class="bloody" value="2" data-i18n="fair" selected>+2 - Ordentlich</option>
+                        <option class="bloody" value="3" data-i18n="good">+3 - Gut</option>
+                        <option class="bloody" value="4" data-i18n="great">+4 - Großartig</option>
+                        <option class="bloody" value="5" data-i18n="superb">+5 - Hervorragend</option>
+                        <option class="bloody" value="6" data-i18n="fantastic">+6 - Fantastisch</option>
+                        <option class="bloody" value="7" data-i18n="epic">+7 - Episch</option>
+                        <option class="bloody" value="8" data-i18n="legendary">+8 - Legendär</option>
+                    </select>
+                    <button class="w6fate" type="roll" value="/roll 4dF + @{skill_follower_2} + @{mod_option} "></button>
+                    <input type="checkbox" class="klapp-cb" name="attr_klapp_box_2" value="1" checked><span></span>
+                    <div class="klapp-box">
+                        <select class="" name="attr_skill_follower_selector_3">
+                        <option class="bloody" value="0" data-i18n="selector-default" selected>Bitte eine Fertigkeit auswählen...</option>
+                        <option class="bloody" value="1" data-i18n="athletics"></option>
+                        <option class="bloody" value="2" data-i18n="rapport"></option>
+                        <option class="bloody" value="3" data-i18n="burglary"></option>
+                        <option class="bloody" value="4" data-i18n="empathy"></option>
+                        <option class="bloody" value="5" data-i18n="marksmanship"></option>
+                        <option class="bloody" value="6" data-i18n="lore"></option>
+                        <option class="bloody" value="7" data-i18n="crafts"></option>
+                        <option class="bloody" value="8" data-i18n="stealth"></option>
+                        <option class="bloody" value="9" data-i18n="fight"></option>
+                        <option class="bloody" value="10" data-i18n="contacts"></option>
+                        <option class="bloody" value="11" data-i18n="steer"></option>
+                        <option class="bloody" value="12" data-i18n="investigate"></option>
+                        <option class="bloody" value="13" data-i18n="provoke"></option>
+                        <option class="bloody" value="14" data-i18n="resources"></option>
+                        <option class="bloody" value="15" data-i18n="physique"></option>
+                        <option class="bloody" value="16" data-i18n="decieve"></option>
+                        <option class="bloody" value="17" data-i18n="survival"></option>
+                        <option class="bloody" value="18" data-i18n="notice"></option>
+                        <option class="bloody" value="19" data-i18n="will"></option>
+                    </select>
+                        <select class="" name="attr_skill_follower_3">
+                        <option class="bloody" value="-2" data-i18n="terrible">-2 - fürchterlich</option>
+                        <option class="bloody" value="-1" data-i18n="poor">-1 - schwach</option>
+                        <option class="bloody" value="0" data-i18n="mediocre">0 - mittelmäßig</option>
+                        <option class="bloody" value="1" data-i18n="average">+1 - Durchschnitt</option>
+                        <option class="bloody" value="2" data-i18n="fair" selected>+2 - Ordentlich</option>
+                        <option class="bloody" value="3" data-i18n="good">+3 - Gut</option>
+                        <option class="bloody" value="4" data-i18n="great">+4 - Großartig</option>
+                        <option class="bloody" value="5" data-i18n="superb">+5 - Hervorragend</option>
+                        <option class="bloody" value="6" data-i18n="fantastic">+6 - Fantastisch</option>
+                        <option class="bloody" value="7" data-i18n="epic">+7 - Episch</option>
+                        <option class="bloody" value="8" data-i18n="legendary">+8 - Legendär</option>
+                    </select>
+                        <button class="w6fate" type="roll" value="/roll 4dF + @{skill_follower_3} + @{mod_option} "></button>
+                        <input type="checkbox" class="klapp-cb" name="attr_klapp_box_3" value="1" checked><span></span>
+                        <div class="klapp-box">
+
+                            <select class="" name="attr_skill_follower_selector_4">
+                        <option class="bloody" value="0" data-i18n="selector-default" selected>Bitte eine Fertigkeit auswählen...</option>
+                        <option class="bloody" value="1" data-i18n="athletics"></option>
+                        <option class="bloody" value="2" data-i18n="rapport"></option>
+                        <option class="bloody" value="3" data-i18n="burglary"></option>
+                        <option class="bloody" value="4" data-i18n="empathy"></option>
+                        <option class="bloody" value="5" data-i18n="marksmanship"></option>
+                        <option class="bloody" value="6" data-i18n="lore"></option>
+                        <option class="bloody" value="7" data-i18n="crafts"></option>
+                        <option class="bloody" value="8" data-i18n="stealth"></option>
+                        <option class="bloody" value="9" data-i18n="fight"></option>
+                        <option class="bloody" value="10" data-i18n="contacts"></option>
+                        <option class="bloody" value="11" data-i18n="steer"></option>
+                        <option class="bloody" value="12" data-i18n="investigate"></option>
+                        <option class="bloody" value="13" data-i18n="provoke"></option>
+                        <option class="bloody" value="14" data-i18n="resources"></option>
+                        <option class="bloody" value="15" data-i18n="physique"></option>
+                        <option class="bloody" value="16" data-i18n="decieve"></option>
+                        <option class="bloody" value="17" data-i18n="survival"></option>
+                        <option class="bloody" value="18" data-i18n="notice"></option>
+                        <option class="bloody" value="19" data-i18n="will"></option>
+                    </select>
+                            <select class="" name="attr_skill_follower_4">
+                        <option class="bloody" value="-2" data-i18n="terrible">-2 - fürchterlich</option>
+                        <option class="bloody" value="-1" data-i18n="poor">-1 - schwach</option>
+                        <option class="bloody" value="0" data-i18n="mediocre">0 - mittelmäßig</option>
+                        <option class="bloody" value="1" data-i18n="average">+1 - Durchschnitt</option>
+                        <option class="bloody" value="2" data-i18n="fair" selected>+2 - Ordentlich</option>
+                        <option class="bloody" value="3" data-i18n="good">+3 - Gut</option>
+                        <option class="bloody" value="4" data-i18n="great">+4 - Großartig</option>
+                        <option class="bloody" value="5" data-i18n="superb">+5 - Hervorragend</option>
+                        <option class="bloody" value="6" data-i18n="fantastic">+6 - Fantastisch</option>
+                        <option class="bloody" value="7" data-i18n="epic">+7 - Episch</option>
+                        <option class="bloody" value="8" data-i18n="legendary">+8 - Legendär</option>
+                    </select>
+                            <button class="w6fate" type="roll" value="/roll 4dF + @{skill_follower_4} + @{mod_option} "></button>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <br>
             <div>
                 <span class="" data-i18n="stress">Stress</span>
                 <input class="" type="number" name="attr_follower_stress" />
                 <input class="" type="number" name="attr_follower_stress_max" />
+            </div>
+            <div>
                 <span class="" data-i18n="costs">Kosten:</span>
                 <input class="" type="number" name="attr_follower_costs" />
                 <span class="" data-i18n="stunts">Stunts</span>
             </div>
+            <br>
             <div>
                 <textarea class="stunt-textarea" data-i18n-placeholder="description" placeholder="Beschreibung" name="attr_follower_description"></textarea>
             </div>
