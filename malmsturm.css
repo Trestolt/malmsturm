@@ -449,46 +449,9 @@ Rot: #d7515c
      background-color: transparent;
      margin-left: 5px;
  }
- /* Configure the button styling. This example makes it look like a radio. */
- 
- button.sheet-dot {
-     padding: 0;
-     border: solid 1px #a8a8a8;
-     cursor: pointer;
-     width: 14px;
-     height: 14px;
-     border-radius: 50%;
-     display: inline-flex;
-     justify-content: center;
-     align-items: center;
- }
- 
- button.sheet-dot>span {
-     width: 6px;
-     height: 6px;
-     border-radius: 50%;
-     background: buttontext;
- }
- /* Hide the "checked" section of the radio if the hidden attribute value is greater than the button value */
- 
- input.sheet-dot[value="1"]~button.sheet-gt-1>span.sheet-checked {
-     display: none;
- }
- 
- input.sheet-dot[value="2"]~button.sheet-gt-2>span.sheet-checked {
-     display: none;
- }
- 
- input.sheet-dot[value="3"]~button.sheet-gt-3>span.sheet-checked {
-     display: none;
- }
- 
- input.sheet-dot[value="4"]~button.sheet-gt-4>span.sheet-checked {
-     display: none;
- }
  /* Hide actual radio */
  
- input[type="radio"].sheet-follower-stress {
+ input[type="radio"].sheet-stress-dots {
      opacity: 0;
      width: 16px;
      height: 16px;
@@ -501,7 +464,7 @@ Rot: #d7515c
  }
  /* Fake radio */
  
- input[type="radio"].sheet-follower-stress+span::before {
+ input[type="radio"].sheet-stress-dots+span::before {
      margin-right: 4px;
      border: solid 1px #a8a8a8;
      line-height: 14px;
@@ -519,6 +482,6 @@ Rot: #d7515c
  }
  /* Remove dot from all radios _after_ selected one */
  
- input[type="radio"].sheet-follower-stress:checked~input[type="radio"].sheet-follower-stress+span::before {
+ input[type="radio"].sheet-stress-dots:checked~input[type="radio"].sheet-stress-dots+span::before {
      content: "";
  }
