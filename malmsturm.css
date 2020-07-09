@@ -51,7 +51,7 @@
 }
 
 .sheet-sheet_selector[value="tradition"]~* {
-    --main-grid-template-areas: "title  title" "tabs tabs" "tradition tradition" "4-actions trauma" "4-actions notes";
+    --main-grid-template-areas: "title  title" "tabs tabs" "tradition tradition" "trauma trauma" "4-actions 4-actions" "notes notes";
     --display-skills: none;
     --display-aspects: none;
     --display-points: none;
@@ -63,7 +63,7 @@
     --display-follower: none;
     --display-notes: inline-block;
     --display-tradition: inline-block;
-    --display-4-actions: inline-block;
+    --display-4-actions: grid;
     --display-trauma: inline-block;
 }
 
@@ -329,6 +329,10 @@ input[type="checkbox"].sheet-klapp-cb:checked~div.sheet-klapp-box {
     grid-area: stunts;
 }
 
+.sheet-stunt-textarea {
+    width: 97%
+}
+
 .sheet-extras {
     display: var(--display-extras);
     grid-gap: 5px;
@@ -387,12 +391,69 @@ input[type="checkbox"].sheet-klapp-cb:checked~div.sheet-klapp-box {
 .sheet-4-actions {
     display: var(--display-4-actions);
     grid-gap: 5px;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "4-actions-title 4-actions-title" "overcome create" "overcome-text create-text" "attack defend" "attack-text defend-text";
     border-radius: 3px;
     border: 1px solid;
     margin: 10px;
     padding: 5px;
     grid-area: 4-actions;
+}
+
+.sheet-4-actions-title {
+    grid-area: 4-actions-title;
+}
+
+.sheet-attack {
+    grid-area: attack;
+    margin: 10px;
+    padding: 5px;
+}
+
+.sheet-attack-text {
+    grid-area: attack-text;
+    margin: 10px;
+    padding: 5px;
+    width: 28em;
+}
+
+.sheet-create {
+    grid-area: create;
+    margin: 10px;
+    padding: 5px;
+}
+
+.sheet-create-text {
+    margin: 10px;
+    padding: 5px;
+    grid-area: create-text;
+    width: 28em;
+}
+
+.sheet-defend {
+    grid-area: defend;
+    margin: 10px;
+    padding: 5px;
+}
+
+.sheet-defend-text {
+    grid-area: defend-text;
+    margin: 10px;
+    padding: 5px;
+    width: 28em;
+}
+
+.sheet-overcome {
+    grid-area: overcome;
+    margin: 10px;
+    padding: 5px;
+}
+
+.sheet-overcome-text {
+    grid-area: overcome-text;
+    margin: 10px;
+    padding: 5px;
+    width: 28em;
 }
 
 .sheet-trauma {
@@ -407,11 +468,6 @@ input[type="checkbox"].sheet-klapp-cb:checked~div.sheet-klapp-box {
 }
 
 .sheet-trauma-textarea {
-    width: 97%;
-    height: 150px;
-}
-
-.sheet-stunt-textarea {
     width: 97%;
     height: 150px;
 }

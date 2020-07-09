@@ -934,27 +934,28 @@
 
 
     <div class="4-actions">
-        <h3 class="" data-i18n="4-actions">Die 4 Aktionen</h3>
-        <div>
+        <h3 class="4-actions-title" data-i18n="4-actions">Die 4 Aktionen</h3>
+        <br>
+        <div class="overcome">
             <span class="" data-i18n="overcome">Überwinden</span>
             <button class="w6chat" type="roll" value="@{tradition_overcome}"></button>
         </div>
-        <textarea class="stunt-textarea" data-i18n-placeholder="overcome" placeholder="Überwinden" name="attr_tradition_overcome"></textarea>
-        <div>
+        <textarea class="overcome-text" data-i18n-placeholder="overcome" placeholder="Überwinden" name="attr_tradition_overcome"></textarea>
+        <div class="create">
             <span class="" data-i18n="create-advantage">Erschaffen eines Vorteils</span>
             <button class="w6chat" type="roll" value="@{tradition_advantage}"></button>
         </div>
-        <textarea class="stunt-textarea" data-i18n-placeholder="create-advantage" placeholder="Erschaffen des Vorteils" name="attr_tradition_advantage"></textarea>
+        <textarea class="create-text" data-i18n-placeholder="create-advantage" placeholder="Erschaffen des Vorteils" name="attr_tradition_advantage"></textarea>
         <div>
-            <span class="" data-i18n="attack">Angreifen</span>
+            <span class="attack" data-i18n="attack">Angreifen</span>
             <button class="w6chat" type="roll" value="@{tradition_attack}"></button>
         </div>
-        <textarea class="stunt-textarea" data-i18n-placeholder="attack" placeholder="Angreifen" name="attr_tradition_attack"></textarea>
+        <textarea class="attack-text" data-i18n-placeholder="attack" placeholder="Angreifen" name="attr_tradition_attack"></textarea>
         <div>
-            <span class="" data-i18n="defend">Verteidigen</span>
+            <span class="defend" data-i18n="defend">Verteidigen</span>
             <button class="w6chat" type="roll" value="@{tradition_defend}"></button>
         </div>
-        <textarea class="stunt-textarea" data-i18n-placeholder="defend" placeholder="Verteidigen" name="attr_tradition_defend"></textarea>
+        <textarea class="defend-text" data-i18n-placeholder="defend" placeholder="Verteidigen" name="attr_tradition_defend"></textarea>
     </div>
 
 
@@ -975,8 +976,6 @@
             <span class="" data-i18n="mactatum">Mactatum</span>
             <span class="" data-i18n="stress-item">leitet Stress auf einen persönlichen Gegenstand ab</span>
         </div>
-        <!-- <textarea class="trauma-textarea" data-i18n-placeholder="description" placeholder="Beschreibung" name="attr_trauma_notes"></textarea> -->
-
     </div>
 </div>
 
