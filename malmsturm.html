@@ -454,10 +454,9 @@
     </div>
 
     <div class="stress">
-
         <h3 class="" data-i18n="stress">Stress</h3>
-        <span class='dee golden' style="text-align: center;">Art</span>
-        <span class='dee golden' style="text-align: center;">0 -> 4</span>
+        <span class='dee golden'></span>
+        <span class='dee golden' style="text-align: center;">aktuell 0 -> 4</span>
         <span class='dee golden' style="text-align: center;">Max</span>
 
         <span class="" data-i18n="arcane-stress">Arkaner Stress</span>
@@ -521,7 +520,12 @@
 
 
     <div class="consequence">
-        <h3 class=" bloody" data-i18n="consequence">Konsequenzen</h3>
+        <div>
+            <h3 class=" bloody" data-i18n="consequence">Konsequenzen</h3>
+        </div>
+        <div class='dee'></div>
+        <span class='dee golden' style="text-align: center;">Art</span>
+        <span class='dee golden' style="text-align: center;">Behandelt?</span>
         <div>
             <span class=" bloody">2</span>
             <input class=" bloody" type="text" data-i18n-placeholder="mild-consequence" placeholder="leichte Konsequenz" name="attr_consequence_1" />
@@ -665,10 +669,12 @@
             <div class="klapp-box">
                 <textarea class="stunt-textarea" type="number" data-i18n-placeholder="description" placeholder="Beschreibung" name="attr_extra_description"></textarea>
                 <span class="" data-i18n="costs">Kosten:</span>
-                <select class="" name="attr_extra_costs">
-                    <option class="bloody" value="aspect" data-i18n="aspect-slot">Aspektplätze</option>
-                    <option class="bloody" value="stunt" data-i18n="stunt-slot">Stuntplätze</option>
-                    </select>
+
+                <input class="" type="number" name="attr_costs_aspectslots" />
+                <span class="" data-i18n="aspect-slot">Aspektplätze</span>
+                <input class="" type="number" name="attr_costs_stuntslots" />
+                <span class="" data-i18n="stunt-slot">Stuntplätze</span>
+                <br>
                 <span class="" data-i18n="other-costs">Andere Kosten</span>
                 <input class="" type="text" name="attr_costs_other" />
             </div>

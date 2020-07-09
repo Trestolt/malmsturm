@@ -112,6 +112,10 @@
     "saenda": "Sænda",
     "stress-person": "leitet Stress auf eine andere Person ab",
     "mactatum": "Mactatum",
-    "stress-item": "leitet Stress auf einen persönlichen Gegenstand ab"
+    "stress-item": "leitet Stress auf einen persönlichen Gegenstand ab",
+    "new-action": "Neue Aktion",
+    "bonus": "Bonus",
+    "rule-exception": "Regelausnahme"
+
 
 }

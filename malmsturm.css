@@ -533,8 +533,6 @@ input[type="radio"].sheet-stress-dots {
     line-height: 28px;
 }
 
-.sheet-stress-input {}
-
 input[type="radio"].sheet-stress-dots+span::before {
     margin-right: 4px;
     border: solid 1px #a8a8a8;
