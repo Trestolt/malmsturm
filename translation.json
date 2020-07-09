@@ -75,7 +75,7 @@
     "moderate-consequence": "mittlere Konsequenz",
     "severe-consequence": "schwere Konsequenz",
     "extreme-consequence": "extreme Konsequenz",
-    "treated": "behandelt",
+    "treated": "behandelt?",
     "not-treated": "nicht behandelt",
     "select-type": "",
     "stunts": "Stunts",
@@ -115,7 +115,11 @@
     "stress-item": "leitet Stress auf einen persönlichen Gegenstand ab",
     "new-action": "Neue Aktion",
     "bonus": "Bonus",
-    "rule-exception": "Regelausnahme"
+    "rule-exception": "Regelausnahme",
+    "current-stress": "aktuell 0 -> 4",
+    "maximum": "Max.",
+    "category": "Art"
+
 
 
 }

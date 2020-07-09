@@ -1,3 +1,8 @@
+* {
+    --border-image-url: url("https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/5e%20Darker%20Dungeons/img/sheet-bar-border.png") 30 fill stretch;
+    --border-image-width: 10px;
+}
+
 .sheet-char_selector[value="character"]~* {
     --display-character: inline;
     --display-contact: none;
@@ -91,24 +96,6 @@ Rot: #d7515c
  4-actions
  trauma
 
-
- 
- --display-title: grid;
- --display-tabs: grids;
- --display-skills: inline-block;
- --display-aspects: inline-block;
- --display-points: grid;
- --display-stress: grid;
- --display-stunts: inline-block;
- --display-extras: inline-block;
- --display-consequence: inline-block;
- --display-rewards: inline-block;
- --display-follower: inline-block;
- --display-notes: inline-block;
- --display-tradition: inline-block;
- --display-4-actions: inline-block;
- --display-trauma: inline-block;
- var()
 */
 
 .sheet-golden {
@@ -121,7 +108,7 @@ Rot: #d7515c
 
 .sheet-main {
     display: grid;
-    width: 820px;
+    width: 860px;
     grid-gap: 4px;
     grid-template-columns: auto;
     grid-template-rows: auto;
@@ -136,7 +123,6 @@ input {
     border-bottom: 1px solid;
     border-left: 0;
     border-radius: 3px;
-    /*   border-color: var(--color-border);*/
 }
 
 select {
@@ -163,6 +149,8 @@ input[type="number"] {
     margin: 10px;
     padding: 5px;
     grid-area: title;
+    border-image: var(--border-image-url);
+    border-width: var(--border-image-width);
 }
 
 .sheet-title-image {
@@ -196,6 +184,8 @@ input[type="number"] {
     padding: 5px;
     grid-area: tabs;
     grid-template-columns: 1fr 1fr 1fr;
+    border-image: var(--border-image-url);
+    border-width: var(--border-image-width);
 }
 
 .sheet-aspects {
@@ -206,6 +196,8 @@ input[type="number"] {
     margin: 10px;
     padding: 5px;
     grid-area: aspects;
+    border-image: var(--border-image-url);
+    border-width: var(--border-image-width);
 }
 
 .sheet-aspects-select {
@@ -223,11 +215,15 @@ input[type="number"] {
     margin: 10px;
     padding: 5px;
     grid-area: skills;
+    border-image: var(--border-image-url);
+    border-width: var(--border-image-width);
 }
 
 .sheet-skill {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    border-image: var(--border-image-url);
+    border-width: var(--border-image-width);
 }
 
 .sheet-skill-input {
@@ -248,6 +244,8 @@ input[type="number"] {
     margin: 10px;
     padding: 5px;
     grid-area: points;
+    border-image: var(--border-image-url);
+    border-width: var(--border-image-width);
 }
 
 .sheet-points-text {
@@ -263,6 +261,8 @@ input[type="number"] {
     margin: 10px;
     padding: 5px;
     grid-area: stress;
+    border-image: var(--border-image-url);
+    border-width: var(--border-image-width);
 }
 
 .sheet-stress-select {
@@ -316,6 +316,8 @@ input[type="checkbox"].sheet-klapp-cb:checked~div.sheet-klapp-box {
     margin: 10px;
     padding: 5px;
     grid-area: consequence;
+    border-image: var(--border-image-url);
+    border-width: var(--border-image-width);
 }
 
 .sheet-stunts {
@@ -327,10 +329,21 @@ input[type="checkbox"].sheet-klapp-cb:checked~div.sheet-klapp-box {
     margin: 10px;
     padding: 5px;
     grid-area: stunts;
+    border-image: var(--border-image-url);
+    border-width: var(--border-image-width);
 }
 
 .sheet-stunt-textarea {
     width: 97%
+}
+
+.sheet-stunt-select {
+    width: 10em;
+}
+
+.sheet-stunt-div {
+    display: grid;
+    grid-template-columns: 10em 1fr;
 }
 
 .sheet-extras {
@@ -342,6 +355,8 @@ input[type="checkbox"].sheet-klapp-cb:checked~div.sheet-klapp-box {
     margin: 10px;
     padding: 5px;
     grid-area: extras;
+    border-image: var(--border-image-url);
+    border-width: var(--border-image-width);
 }
 
 .sheet-rewards {
@@ -353,6 +368,8 @@ input[type="checkbox"].sheet-klapp-cb:checked~div.sheet-klapp-box {
     margin: 10px;
     padding: 5px;
     grid-area: rewards;
+    border-image: var(--border-image-url);
+    border-width: var(--border-image-width);
 }
 
 .sheet-follower {
@@ -364,6 +381,8 @@ input[type="checkbox"].sheet-klapp-cb:checked~div.sheet-klapp-box {
     margin: 10px;
     padding: 5px;
     grid-area: follower;
+    border-image: var(--border-image-url);
+    border-width: var(--border-image-width);
 }
 
 .sheet-notes {
@@ -375,6 +394,8 @@ input[type="checkbox"].sheet-klapp-cb:checked~div.sheet-klapp-box {
     margin: 10px;
     padding: 5px;
     grid-area: notes;
+    border-image: var(--border-image-url);
+    border-width: var(--border-image-width);
 }
 
 .sheet-tradition {
@@ -386,6 +407,8 @@ input[type="checkbox"].sheet-klapp-cb:checked~div.sheet-klapp-box {
     margin: 10px;
     padding: 5px;
     grid-area: tradition;
+    border-image: var(--border-image-url);
+    border-width: var(--border-image-width);
 }
 
 .sheet-4-actions {
@@ -398,6 +421,8 @@ input[type="checkbox"].sheet-klapp-cb:checked~div.sheet-klapp-box {
     margin: 10px;
     padding: 5px;
     grid-area: 4-actions;
+    border-image: var(--border-image-url);
+    border-width: var(--border-image-width);
 }
 
 .sheet-4-actions-title {
@@ -465,6 +490,8 @@ input[type="checkbox"].sheet-klapp-cb:checked~div.sheet-klapp-box {
     margin: 10px;
     padding: 5px;
     grid-area: trauma;
+    border-image: var(--border-image-url);
+    border-width: var(--border-image-width);
 }
 
 .sheet-trauma-textarea {

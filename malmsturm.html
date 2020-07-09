@@ -19,7 +19,7 @@
 
         <div class=title-setting1>
             <span class="" data-i18n="character">Charakter</span>
-            <input type="radio" class="char_selector" name="attr_char_selector" value="character" />
+            <input type="radio" class="char_selector" name="attr_char_selector" value="character" selected/>
             <span class="" data-i18n="or">oder</span>
             <input type="radio" class="char_selector" name="attr_char_selector" value="contact" />
             <span class="" data-i18n="contact">Verbindung</span>
@@ -32,7 +32,7 @@
     <div class="tabs">
         <div>
             <span class="" data-i18n="character">Charakter</span>
-            <input type="radio" class="sheet_selector" name="attr_sheet_selector" value="main" />
+            <input type="radio" class="sheet_selector" name="attr_sheet_selector" value="main" selected/>
         </div>
         <div>
             <span class="" data-i18n="follower">Gefolge</span>
@@ -456,8 +456,8 @@
     <div class="stress">
         <h3 class="" data-i18n="stress">Stress</h3>
         <span class='dee golden'></span>
-        <span class='dee golden' style="text-align: center;">aktuell 0 -> 4</span>
-        <span class='dee golden' style="text-align: center;">Max</span>
+        <span class='dee golden' data-i18n="current-stress" style="text-align: center;">aktuell 0 -> 4</span>
+        <span class='dee golden' data-i18n="maximum" style="text-align: center;">Max</span>
 
         <span class="" data-i18n="arcane-stress">Arkaner Stress</span>
         <select class="stress-select  bloody" name="attr_arcane_stress_selector">
@@ -521,11 +521,11 @@
 
     <div class="consequence">
         <div>
-            <h3 class=" bloody" data-i18n="consequence">Konsequenzen</h3>
+            <h3 class="bloody" data-i18n="consequence">Konsequenzen</h3>
         </div>
         <div class='dee'></div>
-        <span class='dee golden' style="text-align: center;">Art</span>
-        <span class='dee golden' style="text-align: center;">Behandelt?</span>
+        <span class='dee golden' data-i18n="category" style="text-align: center;">Art</span>
+        <span class='dee golden' data-i18n="treated" style="text-align: center;">Behandelt?</span>
         <div>
             <span class=" bloody">2</span>
             <input class=" bloody" type="text" data-i18n-placeholder="mild-consequence" placeholder="leichte Konsequenz" name="attr_consequence_1" />
@@ -630,23 +630,23 @@
                 <input type="checkbox" class="klapp-cb" name="attr_klapp_box" value="1" checked><span></span>
                 <div class="klapp-box">
                     <textarea class="stunt-textarea" data-i18n-placeholder="description" placeholder="Beschreibung" name="attr_stunt_description"></textarea>
-                    <div class="">
+                    <div class="stunt-div">
                         <span class="" data-i18n="type">Typ:</span>
-                        <select class="" name="attr_stunt_type">
+                        <select class="stunt-select" name="attr_stunt_type">
                         <option class="bloody" value="action" data-i18n="new-action">Neue Aktion</option>
                         <option class="bloody" value="bonus" data-i18n="bonus">Bonus</option>
                         <option class="bloody" value="exception" data-i18n="rule-exception">Regelausnahme</option>
                     </select>
                     </div>
-                    <div class="">
+                    <div class="stunt-div">
                         <span class="" data-i18n="costs">Kosten:</span>
-                        <select class="" name="attr_stunt_costs">
+                        <select class="stunt-select" name="attr_stunt_costs">
                         <option class="bloody" value="free" data-i18n="free">frei</option>
                         <option class="bloody" value="rest-rate" data-i18n="rest-rate-stunt">-1 Erholungsrate</option>
                     </select>
                     </div>
-                    <div class="">
-                        <span class="" data-i18n="limits">Beschränkungen:</span>
+                    <div class="stunt-div">
+                        <span class="stunt-select" data-i18n="limits">Beschränkungen:</span>
                         <select class="" name="attr_stunt_limit">
                         <option class="bloody" value="scene" data-i18n="scene">Szene</option>
                         <option class="bloody" value="conflict" data-i18n="conflict">Konflikt</option>
@@ -669,7 +669,6 @@
             <div class="klapp-box">
                 <textarea class="stunt-textarea" type="number" data-i18n-placeholder="description" placeholder="Beschreibung" name="attr_extra_description"></textarea>
                 <span class="" data-i18n="costs">Kosten:</span>
-
                 <input class="" type="number" name="attr_costs_aspectslots" />
                 <span class="" data-i18n="aspect-slot">Aspektplätze</span>
                 <input class="" type="number" name="attr_costs_stuntslots" />
@@ -705,7 +704,7 @@
             <h4 class="" data-i18n="skills">Fertigkeiten</h4>
             <div class="modifikator">
                 <span class="" data-i18n="modifier">Modifikator</span>
-                <input type="radio" name="attr_mod_option" class="" value="?{@{query_translation}|0}" checked="checked" />
+                <input type="radio" name="attr_mod_option" class="" value="?{@{query_translation}|0}" selected />
                 <input type="hidden" name="query_translation" value="Erleichterung(+) / Erschwernis(-), im Fall der Erleichterung ohne '+' eingeben" />
                 <span class="" data-i18n="yes">ja</span>
                 <input type="radio" name="attr_mod_option" class="" value="0" />
