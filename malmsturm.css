@@ -1,6 +1,15 @@
+@font-face {
+    font-family: 'Noto Serif', 'serif';
+    font-display: swap;
+    font-style: normal;
+    font-weight: 400;
+    src: local('Noto Serif'), local('NotoSerif'), url(https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap);
+}
+
 * {
     --border-image-url: url("https://raw.githubusercontent.com/Trestolt/malmsturm/master/assets/boxen-und-striche_charakterbogen_01.png") 30 fill stretch;
     --border-image-width: 10px;
+    font-family: 'Noto Serif', 'serif';
 }
 
 .sheet-char_selector[value="character"]~* {
@@ -156,6 +165,8 @@ input[type="number"] {
 .sheet-title-image {
     grid-column: 3 /5;
     grid-row: 2 / 5;
+    max-width: 75%;
+    margin-left: 5.5em;
 }
 
 .sheet-title-text {
