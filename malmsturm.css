@@ -109,7 +109,7 @@ Rot: #d7515c
 .sheet-main {
     display: grid;
     width: 860px;
-    grid-gap: 4px;
+    grid-gap: 0px;
     grid-template-columns: auto;
     grid-template-rows: auto;
     background-image: url(https://raw.githubusercontent.com/Trestolt/malmsturm/master/assets/bg_splats_png24.png);
