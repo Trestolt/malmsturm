@@ -108,7 +108,7 @@ Rot: #d7515c
 
 .sheet-main {
     display: grid;
-    width: 860px;
+    width: 870px;
     grid-gap: 0px;
     grid-template-columns: auto;
     grid-template-rows: auto;
