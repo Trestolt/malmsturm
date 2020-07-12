@@ -456,8 +456,8 @@
     <div class="stress">
         <h3 class="bloody" data-i18n="stress">Stress</h3>
         <span class='dee golden'></span>
-        <span class='dee golden' data-i18n="current-stress" style="text-align: center;">aktuell 0 -> 4</span>
-        <span class='dee golden' data-i18n="maximum" style="text-align: center;">Max</span>
+        <span class='dee golden stress-header' data-i18n="current-stress" aktuell 0 -> 4</span>
+        <span class='dee golden stress-header' data-i18n="maximum">Max</span>
 
         <span class="" data-i18n="arcane-stress">Arkaner Stress</span>
         <select class="stress-select  bloody" name="attr_arcane_stress_selector">
@@ -981,6 +981,10 @@
             <input class="" type="checkbox" name="attr_trauma_mactatum" />
             <span class="" data-i18n="mactatum">Mactatum</span>
             <span class="" data-i18n="stress-item">leitet Stress auf einen persönlichen Gegenstand ab</span>
+        </div>
+        <div>
+            <input class="" type="checkbox" name="attr_trauma_other" />
+            <input class="" type="text" data-i18n-placeholder="description" placeholder="Beschreibung" name="attr_trauma_other_desc" />
         </div>
     </div>
 </div>

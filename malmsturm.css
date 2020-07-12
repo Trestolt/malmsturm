@@ -12,6 +12,10 @@
     font-family: 'Noto Serif', 'serif';
 }
 
+.repcontainer[data-groupname="repeating_aspect"]>.repitem:hover>.itemcontrol:hover {
+    margin-top: -6px;
+}
+
 .sheet-char_selector[value="character"]~* {
     --display-character: inline;
     --display-contact: none;
@@ -149,6 +153,10 @@ input[type="number"] {
     text-align: center;
 }
 
+h3 {
+    margin-bottom: 5px;
+}
+
 .sheet-title {
     display: grid;
     grid-gap: 5px;
@@ -278,6 +286,12 @@ input[type="number"] {
 
 .sheet-stress-select {
     width: 8em;
+}
+
+.sheet-stress-header {
+    text-align: center;
+    margin-top: 5px;
+    margin-left: -20px;
 }
 
 input[type="checkbox"].sheet-klapp-cb {
