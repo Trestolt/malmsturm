@@ -97,6 +97,10 @@
     font-weight: bold;
 }
 
+.sheet-left_margin {
+    margin-left: 1em;
+}
+
 .sheet-main {
     display: grid;
     width: 870px;
@@ -553,49 +557,3 @@ button[type="roll"].sheet-w6fate {
     margin-left: 5px;
 }
 
-
-/* Hide actual radio */
-
-input[type="radio"].sheet-stress-dots {
-    opacity: 0;
-    width: 16px;
-    height: 16px;
-    position: relative;
-    top: 5px;
-    left: 6px;
-    margin: -10px;
-    cursor: pointer;
-    z-index: 1;
-}
-
-
-/* Fake radio */
-
-.sheet-stress-radio {
-    margin-left: 1em;
-    line-height: 28px;
-}
-
-input[type="radio"].sheet-stress-dots+span::before {
-    margin-right: 4px;
-    border: solid 1px #a8a8a8;
-    line-height: 14px;
-    text-align: center;
-    display: inline-block;
-    vertical-align: middle;
-    box-shadow: 0 0 2px #ccc;
-    background: #f6f6f6;
-    background: radial-gradient(#f6f6f6, #dfdfdf);
-    content: "•";
-    width: 12px;
-    height: 12px;
-    font-size: 24px;
-    border-radius: 50%;
-}
-
-
-/* Remove dot from all radios _after_ selected one */
-
-input[type="radio"].sheet-stress-dots:checked~input[type="radio"].sheet-stress-dots+span::before {
-    content: "";
-}
