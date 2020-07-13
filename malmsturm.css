@@ -85,38 +85,16 @@
     --display-trauma: inline-block;
 }
 
-
-/*
-Farben ausser Schwarz und weiß
-Gold: #8a6d45
-Rot: #d7515c
-*/
-
-
-/*
- title
- skills
- aspects
- points
- stress
- stunts
- extras
- consequence
- rewards
- follower
- notes
- tradition
- 4-actions
- trauma
-
-*/
-
 .sheet-golden {
     color: #8a6d45;
 }
 
 .sheet-bloody {
     color: #c20e1a;
+}
+
+.sheet-font-text {
+    font-weight: bold;
 }
 
 .sheet-main {
@@ -189,9 +167,9 @@ h3 {
 }
 
 .sheet-title-setting1 {
-    grid-column: 3 / 5;
+    grid-column: 1 / 3;
     grid-row: 1 / 1;
-    text-align: right;
+    margin-bottom: 5px;
 }
 
 .sheet-tabs {
@@ -240,7 +218,7 @@ h3 {
 
 .sheet-skill {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 12em auto;
     border-image: var(--border-image-url);
     border-width: var(--border-image-width);
 }
@@ -252,6 +230,10 @@ h3 {
 .sheet-skill-text {
     width: 10em;
     line-height: 3em;
+}
+
+.sheet-modifikator {
+    width: max-content;
 }
 
 .sheet-points {
@@ -343,12 +325,17 @@ input[type="checkbox"].sheet-klapp-cb:checked~div.sheet-klapp-box {
     grid-area: consequence;
     border-image: var(--border-image-url);
     border-width: var(--border-image-width);
+    min-width: 30;
+}
+
+.sheet-consequence-text {
+    width: 18em;
 }
 
 .sheet-stunts {
     display: var(--display-stunts);
     grid-gap: 5px;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr auto;
     border-radius: 3px;
     border: 1px solid;
     margin: 10px;
@@ -395,6 +382,10 @@ input[type="checkbox"].sheet-klapp-cb:checked~div.sheet-klapp-box {
     grid-area: rewards;
     border-image: var(--border-image-url);
     border-width: var(--border-image-width);
+}
+
+.sheet-reward-text {
+    width: 24em;
 }
 
 .sheet-follower {
