@@ -1,0 +1,112 @@
+value="&{template:chat} {{name=@{character_name}}} {{subtags=^{aspect}}} {{subtags2=^{@{aspect_scheme}}}} {{output=@{aspect}}}"
+
+value="&{template:chat} {{name=@{character_name}}} {{subtags=^{stunt}}} {{subtags2=@{stunt_name}}} {{output=@{stunt_description}}} {{output2=^{type} : ^{@{stunt_type}}}} {{output3=^{costs} : ^{@{stunt_costs}}}} {{output4=^{limits} : ^{@{stunt_limit}}}}"
+
+value="&{template:chat} {{name=@{character_name}}} {{subtags=^{extra}}} {{subtags2=@{extra_name}}} {{output=@{extra_description}}} {{output2=^{costs} : }}} {{output3=@{costs_aspectslots} ^{aspect-slot}}} {{output4=@{costs_stuntslots} ^{stunt-slot}}} {{output5=^{other-costs} : @{costs_other}}}"
+
+value="&{template:chat} {{name=@{character_name}}} {{subtags=^{reward}}} {{output=@{reward}}}"
+
+
+value="&{template:chat} {{name=@{follower_name}}} {{subtags=^{follower} ^{of} @{character_name}}} {{subtags2=@{follower_concept}}} {{output=@{follower_description}}} "
+
+
+value="&{template:chat} {{name=@{character_name}}} {{subtags=^{tradition}}} {{subtags2=@{tradition_name}}} {{output=^{tradition-aspect} : @{tradition_aspect}}} {{output2=^{tradition-skill} : ^{@{tradition_skill}}}} {{output3=@{tradition_description}}}"
+
+
+value="&{template:chat} {{name=@{character_name}}} {{subtags=^{tradition}}} {{subtags2=@{tradition_name}}} {{output=^{overcome}}} {{output2=@{tradition_overcome}}}"
+
+value="&{template:chat} {{name=@{character_name}}} {{subtags=^{tradition}}} {{subtags2=@{tradition_name}}} {{output=^{create-advantage}}} {{output2=@{tradition_advantage}}}"
+
+value="&{template:chat} {{name=@{character_name}}} {{subtags=^{tradition}}} {{subtags2=@{tradition_name}}} {{output=^{attack}}} {{output2=@{tradition_attack}}}"
+
+value="&{template:chat} {{name=@{character_name}}} {{subtags=^{tradition}}} {{subtags2=@{tradition_name}}} {{output=^{defend}}} {{output2=@{tradition_defend}}}"
+
+
+
+
+
+<rolltemplate class="sheet-rolltemplate-chat">
+	<table>
+        <tr>
+			<th>{{name}}</th>
+		</tr>
+        <tr>
+			<td class="subheader">{{subtags}} <br> {{subtags2}}</td>
+		</tr>
+		<tr class="arrow-container">
+			<td>
+				<div class="arrow-right"></div>
+			</td>
+		</tr>
+		{{#output}}
+		<tr class="rowcolor">
+			<td>{{output}}</td>
+		</tr>
+        {{#output}}
+		{{/output2}}
+		<tr class="rowcolor">
+			<td>{{output2}}</td>
+		</tr>
+		{{/output2}}
+        {{#output3}}
+		<tr class="rowcolor">
+			<td>{{output3}}</td>
+		</tr>
+		{{/output3}}
+  		{{#output4}}
+		<tr class="rowcolor">
+			<td>{{output4}}</td>
+		</tr>
+		{{/output4}}
+        {{#output5}}
+		<tr class="rowcolor">
+			<td>{{output5}}</td>
+		</tr>
+		{{/output5}}
+    </table>
+</rolltemplate>
+
+.sheet-rolltemplate-chat table {
+    width: 189px;
+    padding: 2px;
+    border: 1px solid;
+    background-color: #ffffff;
+}
+
+.sheet-rolltemplate-chat .sheet-subheader {
+  font-size: 0.9em;
+    font-style: italic;  
+}
+
+.sheet-rolltemplate-chat .sheet-tcat {
+    font-style: italic;
+}
+
+.sheet-rolltemplate-chat .sheet-freeform {
+    font-size: 0.8em;
+}
+
+.sheet-rolltemplate-chat td {
+    padding-left: 5px;
+    font-size: 0.9em;
+}
+
+.sheet-rolltemplate-chat .inlinerollresult {
+    border: none;
+    background-color: #ffffff;
+}
+
+.sheet-rolltemplate-chat .sheet-arrow-right {
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+}
+
+.sheet-rolltemplate-chat th {
+    padding-left: 5px;
+    text-align: left;
+    font-family: 'Gentium Book Basic', serif;
+    font-size: 1.2em;
+    font-variant: small-caps;
+    line-height: 1.6em;
+    /* font-family: "Times New Roman", Times, serif; */
+}

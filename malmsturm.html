@@ -65,7 +65,7 @@
                 </optgroup>
             </select>
             <input class="aspects-text" type="text" name="attr_aspect" />
-            <button class="w6chat" type="roll" value="@{aspect}"></button>
+            <button class="w6chat" type="roll" value="&{template:chat} {{name=@{character_name}}} {{subtags=^{aspect} ^{@{aspect_scheme}} }} {{output=@{aspect}}}"></button>
         </fieldset>
     </div>
 
@@ -462,27 +462,27 @@
 
         <span class=" font-text" data-i18n="arcane-stress">Arkaner Stress</span>
         <select class="stress-select  bloody" name="attr_arcane_stress_selector">
-            <option class="bloody" value="0" data-i18n="selector-default" selected>Bitte eine Fertigkeit auswählen...
-            </option>
-            <option class="bloody" value="1" data-i18n="athletics"></option>
-            <option class="bloody" value="2" data-i18n="rapport"></option>
-            <option class="bloody" value="3" data-i18n="burglary"></option>
-            <option class="bloody" value="4" data-i18n="empathy"></option>
-            <option class="bloody" value="5" data-i18n="marksmanship"></option>
-            <option class="bloody" value="6" data-i18n="lore"></option>
-            <option class="bloody" value="7" data-i18n="crafts"></option>
-            <option class="bloody" value="8" data-i18n="stealth"></option>
-            <option class="bloody" value="9" data-i18n="fight"></option>
-            <option class="bloody" value="10" data-i18n="contacts"></option>
-            <option class="bloody" value="11" data-i18n="steer"></option>
-            <option class="bloody" value="12" data-i18n="investigate"></option>
-            <option class="bloody" value="13" data-i18n="provoke"></option>
-            <option class="bloody" value="14" data-i18n="resources"></option>
-            <option class="bloody" value="15" data-i18n="physique"></option>
-            <option class="bloody" value="16" data-i18n="decieve"></option>
-            <option class="bloody" value="17" data-i18n="survival"></option>
-            <option class="bloody" value="18" data-i18n="notice"></option>
-            <option class="bloody" value="19" data-i18n="will"></option>
+            <option class="bloody" value="--" data-i18n="selector-default" selected>Bitte eine Fertigkeit
+                auswählen...</option>
+            <option class="bloody" value="athletics" data-i18n="athletics"></option>
+            <option class="bloody" value="rapport" data-i18n="rapport"></option>
+            <option class="bloody" value="burglary" data-i18n="burglary"></option>
+            <option class="bloody" value="empathy" data-i18n="empathy"></option>
+            <option class="bloody" value="marksmanship" data-i18n="marksmanship"></option>
+            <option class="bloody" value="lore" data-i18n="lore"></option>
+            <option class="bloody" value="crafts" data-i18n="crafts"></option>
+            <option class="bloody" value="stealth" data-i18n="stealth"></option>
+            <option class="bloody" value="fight" data-i18n="fight"></option>
+            <option class="bloody" value="contacts" data-i18n="contacts"></option>
+            <option class="bloody" value="steer" data-i18n="steer"></option>
+            <option class="bloody" value="investigate" data-i18n="investigate"></option>
+            <option class="bloody" value="provoke" data-i18n="provoke"></option>
+            <option class="bloody" value="resources" data-i18n="resources"></option>
+            <option class="bloody" value="physique" data-i18n="physique"></option>
+            <option class="bloody" value="decieve" data-i18n="decieve"></option>
+            <option class="bloody" value="survival" data-i18n="survival"></option>
+            <option class="bloody" value="notice" data-i18n="notice"></option>
+            <option class="bloody" value="will" data-i18n="will"></option>
         </select>
         <div class="stress-radio">
             <span class="left_margin"></span>
@@ -632,23 +632,23 @@
             <div class="">
                 <!-- <span class="" data-i18n="stunt">Stunt</span> -->
                 <input class="" data-i18n-placeholder="name" placeholder="Name" type="text" name="attr_stunt_name" />
-                <button class="w6chat" type="roll" value="@{stunt_name} @{stunt_description}"></button>
+                <button class="w6chat" type="roll" value="&{template:chat} {{name=@{character_name}}} {{subtags=^{stunt} @{stunt_name}}} {{output=@{stunt_description}}} {{output2=^{type} : ^{@{stunt_type}}}} {{output3=^{costs} : ^{@{stunt_costs}}}} {{output4=^{limits} : ^{@{stunt_limit}}}}"></button>
                 <input type="checkbox" class="klapp-cb" name="attr_klapp_box" value="1" checked><span></span>
                 <div class="klapp-box">
                     <textarea class="stunt-textarea" data-i18n-placeholder="description" placeholder="Beschreibung" name="attr_stunt_description"></textarea>
                     <div class="stunt-div">
                         <span class=" font-text" data-i18n="type">Typ:</span>
                         <select class="stunt-select" name="attr_stunt_type">
-                            <option class="bloody" value="action" data-i18n="new-action">Neue Aktion</option>
+                            <option class="bloody" value="new-action" data-i18n="new-action">Neue Aktion</option>
                             <option class="bloody" value="bonus" data-i18n="bonus">Bonus</option>
-                            <option class="bloody" value="exception" data-i18n="rule-exception">Regelausnahme</option>
+                            <option class="bloody" value="rule-exception" data-i18n="rule-exception">Regelausnahme</option>
                         </select>
                     </div>
                     <div class="stunt-div">
                         <span class=" font-text" data-i18n="costs">Kosten:</span>
                         <select class="stunt-select" name="attr_stunt_costs">
                             <option class="bloody" value="free" data-i18n="free">frei</option>
-                            <option class="bloody" value="rest-rate" data-i18n="rest-rate-stunt">-1 Erholungsrate
+                            <option class="bloody" value="rest-rate-stunt" data-i18n="rest-rate-stunt">-1 Erholungsrate
                             </option>
                         </select>
                     </div>
@@ -671,14 +671,14 @@
         <h3 class="golden" data-i18n="extras">Extras</h3>
         <fieldset class="repeating_extra">
             <input class="" type="text" data-i18n-placeholder="name" placeholder="Name" name="attr_extra_name" />
-            <button class="w6chat" type="roll" value="@{extra_name} @{extra_description}"></button>
+            <button class="w6chat" type="roll" value="&{template:chat} {{name=@{character_name}}} {{subtags=^{extra} @{extra_name}}} {{output=@{extra_description}}} {{output2=^{costs} : }} {{output3=@{costs_aspectslots} ^{aspect-slot}}} {{output4=@{costs_stuntslots} ^{stunt-slot}}} {{output5=^{other-costs} : @{costs_other}}}"></button>
             <input type="checkbox" class="klapp-cb" name="attr_klapp_box" value="1" checked><span></span>
             <div class="klapp-box">
                 <textarea class="stunt-textarea" type="number" data-i18n-placeholder="description" placeholder="Beschreibung" name="attr_extra_description"></textarea>
                 <span class=" font-text" data-i18n="costs">Kosten:</span>
-                <input class="" type="number" name="attr_costs_aspectslots" />
+                <input class="" type="number" name="attr_costs_aspectslots" value="0" />
                 <span class=" font-text" data-i18n="aspect-slot">Aspektplätze</span>
-                <input class="" type="number" name="attr_costs_stuntslots" />
+                <input class="" type="number" name="attr_costs_stuntslots" value="0" />
                 <span class=" font-text" data-i18n="stunt-slot">Stuntplätze</span>
                 <br>
                 <span class=" font-text" data-i18n="other-costs">Andere Kosten</span>
@@ -692,7 +692,7 @@
         <h3 class="golden" data-i18n="rewards">Belohungen</h3>
         <fieldset class="repeating_reward">
             <input class="reward-text" type="text" name="attr_reward" />
-            <button class="w6chat" type="roll" value="@{extra_name} @{extra_description}"></button>
+            <button class="w6chat" type="roll" value="&{template:chat} {{name=@{character_name}}} {{subtags=^{reward}}} {{output=@{reward}}}"></button>
             <input class="" type="checkbox" name="attr_reward_used" />
         </fieldset>
     </div>
@@ -702,10 +702,10 @@
             <br>
             <div>
                 <input class="aspects-text" type="text" data-i18n-placeholder="name" placeholder="Name" name="attr_follower_name" />
-                <button class="w6chat" type="roll" value="@{follower_name} @{follower_conecpt} @{follower_description}"></button>
+                <button class="w6chat" type="roll" value="&{template:chat} {{name=@{follower_name}}} {{subtags=^{follower} ^{of} @{character_name}}} {{subtags2=@{follower_concept}}} {{output=@{follower_description}}} "></button>
             </div>
             <div>
-                <input class="aspects-text" type="text" data-i18n-placeholder="concept" placeholder="Konzept" name="attr_follower_conecpt" />
+                <input class="aspects-text" type="text" data-i18n-placeholder="concept" placeholder="Konzept" name="attr_follower_concept" />
             </div>
             <br>
             <h4 class="" data-i18n="skills">Fertigkeiten</h4>
@@ -719,27 +719,27 @@
             </div>
             <div>
                 <select class="" name="attr_skill_follower_selector_1">
-                    <option class="bloody" value="0" data-i18n="selector-default" selected>Bitte eine Fertigkeit
+                    <option class="bloody" value="--" data-i18n="selector-default" selected>Bitte eine Fertigkeit
                         auswählen...</option>
-                    <option class="bloody" value="1" data-i18n="athletics"></option>
-                    <option class="bloody" value="2" data-i18n="rapport"></option>
-                    <option class="bloody" value="3" data-i18n="burglary"></option>
-                    <option class="bloody" value="4" data-i18n="empathy"></option>
-                    <option class="bloody" value="5" data-i18n="marksmanship"></option>
-                    <option class="bloody" value="6" data-i18n="lore"></option>
-                    <option class="bloody" value="7" data-i18n="crafts"></option>
-                    <option class="bloody" value="8" data-i18n="stealth"></option>
-                    <option class="bloody" value="9" data-i18n="fight"></option>
-                    <option class="bloody" value="10" data-i18n="contacts"></option>
-                    <option class="bloody" value="11" data-i18n="steer"></option>
-                    <option class="bloody" value="12" data-i18n="investigate"></option>
-                    <option class="bloody" value="13" data-i18n="provoke"></option>
-                    <option class="bloody" value="14" data-i18n="resources"></option>
-                    <option class="bloody" value="15" data-i18n="physique"></option>
-                    <option class="bloody" value="16" data-i18n="decieve"></option>
-                    <option class="bloody" value="17" data-i18n="survival"></option>
-                    <option class="bloody" value="18" data-i18n="notice"></option>
-                    <option class="bloody" value="19" data-i18n="will"></option>
+                    <option class="bloody" value="athletics" data-i18n="athletics"></option>
+                    <option class="bloody" value="rapport" data-i18n="rapport"></option>
+                    <option class="bloody" value="burglary" data-i18n="burglary"></option>
+                    <option class="bloody" value="empathy" data-i18n="empathy"></option>
+                    <option class="bloody" value="marksmanship" data-i18n="marksmanship"></option>
+                    <option class="bloody" value="lore" data-i18n="lore"></option>
+                    <option class="bloody" value="crafts" data-i18n="crafts"></option>
+                    <option class="bloody" value="stealth" data-i18n="stealth"></option>
+                    <option class="bloody" value="fight" data-i18n="fight"></option>
+                    <option class="bloody" value="contacts" data-i18n="contacts"></option>
+                    <option class="bloody" value="steer" data-i18n="steer"></option>
+                    <option class="bloody" value="investigate" data-i18n="investigate"></option>
+                    <option class="bloody" value="provoke" data-i18n="provoke"></option>
+                    <option class="bloody" value="resources" data-i18n="resources"></option>
+                    <option class="bloody" value="physique" data-i18n="physique"></option>
+                    <option class="bloody" value="decieve" data-i18n="decieve"></option>
+                    <option class="bloody" value="survival" data-i18n="survival"></option>
+                    <option class="bloody" value="notice" data-i18n="notice"></option>
+                    <option class="bloody" value="will" data-i18n="will"></option>
                 </select>
                 <select class="" name="attr_skill_follower_1">
                     <option class="bloody" value="-2" data-i18n="terrible">-2 - fürchterlich</option>
@@ -758,27 +758,27 @@
                 <input type="checkbox" class="klapp-cb" name="attr_klapp_box_1" value="1" checked><span></span>
                 <div class="klapp-box">
                     <select class="" name="attr_skill_follower_selector_2">
-                        <option class="bloody" value="0" data-i18n="selector-default" selected>Bitte eine Fertigkeit
+                        <option class="bloody" value="--" data-i18n="selector-default" selected>Bitte eine Fertigkeit
                             auswählen...</option>
-                        <option class="bloody" value="1" data-i18n="athletics"></option>
-                        <option class="bloody" value="2" data-i18n="rapport"></option>
-                        <option class="bloody" value="3" data-i18n="burglary"></option>
-                        <option class="bloody" value="4" data-i18n="empathy"></option>
-                        <option class="bloody" value="5" data-i18n="marksmanship"></option>
-                        <option class="bloody" value="6" data-i18n="lore"></option>
-                        <option class="bloody" value="7" data-i18n="crafts"></option>
-                        <option class="bloody" value="8" data-i18n="stealth"></option>
-                        <option class="bloody" value="9" data-i18n="fight"></option>
-                        <option class="bloody" value="10" data-i18n="contacts"></option>
-                        <option class="bloody" value="11" data-i18n="steer"></option>
-                        <option class="bloody" value="12" data-i18n="investigate"></option>
-                        <option class="bloody" value="13" data-i18n="provoke"></option>
-                        <option class="bloody" value="14" data-i18n="resources"></option>
-                        <option class="bloody" value="15" data-i18n="physique"></option>
-                        <option class="bloody" value="16" data-i18n="decieve"></option>
-                        <option class="bloody" value="17" data-i18n="survival"></option>
-                        <option class="bloody" value="18" data-i18n="notice"></option>
-                        <option class="bloody" value="19" data-i18n="will"></option>
+                        <option class="bloody" value="athletics" data-i18n="athletics"></option>
+                        <option class="bloody" value="rapport" data-i18n="rapport"></option>
+                        <option class="bloody" value="burglary" data-i18n="burglary"></option>
+                        <option class="bloody" value="empathy" data-i18n="empathy"></option>
+                        <option class="bloody" value="marksmanship" data-i18n="marksmanship"></option>
+                        <option class="bloody" value="lore" data-i18n="lore"></option>
+                        <option class="bloody" value="crafts" data-i18n="crafts"></option>
+                        <option class="bloody" value="stealth" data-i18n="stealth"></option>
+                        <option class="bloody" value="fight" data-i18n="fight"></option>
+                        <option class="bloody" value="contacts" data-i18n="contacts"></option>
+                        <option class="bloody" value="steer" data-i18n="steer"></option>
+                        <option class="bloody" value="investigate" data-i18n="investigate"></option>
+                        <option class="bloody" value="provoke" data-i18n="provoke"></option>
+                        <option class="bloody" value="resources" data-i18n="resources"></option>
+                        <option class="bloody" value="physique" data-i18n="physique"></option>
+                        <option class="bloody" value="decieve" data-i18n="decieve"></option>
+                        <option class="bloody" value="survival" data-i18n="survival"></option>
+                        <option class="bloody" value="notice" data-i18n="notice"></option>
+                        <option class="bloody" value="will" data-i18n="will"></option>
                     </select>
                     <select class="" name="attr_skill_follower_2">
                         <option class="bloody" value="-2" data-i18n="terrible">-2 - fürchterlich</option>
@@ -797,27 +797,27 @@
                     <input type="checkbox" class="klapp-cb" name="attr_klapp_box_2" value="1" checked><span></span>
                     <div class="klapp-box">
                         <select class="" name="attr_skill_follower_selector_3">
-                            <option class="bloody" value="0" data-i18n="selector-default" selected>Bitte eine Fertigkeit
+                            <option class="bloody" value="--" data-i18n="selector-default" selected>Bitte eine Fertigkeit
                                 auswählen...</option>
-                            <option class="bloody" value="1" data-i18n="athletics"></option>
-                            <option class="bloody" value="2" data-i18n="rapport"></option>
-                            <option class="bloody" value="3" data-i18n="burglary"></option>
-                            <option class="bloody" value="4" data-i18n="empathy"></option>
-                            <option class="bloody" value="5" data-i18n="marksmanship"></option>
-                            <option class="bloody" value="6" data-i18n="lore"></option>
-                            <option class="bloody" value="7" data-i18n="crafts"></option>
-                            <option class="bloody" value="8" data-i18n="stealth"></option>
-                            <option class="bloody" value="9" data-i18n="fight"></option>
-                            <option class="bloody" value="10" data-i18n="contacts"></option>
-                            <option class="bloody" value="11" data-i18n="steer"></option>
-                            <option class="bloody" value="12" data-i18n="investigate"></option>
-                            <option class="bloody" value="13" data-i18n="provoke"></option>
-                            <option class="bloody" value="14" data-i18n="resources"></option>
-                            <option class="bloody" value="15" data-i18n="physique"></option>
-                            <option class="bloody" value="16" data-i18n="decieve"></option>
-                            <option class="bloody" value="17" data-i18n="survival"></option>
-                            <option class="bloody" value="18" data-i18n="notice"></option>
-                            <option class="bloody" value="19" data-i18n="will"></option>
+                            <option class="bloody" value="athletics" data-i18n="athletics"></option>
+                            <option class="bloody" value="rapport" data-i18n="rapport"></option>
+                            <option class="bloody" value="burglary" data-i18n="burglary"></option>
+                            <option class="bloody" value="empathy" data-i18n="empathy"></option>
+                            <option class="bloody" value="marksmanship" data-i18n="marksmanship"></option>
+                            <option class="bloody" value="lore" data-i18n="lore"></option>
+                            <option class="bloody" value="crafts" data-i18n="crafts"></option>
+                            <option class="bloody" value="stealth" data-i18n="stealth"></option>
+                            <option class="bloody" value="fight" data-i18n="fight"></option>
+                            <option class="bloody" value="contacts" data-i18n="contacts"></option>
+                            <option class="bloody" value="steer" data-i18n="steer"></option>
+                            <option class="bloody" value="investigate" data-i18n="investigate"></option>
+                            <option class="bloody" value="provoke" data-i18n="provoke"></option>
+                            <option class="bloody" value="resources" data-i18n="resources"></option>
+                            <option class="bloody" value="physique" data-i18n="physique"></option>
+                            <option class="bloody" value="decieve" data-i18n="decieve"></option>
+                            <option class="bloody" value="survival" data-i18n="survival"></option>
+                            <option class="bloody" value="notice" data-i18n="notice"></option>
+                            <option class="bloody" value="will" data-i18n="will"></option>
                         </select>
                         <select class="" name="attr_skill_follower_3">
                             <option class="bloody" value="-2" data-i18n="terrible">-2 - fürchterlich</option>
@@ -837,27 +837,27 @@
                         <div class="klapp-box">
 
                             <select class="" name="attr_skill_follower_selector_4">
-                                <option class="bloody" value="0" data-i18n="selector-default" selected>Bitte eine
-                                    Fertigkeit auswählen...</option>
-                                <option class="bloody" value="1" data-i18n="athletics"></option>
-                                <option class="bloody" value="2" data-i18n="rapport"></option>
-                                <option class="bloody" value="3" data-i18n="burglary"></option>
-                                <option class="bloody" value="4" data-i18n="empathy"></option>
-                                <option class="bloody" value="5" data-i18n="marksmanship"></option>
-                                <option class="bloody" value="6" data-i18n="lore"></option>
-                                <option class="bloody" value="7" data-i18n="crafts"></option>
-                                <option class="bloody" value="8" data-i18n="stealth"></option>
-                                <option class="bloody" value="9" data-i18n="fight"></option>
-                                <option class="bloody" value="10" data-i18n="contacts"></option>
-                                <option class="bloody" value="11" data-i18n="steer"></option>
-                                <option class="bloody" value="12" data-i18n="investigate"></option>
-                                <option class="bloody" value="13" data-i18n="provoke"></option>
-                                <option class="bloody" value="14" data-i18n="resources"></option>
-                                <option class="bloody" value="15" data-i18n="physique"></option>
-                                <option class="bloody" value="16" data-i18n="decieve"></option>
-                                <option class="bloody" value="17" data-i18n="survival"></option>
-                                <option class="bloody" value="18" data-i18n="notice"></option>
-                                <option class="bloody" value="19" data-i18n="will"></option>
+                                <option class="bloody" value="--" data-i18n="selector-default" selected>Bitte eine Fertigkeit
+                                    auswählen...</option>
+                                <option class="bloody" value="athletics" data-i18n="athletics"></option>
+                                <option class="bloody" value="rapport" data-i18n="rapport"></option>
+                                <option class="bloody" value="burglary" data-i18n="burglary"></option>
+                                <option class="bloody" value="empathy" data-i18n="empathy"></option>
+                                <option class="bloody" value="marksmanship" data-i18n="marksmanship"></option>
+                                <option class="bloody" value="lore" data-i18n="lore"></option>
+                                <option class="bloody" value="crafts" data-i18n="crafts"></option>
+                                <option class="bloody" value="stealth" data-i18n="stealth"></option>
+                                <option class="bloody" value="fight" data-i18n="fight"></option>
+                                <option class="bloody" value="contacts" data-i18n="contacts"></option>
+                                <option class="bloody" value="steer" data-i18n="steer"></option>
+                                <option class="bloody" value="investigate" data-i18n="investigate"></option>
+                                <option class="bloody" value="provoke" data-i18n="provoke"></option>
+                                <option class="bloody" value="resources" data-i18n="resources"></option>
+                                <option class="bloody" value="physique" data-i18n="physique"></option>
+                                <option class="bloody" value="decieve" data-i18n="decieve"></option>
+                                <option class="bloody" value="survival" data-i18n="survival"></option>
+                                <option class="bloody" value="notice" data-i18n="notice"></option>
+                                <option class="bloody" value="will" data-i18n="will"></option>
                             </select>
                             <select class="" name="attr_skill_follower_4">
                                 <option class="bloody" value="-2" data-i18n="terrible">-2 - fürchterlich</option>
@@ -892,7 +892,7 @@
 
             <div>
                 <span class=" font-text" data-i18n="costs">Kosten:</span>
-                <input class="" type="number" name="attr_follower_costs" />
+                <input class="" type="number" name="attr_follower_costs" value="0"/>
                 <span class=" font-text" data-i18n="stunts">Stunts</span>
             </div>
             <br>
@@ -915,6 +915,7 @@
         <div>
             <span class=" font-text" data-i18n="tradition-name">Name der großen Tradition</span>
             <input class="aspects-text" type="text" data-i18n-placeholder="name" placeholder="Name" name="attr_tradition_name" />
+            <button class="w6chat" type="roll" value="&{template:chat} {{name=@{character_name}}} {{subtags=^{tradition} @{tradition_name}}} {{output=^{tradition-aspect} : @{tradition_aspect}}} {{output2=^{tradition-skill} : ^{@{tradition_skill}}}} {{output3=@{tradition_description}}}"></button>
         </div>
         <div>
             <span class=" font-text" data-i18n="tradition-aspect">Traditionsaspket</span>
@@ -923,27 +924,27 @@
         <div>
             <span class=" font-text" data-i18n="tradition-skill">Schlüsselfertigkeit</span>
             <select class="" name="attr_tradition_skill">
-                <option class="bloody" value="0" data-i18n="selector-default" selected>Bitte eine Fertigkeit
+                <option class="bloody" value="--" data-i18n="selector-default" selected>Bitte eine Fertigkeit
                     auswählen...</option>
-                <option class="bloody" value="1" data-i18n="athletics"></option>
-                <option class="bloody" value="2" data-i18n="rapport"></option>
-                <option class="bloody" value="3" data-i18n="burglary"></option>
-                <option class="bloody" value="4" data-i18n="empathy"></option>
-                <option class="bloody" value="5" data-i18n="marksmanship"></option>
-                <option class="bloody" value="6" data-i18n="lore"></option>
-                <option class="bloody" value="7" data-i18n="crafts"></option>
-                <option class="bloody" value="8" data-i18n="stealth"></option>
-                <option class="bloody" value="9" data-i18n="fight"></option>
-                <option class="bloody" value="10" data-i18n="contacts"></option>
-                <option class="bloody" value="11" data-i18n="steer"></option>
-                <option class="bloody" value="12" data-i18n="investigate"></option>
-                <option class="bloody" value="13" data-i18n="provoke"></option>
-                <option class="bloody" value="14" data-i18n="resources"></option>
-                <option class="bloody" value="15" data-i18n="physique"></option>
-                <option class="bloody" value="16" data-i18n="decieve"></option>
-                <option class="bloody" value="17" data-i18n="survival"></option>
-                <option class="bloody" value="18" data-i18n="notice"></option>
-                <option class="bloody" value="19" data-i18n="will"></option>
+                <option class="bloody" value="athletics" data-i18n="athletics"></option>
+                <option class="bloody" value="rapport" data-i18n="rapport"></option>
+                <option class="bloody" value="burglary" data-i18n="burglary"></option>
+                <option class="bloody" value="empathy" data-i18n="empathy"></option>
+                <option class="bloody" value="marksmanship" data-i18n="marksmanship"></option>
+                <option class="bloody" value="lore" data-i18n="lore"></option>
+                <option class="bloody" value="crafts" data-i18n="crafts"></option>
+                <option class="bloody" value="stealth" data-i18n="stealth"></option>
+                <option class="bloody" value="fight" data-i18n="fight"></option>
+                <option class="bloody" value="contacts" data-i18n="contacts"></option>
+                <option class="bloody" value="steer" data-i18n="steer"></option>
+                <option class="bloody" value="investigate" data-i18n="investigate"></option>
+                <option class="bloody" value="provoke" data-i18n="provoke"></option>
+                <option class="bloody" value="resources" data-i18n="resources"></option>
+                <option class="bloody" value="physique" data-i18n="physique"></option>
+                <option class="bloody" value="decieve" data-i18n="decieve"></option>
+                <option class="bloody" value="survival" data-i18n="survival"></option>
+                <option class="bloody" value="notice" data-i18n="notice"></option>
+                <option class="bloody" value="will" data-i18n="will"></option>
             </select>
         </div>
         <div>
@@ -957,22 +958,22 @@
         <br>
         <div class="overcome">
             <span class=" font-text" data-i18n="overcome">Überwinden</span>
-            <button class="w6chat" type="roll" value="@{tradition_overcome}"></button>
+            <button class="w6chat" type="roll" value="&{template:chat} {{name=@{character_name}}} {{subtags=^{tradition} @{tradition_name}}} {{subtags2=^{overcome}}} {{output=@{tradition_overcome}}}"></button>
         </div>
         <textarea class="overcome-text" data-i18n-placeholder="overcome" placeholder="Überwinden" name="attr_tradition_overcome"></textarea>
         <div class="create">
             <span class=" font-text" data-i18n="create-advantage">Erschaffen eines Vorteils</span>
-            <button class="w6chat" type="roll" value="@{tradition_advantage}"></button>
+            <button class="w6chat" type="roll" value="&{template:chat} {{name=@{character_name}}} {{subtags=^{tradition} @{tradition_name}}} {{subtags2=^{create-advantage}}} {{output=@{tradition_advantage}}}"></button>
         </div>
         <textarea class="create-text" data-i18n-placeholder="create-advantage" placeholder="Erschaffen des Vorteils" name="attr_tradition_advantage"></textarea>
         <div>
             <span class="attack font-text" data-i18n="attack">Angreifen</span>
-            <button class="w6chat" type="roll" value="@{tradition_attack}"></button>
+            <button class="w6chat" type="roll" value="&{template:chat} {{name=@{character_name}}} {{subtags=^{tradition} @{tradition_name}}} {{subtags2=^{attack}}} {{output=@{tradition_attack}}}"></button>
         </div>
         <textarea class="attack-text" data-i18n-placeholder="attack" placeholder="Angreifen" name="attr_tradition_attack"></textarea>
         <div>
             <span class="defend font-text" data-i18n="defend">Verteidigen</span>
-            <button class="w6chat" type="roll" value="@{tradition_defend}"></button>
+            <button class="w6chat" type="roll" value="&{template:chat} {{name=@{character_name}}} {{subtags=^{tradition} @{tradition_name}}} {{subtags2=^{defend}}} {{output=@{tradition_defend}}}"></button>
         </div>
         <textarea class="defend-text" data-i18n-placeholder="defend" placeholder="Verteidigen" name="attr_tradition_defend"></textarea>
     </div>
@@ -1002,8 +1003,41 @@
     </div>
 </div>
 
-
-
+<rolltemplate class="sheet-rolltemplate-chat">
+	<table>
+        <tr>
+			<th> {{name}}</th>
+		</tr>
+        <tr>
+			<td class="subheader">{{subtags}} <br> {{subtags2}}</td>
+		</tr>
+	    {{#output}}
+		<tr class="rowcolor">
+			<td>{{output}}</td>
+		</tr>
+        {{/output}}
+        {{#output2}}
+		<tr class="rowcolor">
+			<td>{{output2}}</td>
+		</tr>
+		{{/output2}}
+        {{#output3}}
+		<tr class="rowcolor">
+			<td>{{output3}}</td>
+		</tr>
+		{{/output3}}
+  		{{#output4}}
+		<tr class="rowcolor">
+			<td>{{output4}}</td>
+		</tr>
+        {{/output4}}
+        {{#output5}}
+		<tr class="rowcolor">
+			<td>{{output5}}</td>
+		</tr>
+		{{/output5}}
+    </table>
+</rolltemplate>
 
 
 <script type="text/worker">

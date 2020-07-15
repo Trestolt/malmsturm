@@ -557,3 +557,58 @@ button[type="roll"].sheet-w6fate {
     margin-left: 5px;
 }
 
+
+
+
+
+.sheet-rolltemplate-chat table {
+    font-family: 'Noto Serif', 'serif';
+    width: auto;
+    min-width: 180px;
+    background-color: #ffffff;
+    background-image: url("https://raw.githubusercontent.com/Trestolt/malmsturm/master/assets/boxen-und-striche_charakterbogen_01.png") ;
+    background-position: top left;
+    background-size: cover;
+}
+
+.sheet-rolltemplate-chat .sheet-subheader {
+  font-size: 0.9em;
+    font-style: italic;  
+}
+
+.sheet-rolltemplate-chat .sheet-tcat {
+    font-style: italic;
+}
+
+.sheet-rolltemplate-chat .sheet-freeform {
+    font-size: 0.8em;
+}
+
+.sheet-rolltemplate-chat td {
+    padding-left: 12px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    font-size: 0.9em;
+}
+
+.sheet-rolltemplate-chat .inlinerollresult {
+    border: none;
+    background-color: #ffffff;
+}
+
+.sheet-rolltemplate-chat .sheet-arrow-right {
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+}
+
+.sheet-rolltemplate-chat th {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 5px;
+    text-align: left;
+    font-size: 1.1em;
+    font-variant: small-caps;
+    line-height: 1.4em;
+    color: #8a6d45;
+    /* font-family: "Times New Roman", Times, serif; */
+}
