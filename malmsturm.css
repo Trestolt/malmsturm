@@ -560,7 +560,7 @@ button[type="roll"].sheet-w6fate {
 
 
 
-
+.sheet-rolltemplate-fate table,
 .sheet-rolltemplate-chat table {
     font-family: 'Noto Serif', 'serif';
     width: auto;
@@ -571,19 +571,18 @@ button[type="roll"].sheet-w6fate {
     background-size: cover;
 }
 
+.sheet-rolltemplate-fate .sheet-subheader,
 .sheet-rolltemplate-chat .sheet-subheader {
   font-size: 0.9em;
     font-style: italic;  
 }
 
-.sheet-rolltemplate-chat .sheet-tcat {
-    font-style: italic;
-}
-
+.sheet-rolltemplate-fate .sheet-freeform,
 .sheet-rolltemplate-chat .sheet-freeform {
     font-size: 0.8em;
 }
 
+.sheet-rolltemplate-fate td,
 .sheet-rolltemplate-chat td {
     padding-left: 12px;
     padding-bottom: 5px;
@@ -591,16 +590,17 @@ button[type="roll"].sheet-w6fate {
     font-size: 0.9em;
 }
 
-.sheet-rolltemplate-chat .inlinerollresult {
-    border: none;
+.sheet-rolltemplate-fate .inlinerollresult {
+    border: solid 1px;
+    border-color: #8a6d45;
     background-color: #ffffff;
 }
 
-.sheet-rolltemplate-chat .sheet-arrow-right {
-    border-top: 3px solid transparent;
-    border-bottom: 3px solid transparent;
+.sheet-fate-output{
+    text-align: center;
 }
 
+.sheet-rolltemplate-fate th,
 .sheet-rolltemplate-chat th {
     padding-top: 10px;
     padding-left: 10px;

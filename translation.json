@@ -28,6 +28,7 @@
     "aspects": "Aspekte",
     "aspect": "Aspekt",
     "skills": "Fertigkeiten",
+    "skill": "Fertigkeit",
     "athletics": "Athletik",
     "rapport": "Charisma",
     "burglary": "Diebeskunst",
@@ -122,7 +123,8 @@
     "maximum": "Max.",
     "category": "Art",
     "of":"von",
-    "--":"--"
+    "--":"--",
+    "result":"Ergebnis"
 
 
 
