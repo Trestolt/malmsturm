@@ -74,22 +74,15 @@
     <div class="skills">
         <h3 class="golden" data-i18n="skills">Fertigkeiten</h3>
         <div class="modifikator">
-            <span class="" data-i18n="modifier">Verwende Erleichterung/Erschwernis-Modifikator</span>
+            <input type="checkbox" name="attr_mod_option" class="" value="?{@{query_translation}|@{skill_modifier}}" checked="checked" />
             <input type="number" name="attr_skill_modifier" class="" value="0" />
-            <input type="radio" name="attr_mod_option" class="" value="?{@{query_translation}|@{skill_modifier}}" checked="checked" />
             <input type="hidden" name="query_translation" value="Erleichterung(+) / Erschwernis(-), im Fall der Erleichterung ohne '+' eingeben" />
-            <span class="" data-i18n="yes">ja</span>
-            <input type="radio" name="attr_mod_option" class="" value="0" />
-            <span class="" data-i18n="no">nein</span>
-            
+            <span class="" data-i18n="modifier">Verwende Erleichterung/Erschwernis-Modifikator</span>
         </div>
         <div class="modifikator">
-            <span class="" data-i18n="aspect-modifier">Verwende Aspekt-Modifikator</span>
+            <input type="checkbox" name="attr_aspect_option" class="" value="@{aspect_modifier}" checked="checked" />
             <input type="number" name="attr_aspect_modifier" class="" value="0" />
-            <input type="radio" name="attr_aspect_option" class="" value="@{aspect_modifier}" checked="checked" />
-            <span class="" data-i18n="yes">ja</span>
-            <input type="radio" name="attr_aspect_option" class="" value="0" />
-            <span class="" data-i18n="no">nein</span>
+            <span class="" data-i18n="aspect-modifier">Verwende Aspekt-Modifikator</span>
         </div>
         <br>
         <div class="skill">
@@ -108,7 +101,7 @@
                     <option class="bloody" value="7" data-i18n="epic">+7 - Episch</option>
                     <option class="bloody" value="8" data-i18n="legendary">+8 - Legendär</option>
                 </select>
-                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{athletics} @{skill_athletics}}} {{result_text=^{result}: }} {{output=[[4dF + @{skill_athletics} + @{mod_option} + @{aspect_option} ]]}} "></button>
+                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{athletics} @{skill_athletics}}} {{result_text=^{result}: }} {{mod1=@{mod_option}}} {{mod2=@{aspect_option}}} {{output=[[4dF + @{skill_athletics} + @{mod_option} + @{aspect_option} ]]}} "></button>
             </div>
         </div>
         <div class="skill">
@@ -127,7 +120,7 @@
                     <option class="bloody" value="7" data-i18n="epic">+7 - Episch</option>
                     <option class="bloody" value="8" data-i18n="legendary">+8 - Legendär</option>
                 </select>
-                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{rapport} @{skill_rapport}}} {{result_text=^{result}: }} {{output=[[4dF + @{skill_rapport} + @{mod_option} ]]}} "></button>
+                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{rapport} @{skill_rapport}}} {{result_text=^{result}: }} {{mod1=@{mod_option}}} {{mod2=@{aspect_option}}} {{output=[[4dF + @{skill_rapport} + @{mod_option} + @{aspect_option} ]]}} "></button>
             </div>
         </div>
         <div class="skill">
@@ -146,7 +139,7 @@
                     <option class="bloody" value="7" data-i18n="epic">+7 - Episch</option>
                     <option class="bloody" value="8" data-i18n="legendary">+8 - Legendär</option>
                 </select>
-                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{burglary} @{skill_burglary}}} {{result_text=^{result}: }} {{output=[[4dF + @{skill_burglary} + @{mod_option} ]]}} "></button>
+                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{burglary} @{skill_burglary}}} {{result_text=^{result}: }} {{mod1=@{mod_option}}} {{mod2=@{aspect_option}}} {{output=[[4dF + @{skill_burglary} + @{mod_option} + @{aspect_option}]]}} "></button>
             </div>
         </div>
         <div class="skill">
@@ -165,7 +158,7 @@
                     <option class="bloody" value="7" data-i18n="epic">+7 - Episch</option>
                     <option class="bloody" value="8" data-i18n="legendary">+8 - Legendär</option>
                 </select>
-                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{empathy} @{skill_empathy}}} {{result_text=^{result}: }} {{output=[[4dF + @{skill_empathy} + @{mod_option} ]]}} "></button>
+                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{empathy} @{skill_empathy}}} {{result_text=^{result}: }} {{mod1=@{mod_option}}} {{mod2=@{aspect_option}}} {{output=[[4dF + @{skill_empathy} + @{mod_option} + @{aspect_option}]]}} "></button>
             </div>
         </div>
         <div class="skill">
@@ -184,7 +177,7 @@
                     <option class="bloody" value="7" data-i18n="epic">+7 - Episch</option>
                     <option class="bloody" value="8" data-i18n="legendary">+8 - Legendär</option>
                 </select>
-                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{marksmanship} @{skill_marksmanship}}} {{result_text=^{result}: }} {{output=[[4dF + @{skill_marksmanship} + @{mod_option} ]]}} "></button>
+                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{marksmanship} @{skill_marksmanship}}} {{result_text=^{result}: }} {{mod1=@{mod_option}}} {{mod2=@{aspect_option}}} {{output=[[4dF + @{skill_marksmanship} + @{mod_option} + @{aspect_option}]]}} "></button>
             </div>
         </div>
         <div class="skill">
@@ -203,7 +196,7 @@
                     <option class="bloody" value="7" data-i18n="epic">+7 - Episch</option>
                     <option class="bloody" value="8" data-i18n="legendary">+8 - Legendär</option>
                 </select>
-                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{lore} @{skill_lore}}} {{result_text=^{result}: }} {{output=[[4dF + @{skill_lore} + @{mod_option} ]]}} "></button>
+                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{lore} @{skill_lore}}} {{result_text=^{result}: }} {{mod1=@{mod_option}}} {{mod2=@{aspect_option}}} {{output=[[4dF + @{skill_lore} + @{mod_option} + @{aspect_option}]]}} "></button>
             </div>
         </div>
         <div class="skill">
@@ -222,7 +215,7 @@
                     <option class="bloody" value="7" data-i18n="epic">+7 - Episch</option>
                     <option class="bloody" value="8" data-i18n="legendary">+8 - Legendär</option>
                 </select>
-                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{crafts} @{skill_crafts}}} {{result_text=^{result}: }} {{output=[[4dF + @{skill_crafts} + @{mod_option} ]]}} "></button>
+                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{crafts} @{skill_crafts}}} {{result_text=^{result}: }} {{mod1=@{mod_option}}} {{mod2=@{aspect_option}}} {{output=[[4dF + @{skill_crafts} + @{mod_option} + @{aspect_option}]]}} "></button>
             </div>
         </div>
         <div class="skill">
@@ -241,7 +234,7 @@
                     <option class="bloody" value="7" data-i18n="epic">+7 - Episch</option>
                     <option class="bloody" value="8" data-i18n="legendary">+8 - Legendär</option>
                 </select>
-                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{stealth} @{skill_stealth}}} {{result_text=^{result}: }} {{output=[[4dF + @{skill_stealth} + @{mod_option} ]]}} "></button>
+                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{stealth} @{skill_stealth}}} {{result_text=^{result}: }} {{mod1=@{mod_option}}} {{mod2=@{aspect_option}}} {{output=[[4dF + @{skill_stealth} + @{mod_option} + @{aspect_option}]]}} "></button>
             </div>
         </div>
         <div class="skill">
@@ -260,7 +253,7 @@
                     <option class="bloody" value="7" data-i18n="epic">+7 - Episch</option>
                     <option class="bloody" value="8" data-i18n="legendary">+8 - Legendär</option>
                 </select>
-                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{fight} @{skill_fight}}} {{result_text=^{result}: }} {{output=[[4dF + @{skill_fight} + @{mod_option} ]]}} "></button>
+                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{fight} @{skill_fight}}} {{result_text=^{result}: }} {{mod1=@{mod_option}}} {{mod2=@{aspect_option}}} {{output=[[4dF + @{skill_fight} + @{mod_option} + @{aspect_option}]]}} "></button>
             </div>
         </div>
         <div class="skill">
@@ -279,7 +272,7 @@
                     <option class="bloody" value="7" data-i18n="epic">+7 - Episch</option>
                     <option class="bloody" value="8" data-i18n="legendary">+8 - Legendär</option>
                 </select>
-                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{contacts} @{skill_contacts}}} {{result_text=^{result}: }} {{output=[[4dF + @{skill_contacts} + @{mod_option} ]]}} "></button>
+                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{contacts} @{skill_contacts}}} {{result_text=^{result}: }} {{mod1=@{mod_option}}} {{mod2=@{aspect_option}}} {{output=[[4dF + @{skill_contacts} + @{mod_option} + @{aspect_option}]]}} "></button>
             </div>
         </div>
         <div class="skill">
@@ -298,7 +291,7 @@
                     <option class="bloody" value="7" data-i18n="epic">+7 - Episch</option>
                     <option class="bloody" value="8" data-i18n="legendary">+8 - Legendär</option>
                 </select>
-                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{steer} @{skill_steer}}} {{result_text=^{result}: }} {{output=[[4dF + @{skill_steer} + @{mod_option} ]]}} "></button>
+                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{steer} @{skill_steer}}} {{result_text=^{result}: }} {{mod1=@{mod_option}}} {{mod2=@{aspect_option}}} {{output=[[4dF + @{skill_steer} + @{mod_option} + @{aspect_option}]]}} "></button>
             </div>
         </div>
         <div class="skill">
@@ -317,7 +310,7 @@
                     <option class="bloody" value="7" data-i18n="epic">+7 - Episch</option>
                     <option class="bloody" value="8" data-i18n="legendary">+8 - Legendär</option>
                 </select>
-                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{investigate} @{skill_investigate}}} {{result_text=^{result}: }} {{output=[[4dF + @{skill_investigate} + @{mod_option} ]]}} "></button>
+                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{investigate} @{skill_investigate}}} {{result_text=^{result}: }} {{mod1=@{mod_option}}} {{mod2=@{aspect_option}}} {{output=[[4dF + @{skill_investigate} + @{mod_option} + @{aspect_option}]]}} "></button>
             </div>
         </div>
         <div class="skill">
@@ -336,7 +329,7 @@
                     <option class="bloody" value="7" data-i18n="epic">+7 - Episch</option>
                     <option class="bloody" value="8" data-i18n="legendary">+8 - Legendär</option>
                 </select>
-                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{provoke} @{skill_provoke}}} {{result_text=^{result}: }} {{output=[[4dF + @{skill_provoke} + @{mod_option} ]]}} "></button>
+                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{provoke} @{skill_provoke}}} {{result_text=^{result}: }} {{mod1=@{mod_option}}} {{mod2=@{aspect_option}}} {{output=[[4dF + @{skill_provoke} + @{mod_option} + @{aspect_option}]]}} "></button>
             </div>
         </div>
         <div class="skill">
@@ -355,7 +348,7 @@
                     <option class="bloody" value="7" data-i18n="epic">+7 - Episch</option>
                     <option class="bloody" value="8" data-i18n="legendary">+8 - Legendär</option>
                 </select>
-                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{resources} @{skill_resources}}} {{result_text=^{result}: }} {{output=[[4dF + @{skill_resources} + @{mod_option} ]]}} "></button>
+                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{resources} @{skill_resources}}} {{result_text=^{result}: }} {{mod1=@{mod_option}}} {{mod2=@{aspect_option}}} {{output=[[4dF + @{skill_resources} + @{mod_option} + @{aspect_option}]]}} "></button>
             </div>
         </div>
         <div class="skill">
@@ -374,7 +367,7 @@
                     <option class="bloody" value="7" data-i18n="epic">+7 - Episch</option>
                     <option class="bloody" value="8" data-i18n="legendary">+8 - Legendär</option>
                 </select>
-                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{physique} @{skill_physique}}} {{result_text=^{result}: }} {{output=[[4dF + @{skill_physique} + @{mod_option} ]]}} "></button>
+                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{physique} @{skill_physique}}} {{result_text=^{result}: }} {{mod1=@{mod_option}}} {{mod2=@{aspect_option}}} {{output=[[4dF + @{skill_physique} + @{mod_option} + @{aspect_option}]]}} "></button>
             </div>
         </div>
         <div class="skill">
@@ -393,7 +386,7 @@
                     <option class="bloody" value="7" data-i18n="epic">+7 - Episch</option>
                     <option class="bloody" value="8" data-i18n="legendary">+8 - Legendär</option>
                 </select>
-                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{decieve} @{skill_decieve}}} {{result_text=^{result}: }} {{output=[[4dF + @{skill_decieve} + @{mod_option} ]]}} "></button>
+                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{decieve} @{skill_decieve}}} {{result_text=^{result}: }} {{mod1=@{mod_option}}} {{mod2=@{aspect_option}}} {{output=[[4dF + @{skill_decieve} + @{mod_option} + @{aspect_option}]]}} "></button>
             </div>
         </div>
         <div class="skill">
@@ -412,7 +405,7 @@
                     <option class="bloody" value="7" data-i18n="epic">+7 - Episch</option>
                     <option class="bloody" value="8" data-i18n="legendary">+8 - Legendär</option>
                 </select>
-                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{survival} @{skill_survival}}} {{result_text=^{result}: }} {{output=[[4dF + @{skill_survival} + @{mod_option} ]]}} "></button>
+                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{survival} @{skill_survival}}} {{result_text=^{result}: }} {{mod1=@{mod_option}}} {{mod2=@{aspect_option}}} {{output=[[4dF + @{skill_survival} + @{mod_option} + @{aspect_option}]]}} "></button>
             </div>
         </div>
         <div class="skill">
@@ -431,7 +424,7 @@
                     <option class="bloody" value="7" data-i18n="epic">+7 - Episch</option>
                     <option class="bloody" value="8" data-i18n="legendary">+8 - Legendär</option>
                 </select>
-                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{notice} @{skill_notice}}} {{result_text=^{result}: }} {{output=[[4dF + @{skill_notice} + @{mod_option} ]]}} "></button>
+                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{notice} @{skill_notice}}} {{result_text=^{result}: }} {{mod1=@{mod_option}}} {{mod2=@{aspect_option}}} {{output=[[4dF + @{skill_notice} + @{mod_option} + @{aspect_option}]]}} "></button>
             </div>
         </div>
         <div class="skill">
@@ -450,7 +443,7 @@
                     <option class="bloody" value="7" data-i18n="epic">+7 - Episch</option>
                     <option class="bloody" value="8" data-i18n="legendary">+8 - Legendär</option>
                 </select>
-                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{will} @{skill_will}}} {{result_text=^{result}: }} {{output=[[4dF + @{skill_will} + @{mod_option} ]]}} "></button>
+                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{will} @{skill_will}}} {{result_text=^{result}: }} {{mod1=@{mod_option}}} {{mod2=@{aspect_option}}} {{output=[[4dF + @{skill_will} + @{mod_option} + @{aspect_option}]]}} "></button>
             </div>
         </div>
     </div>
@@ -719,12 +712,10 @@
             <br>
             <h4 class="" data-i18n="skills">Fertigkeiten</h4>
             <div class="modifikator">
-                <span class="" data-i18n="modifier">Modifikator</span>
-                <input type="radio" name="attr_mod_option" class="" value="?{@{query_translation}|0}" selected />
+                <input type="checkbox" name="attr_mod_option" class="" value="?{@{query_translation}|@{skill_modifier}}" checked="checked" />
+                <input type="number" name="attr_skill_modifier" class="" value="0" />
                 <input type="hidden" name="query_translation" value="Erleichterung(+) / Erschwernis(-), im Fall der Erleichterung ohne '+' eingeben" />
-                <span class="" data-i18n="yes">ja</span>
-                <input type="radio" name="attr_mod_option" class="" value="0" />
-                <span class="" data-i18n="no">nein</span>
+                <span class="" data-i18n="modifier">Verwende Erleichterung/Erschwernis-Modifikator</span>
             </div>
             <div>
                 <select class="" name="attr_skill_follower_selector_1">
@@ -763,7 +754,7 @@
                     <option class="bloody" value="7" data-i18n="epic">+7 - Episch</option>
                     <option class="bloody" value="8" data-i18n="legendary">+8 - Legendär</option>
                 </select>
-                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{follower_name}}} {{subtags=^{follower} ^{of} @{character_name}}} {{subtags2=^{skill} ^{@{skill_follower_selector_1}} @{skill_follower_1}}} {{result_text=^{result}: }} {{output=[[4dF + @{skill_follower_1} + @{mod_option} ]]}} "></button>
+                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{follower_name}}} {{subtags=^{follower} ^{of} @{character_name}}} {{subtags2=^{skill} ^{@{skill_follower_selector_1}} @{skill_follower_1}}} {{result_text=^{result}: }} {{mod1=@{mod_option}}} {{output=[[4dF + @{skill_follower_1} + @{mod_option} ]]}} "></button>
                 <input type="checkbox" class="klapp-cb" name="attr_klapp_box_1" value="1" checked><span></span>
                 <div class="klapp-box">
                     <select class="" name="attr_skill_follower_selector_2">
@@ -802,7 +793,7 @@
                         <option class="bloody" value="7" data-i18n="epic">+7 - Episch</option>
                         <option class="bloody" value="8" data-i18n="legendary">+8 - Legendär</option>
                     </select>
-                    <button class="w6fate" type="roll" value="&{template:fate} {{name=@{follower_name}}} {{subtags=^{follower} ^{of} @{character_name}}} {{subtags2=^{skill} ^{@{skill_follower_selector_2}} @{skill_follower_2}}} {{result_text=^{result}: }} {{output=[[4dF + @{skill_follower_2} + @{mod_option} ]]}} "></button>
+                    <button class="w6fate" type="roll" value="&{template:fate} {{name=@{follower_name}}} {{subtags=^{follower} ^{of} @{character_name}}} {{subtags2=^{skill} ^{@{skill_follower_selector_2}} @{skill_follower_2}}} {{result_text=^{result}: }} {{mod1=@{mod_option}}} {{output=[[4dF + @{skill_follower_2} + @{mod_option} ]]}} "></button>
                     <input type="checkbox" class="klapp-cb" name="attr_klapp_box_2" value="1" checked><span></span>
                     <div class="klapp-box">
                         <select class="" name="attr_skill_follower_selector_3">
@@ -841,7 +832,7 @@
                             <option class="bloody" value="7" data-i18n="epic">+7 - Episch</option>
                             <option class="bloody" value="8" data-i18n="legendary">+8 - Legendär</option>
                         </select>
-                        <button class="w6fate" type="roll" value="&{template:fate} {{name=@{follower_name}}} {{subtags=^{follower} ^{of} @{character_name}}} {{subtags2=^{skill} ^{@{skill_follower_selector_3}} @{skill_follower_3}}} {{result_text=^{result}: }} {{output=[[4dF + @{skill_follower_3} + @{mod_option} ]]}} "></button>
+                        <button class="w6fate" type="roll" value="&{template:fate} {{name=@{follower_name}}} {{subtags=^{follower} ^{of} @{character_name}}} {{subtags2=^{skill} ^{@{skill_follower_selector_3}} @{skill_follower_3}}} {{result_text=^{result}: }} {{mod1=@{mod_option}}} {{output=[[4dF + @{skill_follower_3} + @{mod_option} ]]}} "></button>
                         <input type="checkbox" class="klapp-cb" name="attr_klapp_box_3" value="1" checked><span></span>
                         <div class="klapp-box">
 
@@ -881,7 +872,7 @@
                                 <option class="bloody" value="7" data-i18n="epic">+7 - Episch</option>
                                 <option class="bloody" value="8" data-i18n="legendary">+8 - Legendär</option>
                             </select>
-                            <button class="w6fate" type="roll" value="&{template:fate} {{name=@{follower_name}}} {{subtags=^{follower} ^{of} @{character_name}}} {{subtags2=^{skill} ^{@{skill_follower_selector_4}} @{skill_follower_4}}} {{result_text=^{result}: }} {{output=[[4dF + @{skill_follower_4} + @{mod_option} ]]}} "></button>
+                            <button class="w6fate" type="roll" value="&{template:fate} {{name=@{follower_name}}} {{subtags=^{follower} ^{of} @{character_name}}} {{subtags2=^{skill} ^{@{skill_follower_selector_4}} @{skill_follower_4}}} {{result_text=^{result}: }} {{mod1=@{mod_option}}} {{output=[[4dF + @{skill_follower_4} + @{mod_option} ]]}} "></button>
                         </div>
                     </div>
                 </div>
@@ -924,7 +915,7 @@
         <div>
             <span class=" font-text" data-i18n="tradition-name">Name der großen Tradition</span>
             <input class="aspects-text" type="text" data-i18n-placeholder="name" placeholder="Name" name="attr_tradition_name" />
-            <button class="w6chat" type="roll" value="&{template:chat} {{name=@{character_name}}} {{subtags=^{tradition} @{tradition_name}}} {{output=^{tradition-aspect} : @{tradition_aspect}}} {{output2=^{tradition-skill} : ^{@{tradition_skill}}}} {{output3=@{tradition_description}}}"></button>
+            <button class="w6chat" type="roll" value="&{template:chat} {{name=@{character_name}}} {{subtags=^{tradition} @{tradition_name}}} {{output=^{tradition-aspect} : @{tradition_aspect}}} {{output2=^{tradition-skill} : ^{@{tradition_skill}}}} {{mod1=@{mod_option}}} {{output3=@{tradition_description}}}"></button>
         </div>
         <div>
             <span class=" font-text" data-i18n="tradition-aspect">Traditionsaspket</span>
@@ -1055,33 +1046,24 @@
 		</tr>
         <tr>
 			<td class="subheader">{{subtags}} <br> {{subtags2}}</td>
+        </tr>
+        {{#mod1}}
+		<tr>
+			<td class="fate-mod">Erschwernis {{mod1}}</td>
 		</tr>
+        {{/mod1}}
+        {{#mod2}}
+		<tr>
+			<td class="fate-mod">Aspekt-Modifikator {{mod2}}</td>
+		</tr>
+        {{/mod2}}
+
 	    {{#output}}
 		<tr>
-			<td class="fate-output">{{result_text}} {{output}}</td>
+			<td class="fate-output"><span class="fate-output">{{result_text}}</span> {{output}}</td>
 		</tr>
         {{/output}}
-        {{#output2}}
-		<tr >
-			<td>{{output2}}</td>
-		</tr>
-		{{/output2}}
-        {{#output3}}
-		<tr >
-			<td>{{output3}}</td>
-		</tr>
-		{{/output3}}
-  		{{#output4}}
-		<tr >
-			<td>{{output4}}</td>
-		</tr>
-        {{/output4}}
-        {{#output5}}
-		<tr >
-			<td>{{output5}}</td>
-		</tr>
-        {{/output5}}
-        </tr>
+      
     </table>
 </rolltemplate>
 

@@ -594,11 +594,12 @@ button[type="roll"].sheet-w6fate {
     border: solid 1px;
     border-color: #8a6d45;
     background-color: #ffffff;
+    font-size: 1.1em;
+    font-weight: bold;
 }
 
-.sheet-fate-output{
-    text-align: center;
-}
+
+
 
 .sheet-rolltemplate-fate th,
 .sheet-rolltemplate-chat th {
