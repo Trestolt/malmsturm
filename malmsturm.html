@@ -65,6 +65,7 @@
                 </optgroup>
             </select>
             <input class="aspects-text" type="text" name="attr_aspect" />
+            <input class="aspects-cb" type="checkbox" name="attr_aspect_active" value="1" />
             <button class="w6chat" type="roll" value="&{template:chat} {{name=@{character_name}}} {{subtags=^{aspect} ^{@{aspect_scheme}} }} {{output=@{aspect}}}"></button>
         </fieldset>
     </div>
@@ -73,11 +74,21 @@
     <div class="skills">
         <h3 class="golden" data-i18n="skills">Fertigkeiten</h3>
         <div class="modifikator">
-            <span class="" data-i18n="modifier">Modifikator</span>
-            <input type="radio" name="attr_mod_option" class="" value="?{@{query_translation}|0}" checked="checked" />
+            <span class="" data-i18n="modifier">Verwende Erleichterung/Erschwernis-Modifikator</span>
+            <input type="number" name="attr_skill_modifier" class="" value="0" />
+            <input type="radio" name="attr_mod_option" class="" value="?{@{query_translation}|@{skill_modifier}}" checked="checked" />
             <input type="hidden" name="query_translation" value="Erleichterung(+) / Erschwernis(-), im Fall der Erleichterung ohne '+' eingeben" />
             <span class="" data-i18n="yes">ja</span>
             <input type="radio" name="attr_mod_option" class="" value="0" />
+            <span class="" data-i18n="no">nein</span>
+            
+        </div>
+        <div class="modifikator">
+            <span class="" data-i18n="aspect-modifier">Verwende Aspekt-Modifikator</span>
+            <input type="number" name="attr_aspect_modifier" class="" value="0" />
+            <input type="radio" name="attr_aspect_option" class="" value="@{aspect_modifier}" checked="checked" />
+            <span class="" data-i18n="yes">ja</span>
+            <input type="radio" name="attr_aspect_option" class="" value="0" />
             <span class="" data-i18n="no">nein</span>
         </div>
         <br>
@@ -97,7 +108,7 @@
                     <option class="bloody" value="7" data-i18n="epic">+7 - Episch</option>
                     <option class="bloody" value="8" data-i18n="legendary">+8 - Legendär</option>
                 </select>
-                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{athletics} @{skill_athletics}}} {{result_text=^{result}: }} {{output=[[4dF + @{skill_athletics} + @{mod_option} ]]}} "></button>
+                <button class="w6fate" type="roll" value="&{template:fate} {{name=@{character_name}}} {{subtags=^{skill} ^{athletics} @{skill_athletics}}} {{result_text=^{result}: }} {{output=[[4dF + @{skill_athletics} + @{mod_option} + @{aspect_option} ]]}} "></button>
             </div>
         </div>
         <div class="skill">
@@ -448,9 +459,8 @@
         <span class="points-text golden  font-text" data-i18n="fate-points">Aktuelle Fate-Punkte</span>
         <input class="" type="number" name="attr_fate_points" value="0" />
         <span class="points-text  font-text" data-i18n="refresh">Erholungsrate</span>
-        <input class="" type="number" name="attr_refresh" value="0" />
-        <!-- <span class="points-text bloody  font-text" data-i18n="refresh-modified">Modifizierte Erholungsrate</span>
-        <input class="" type="number" name="attr_refresh_max" value="0" /> -->
+        <input class="" type="number" name="attr_refresh_rate" value="0" />
+                
     </div>
 
     <div class="stress">
@@ -1079,12 +1089,45 @@
 
     on("sheet:opened change:mod_option", function () { getAttrs(["query_translation"], function (v) { setAttrs({ query_translation: getTranslationByKey('query_trans') }); }); });
       
-    
+    on("change:repeating_aspect:aspect_active",function ()
+     { getAttrs(["repeating_aspect_aspect_active", "aspect_modifier"],
+      function (values) {
+        var act = parseInt(values.repeating_aspect_aspect_active);
+        var aspect_modifier = parseInt(values.aspect_modifier);
+        if  (act == 1) {
+            var modifier = 2;
+        } else
+        {
+            var modifier = -2;
+        }
+        var aspect_modifier_changed = aspect_modifier + modifier;
+        //console.log("status "+ act + "set " + aspect_modifier + "new "+aspect_modifier_changed + "modifier "+modifier);
+
+        setAttrs({ aspect_modifier : aspect_modifier_changed });
+        });
+     });
+     
+     on("remove:repeating_aspect", function(eventInfo) {
+        rid = eventInfo.sourceAttribute;
+        //console.log(eventInfo.removedInfo);
+        var act = parseInt(eventInfo.removedInfo[rid + "_aspect_active"])||0;
+        
+        if (act == 1) {
+            getAttrs(["aspect_modifier"],
+            function (values) {
+                var aspect_modifier = parseInt(values.aspect_modifier);
+                setAttrs({ aspect_modifier : aspect_modifier - 2 });
+            });
+        }
+        
+     });
+
+
     on("sheet:opened change:repeating_follower:follower_stress1 change:repeating_follower:follower_stress2 change:repeating_follower:follower_stress3  change:repeating_follower:follower_stress4",function ()
      { getAttrs(["repeating_follower_follower_stress1", "repeating_follower_follower_stress2", "repeating_follower_follower_stress3", "repeating_follower_follower_stress4"],
       function (values) {
         var stress = (parseInt(values.repeating_follower_follower_stress1)||0) + (parseInt(values.repeating_follower_follower_stress2)||0)  + (parseInt(values.repeating_follower_follower_stress3)||0) + (parseInt(values.repeating_follower_follower_stress4)||0);
-        console.log("stress:" + stress + "eins"+ parseInt(values.repeating_follower_follower_stress1)+"zwei"+parseInt(values.repeating_follower_follower_stress2)+"drei"+parseInt(values.repeating_follower_follower_stress3)+"vier"+parseInt(values.repeating_follower_follower_stress4));
+        //console.log("stress:" + stress + "eins"+ parseInt(values.repeating_follower_follower_stress1)+"zwei"+parseInt(values.repeating_follower_follower_stress2)+"drei"+parseInt(values.repeating_follower_follower_stress3)+"vier"+parseInt(values.repeating_follower_follower_stress4));
 
         setAttrs({ repeating_follower_follower_stress : stress });
         });
@@ -1094,7 +1137,7 @@
         { getAttrs(["arcane_stress1", "arcane_stress2", "arcane_stress3", "arcane_stress4"],
         function (values) {
             var stress = (parseInt(values.arcane_stress1)||0) + (parseInt(values.arcane_stress2)||0)  + (parseInt(values.arcane_stress3)||0) + (parseInt(values.arcane_stress4)||0);
-             console.log("stress:" + stress + "eins"+ parseInt(values.arcane_stress1)+"zwei"+parseInt(values.arcane_stress2)+"drei"+parseInt(values.arcane_stress3)+"vier"+parseInt(values.arcane_stress4));
+             //console.log("stress:" + stress + "eins"+ parseInt(values.arcane_stress1)+"zwei"+parseInt(values.arcane_stress2)+"drei"+parseInt(values.arcane_stress3)+"vier"+parseInt(values.arcane_stress4));
            setAttrs({ arcane_stress : stress });
         });
     });
@@ -1102,7 +1145,7 @@
         { getAttrs(["mental_stress1", "mental_stress2", "mental_stress3", "mental_stress4"],
         function (values) {
         var stress = (parseInt(values.mental_stress1)||0) + (parseInt(values.mental_stress2)||0)  + (parseInt(values.mental_stress3)||0) + (parseInt(values.mental_stress4)||0);
-        console.log("stress:" + stress + "eins"+ parseInt(values.mental_stress1)+"zwei"+parseInt(values.mental_stress2)+"drei"+parseInt(values.mental_stress3)+"vier"+parseInt(values.mental_stress4));
+        //console.log("stress:" + stress + "eins"+ parseInt(values.mental_stress1)+"zwei"+parseInt(values.mental_stress2)+"drei"+parseInt(values.mental_stress3)+"vier"+parseInt(values.mental_stress4));
         setAttrs({ mental_stress : stress });
        });
     });
@@ -1111,7 +1154,7 @@
         { getAttrs(["physical_stress1", "physical_stress2", "physical_stress3", "physical_stress4"],
         function (values) {
             var stress = (parseInt(values.physical_stress1)||0) + (parseInt(values.physical_stress2)||0)  + (parseInt(values.physical_stress3)||0) + (parseInt(values.physical_stress4)||0);
-            console.log("stress:" + stress + "eins"+ parseInt(values.physical_stress1)+"zwei"+parseInt(values.physical_stress2)+"drei"+parseInt(values.physical_stress3)+"vier"+parseInt(values.physical_stress4));
+          //  console.log("stress:" + stress + "eins"+ parseInt(values.physical_stress1)+"zwei"+parseInt(values.physical_stress2)+"drei"+parseInt(values.physical_stress3)+"vier"+parseInt(values.physical_stress4));
                setAttrs({ physical_stress : stress });
         });
     });

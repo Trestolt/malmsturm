@@ -1,6 +1,7 @@
 {
     "query_trans": "Erleichterung(+) / Erschwernis(-), im Fall der Erleichterung ohne '+' eingeben",
-    "modifier": "Modifikator",
+    "modifier": "Erschwernis-Modifikator",
+    "aspect-modifier": "Aspekt-Modifikator",
     "yes": "ja",
     "no": "nein",
     "character-name": "Name des Charakters",
